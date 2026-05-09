@@ -1,0 +1,1199 @@
+[
+  {
+    "iid": "media",
+    "cid": "comic_s",
+    "pt": "採用情報",
+    "url": "https://www.nttsolmare.jp/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "comic_s",
+    "pt": "お問い合わせ",
+    "url": "https://www.nttsolmare.jp/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "line_manga",
+    "pt": "採用情報",
+    "url": "https://careers.linecorp.com/ja/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "kirin",
+    "pt": "EC・購入",
+    "url": "https://shop.kirin.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "piccoma",
+    "pt": "企業情報",
+    "url": "https://kakaoentertainment-jp.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "piccoma",
+    "pt": "ニュースリリース",
+    "url": "https://kakaoentertainment-jp.com/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "piccoma",
+    "pt": "採用情報",
+    "url": "https://kakaoentertainment-jp.com/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "manga_k",
+    "pt": "TOPページ",
+    "url": "https://www.manga-kingdom.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "採用情報",
+    "url": "https://careers.mercedes-benz.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "金融サービス",
+    "url": "https://www.audi-financial-services.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "ohki",
+    "pt": "TOPページ",
+    "url": "https://www.ohki-hd.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "ohki",
+    "pt": "企業情報",
+    "url": "https://www.ohki-hd.co.jp/company/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "ohki",
+    "pt": "ニュースリリース",
+    "url": "https://www.ohki-hd.co.jp/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "ohki",
+    "pt": "事業領域",
+    "url": "https://www.ohki-hd.co.jp/business/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "ohki",
+    "pt": "グループ会社",
+    "url": "https://www.ohki-hd.co.jp/group/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "ohki",
+    "pt": "サステナビリティ",
+    "url": "https://www.ohki-hd.co.jp/csr/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "ohki",
+    "pt": "IR情報",
+    "url": "https://www.ohki-hd.co.jp/ir/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "ohki",
+    "pt": "採用情報",
+    "url": "https://www.ohki-hd.co.jp/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "ohki",
+    "pt": "お問い合わせ",
+    "url": "https://www.ohki-hd.co.jp/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "manga_k",
+    "pt": "番組・コンテンツ",
+    "url": "https://www.manga-kingdom.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "manga_k",
+    "pt": "タイトル一覧",
+    "url": "https://www.manga-kingdom.com/genre/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "manga_k",
+    "pt": "キャンペーン",
+    "url": "https://www.manga-kingdom.com/campaign/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "manga_k",
+    "pt": "お問い合わせ",
+    "url": "https://www.manga-kingdom.com/support/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "toyota",
+    "pt": "アクセサリー",
+    "url": "https://accessory.toyota.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "honda",
+    "pt": "金融サービス",
+    "url": "https://www.honda-finance.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "nec",
+    "pt": "EC・購入",
+    "url": "https://shop.nec.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "subaru",
+    "pt": "採用情報",
+    "url": "https://www.subaru-career.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "nissan",
+    "pt": "金融サービス",
+    "url": "https://www.nissan-finance.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "food",
+    "cid": "asahi_b",
+    "pt": "EC・購入",
+    "url": "https://shop.asahibeer.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "trading",
+    "cid": "itochu",
+    "pt": "ニュースリリース",
+    "url": "https://www.itochu.co.jp/ja/news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "lineyahoo",
+    "pt": "サービス一覧",
+    "url": "https://www.lycorp.co.jp/ja/business/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "infra",
+    "cid": "sekisui",
+    "pt": "企業情報",
+    "url": "https://www.sekisuihouse.com/company/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "sapporo",
+    "pt": "EC・購入",
+    "url": "https://shop.sapporobeer.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "food",
+    "cid": "suntory",
+    "pt": "EC・購入",
+    "url": "https://ec.suntory.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "mazda",
+    "pt": "認定中古車",
+    "url": "https://www.mazdaprize.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "mazda",
+    "pt": "金融サービス",
+    "url": "https://www.mazda-finance.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "mazda",
+    "pt": "採用情報",
+    "url": "https://www.mazda-recruit.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "TOPページ",
+    "url": "https://sfc.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "企業情報",
+    "url": "https://sfc.co.jp/company/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "ニュースリリース",
+    "url": "https://sfc.co.jp/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "物件・サービス検索",
+    "url": "https://sfc.co.jp/house/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "工事・施工依頼",
+    "url": "https://sfc.co.jp/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "キャンペーン",
+    "url": "https://sfc.co.jp/campaign/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "サステナビリティ",
+    "url": "https://sfc.co.jp/csr/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "IR情報",
+    "url": "https://sfc.co.jp/ir/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "採用情報",
+    "url": "https://sfc.co.jp/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "お問い合わせ",
+    "url": "https://sfc.co.jp/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "sumitomo_r",
+    "pt": "技術・R&D",
+    "url": "https://sfc.co.jp/technology/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "gov",
+    "cid": "tokyo_metro",
+    "pt": "採用情報",
+    "url": "https://www.saiyo.metro.tokyo.lg.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "adcons",
+    "cid": "dentsu",
+    "pt": "採用情報",
+    "url": "https://recruit.dentsu.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "suzuki",
+    "pt": "採用情報",
+    "url": "https://www.suzuki-recruit.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "adcons",
+    "cid": "adk",
+    "pt": "IR情報",
+    "url": "https://www.adk-holdings.co.jp/ir/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "auto",
+    "cid": "kawasaki",
+    "pt": "車種ラインアップ",
+    "url": "https://www.kawasaki-motors.com/ja/motorcycles/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "seven_i",
+    "pt": "EC・購入",
+    "url": "https://www.7net.omni7.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "seven_i",
+    "pt": "店舗検索",
+    "url": "https://www.7-eleven.co.jp/storesearch/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "dell_jp",
+    "pt": "IR情報",
+    "url": "https://investors.delltechnologies.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "square_enix",
+    "pt": "番組・コンテンツ",
+    "url": "https://www.square-enix.com/jpn/game/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "square_enix",
+    "pt": "動画配信",
+    "url": "https://www.square-enix.com/jpn/streaming/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "square_enix",
+    "pt": "タイトル一覧",
+    "url": "https://www.square-enix.com/jpn/game/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "square_enix",
+    "pt": "キャンペーン",
+    "url": "https://www.square-enix.com/jpn/campaign/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "food",
+    "cid": "toyo_suisan",
+    "pt": "サステナビリティ",
+    "url": "https://www.toyosuisan.co.jp/csr/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "square_enix",
+    "pt": "採用情報",
+    "url": "https://www.square-enix.com/jpn/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "food",
+    "cid": "toyo_suisan",
+    "pt": "IR情報",
+    "url": "https://www.toyosuisan.co.jp/ir/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "square_enix",
+    "pt": "お問い合わせ",
+    "url": "https://www.square-enix.com/jpn/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "nitori",
+    "pt": "TOPページ",
+    "url": "https://www.nitori-holdings.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "nitori",
+    "pt": "企業情報",
+    "url": "https://www.nitori-holdings.co.jp/company/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "nitori",
+    "pt": "ニュースリリース",
+    "url": "https://www.nitori-holdings.co.jp/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "keirin_jp",
+    "pt": "番組・コンテンツ",
+    "url": "https://keirin.jp/pc/dfw/portal/",
+    "status": "dead_404"
+  },
+  {
+    "iid": "media",
+    "cid": "keirin_jp",
+    "pt": "動画配信",
+    "url": "https://keirin.jp/pc/dfw/portal/movie/",
+    "status": "dead_404"
+  },
+  {
+    "iid": "media",
+    "cid": "keirin_jp",
+    "pt": "キャンペーン",
+    "url": "https://keirin.jp/pc/dfw/portal/campaign/",
+    "status": "dead_404"
+  },
+  {
+    "iid": "cosme",
+    "cid": "shiseido",
+    "pt": "EC・購入",
+    "url": "https://store.shiseido.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "lenovo_jp",
+    "pt": "修理・サポート",
+    "url": "https://support.lenovo.com/jp/ja/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "food",
+    "cid": "bat_jp",
+    "pt": "TOPページ",
+    "url": "https://www.batjapan.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "kao",
+    "pt": "製品詳細",
+    "url": "https://www.biore.kao.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "kao",
+    "pt": "EC・購入",
+    "url": "https://www.kaoshoppingsite.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "kao",
+    "pt": "肌診断",
+    "url": "https://www.hada-labo.com/skintype/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "TOPページ",
+    "url": "https://kepco.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "企業情報",
+    "url": "https://kepco.co.jp/corporate/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "ニュースリリース",
+    "url": "https://kepco.co.jp/press/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "物件・サービス検索",
+    "url": "https://kepco.co.jp/service/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "料金・プラン",
+    "url": "https://kepco.co.jp/service/plan/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "工事・施工依頼",
+    "url": "https://kepco.co.jp/service/kouji/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "キャンペーン",
+    "url": "https://kepco.co.jp/campaign/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "サステナビリティ",
+    "url": "https://kepco.co.jp/sustainability/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "IR情報",
+    "url": "https://kepco.co.jp/ir/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "採用情報",
+    "url": "https://kepco.co.jp/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "お問い合わせ",
+    "url": "https://kepco.co.jp/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "kansai_e",
+    "pt": "技術・R&D",
+    "url": "https://kepco.co.jp/rd/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "infra",
+    "cid": "tokyo_gas",
+    "pt": "サステナビリティ",
+    "url": "https://www.tokyo-gas.co.jp/csr/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "kose",
+    "pt": "採用情報",
+    "url": "https://www.kose-recruit.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "amazon_jp",
+    "pt": "ニュースリリース",
+    "url": "https://www.aboutamazon.jp/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "nitori",
+    "pt": "サステナビリティ",
+    "url": "https://www.nitori-holdings.co.jp/csr/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "nitori",
+    "pt": "IR情報",
+    "url": "https://www.nitori-holdings.co.jp/ir/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "nitori",
+    "pt": "採用情報",
+    "url": "https://www.nitori-holdings.co.jp/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "pola",
+    "pt": "EC・購入",
+    "url": "https://ec.pola.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "pola",
+    "pt": "IR情報",
+    "url": "https://www.pola-orbis.com/ir/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "amazon_jp",
+    "pt": "サステナビリティ",
+    "url": "https://sustainability.aboutamazon.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "lion",
+    "pt": "EC・購入",
+    "url": "https://lion-direct.lion.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "food",
+    "cid": "bat_jp",
+    "pt": "サステナビリティ",
+    "url": "https://www.bat.com/ja_jp/sustainability",
+    "status": "dead_body"
+  },
+  {
+    "iid": "cosme",
+    "cid": "unilever",
+    "pt": "IR情報",
+    "url": "https://www.unileverplc.com/investors/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "food",
+    "cid": "bat_jp",
+    "pt": "IR情報",
+    "url": "https://www.bat.com/ja_jp/ir",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "bat_jp",
+    "pt": "採用情報",
+    "url": "https://www.bat.com/ja_jp/careers",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "cyberagent",
+    "pt": "技術・R&D",
+    "url": "https://research.cyberagent.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "jp_digital",
+    "pt": "TOPページ",
+    "url": "https://www.jp-digital.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "jp_digital",
+    "pt": "企業情報",
+    "url": "https://www.jp-digital.co.jp/about/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "jp_digital",
+    "pt": "ニュースリリース",
+    "url": "https://www.jp-digital.co.jp/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "jp_digital",
+    "pt": "サービス一覧",
+    "url": "https://www.jp-digital.co.jp/service/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "jp_digital",
+    "pt": "採用情報",
+    "url": "https://www.jp-digital.co.jp/careers/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "jp_digital",
+    "pt": "お問い合わせ",
+    "url": "https://www.jp-digital.co.jp/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "jp_digital",
+    "pt": "技術・R&D",
+    "url": "https://www.jp-digital.co.jp/technology/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "TOPページ",
+    "url": "https://www.loreal.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "企業情報",
+    "url": "https://www.loreal.co.jp/our-company/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "ニュースリリース",
+    "url": "https://www.loreal.co.jp/media/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "ブランド一覧",
+    "url": "https://www.loreal.co.jp/brands/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "製品一覧",
+    "url": "https://www.loreal-paris.co.jp/products/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "製品詳細",
+    "url": "https://www.loreal-paris.co.jp/products/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "EC・購入",
+    "url": "https://www.loreal-paris.co.jp/shop/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "肌診断",
+    "url": "https://www.lancome.co.jp/diagnosis/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "店舗検索",
+    "url": "https://www.loreal-paris.co.jp/storelist/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "キャンペーン",
+    "url": "https://www.loreal-paris.co.jp/campaign/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "サステナビリティ",
+    "url": "https://www.loreal.co.jp/sustainability/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "TOPページ",
+    "url": "https://www.kurita.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "企業情報",
+    "url": "https://www.kurita.co.jp/corporate/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "ニュースリリース",
+    "url": "https://www.kurita.co.jp/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "製品一覧",
+    "url": "https://www.kurita.co.jp/products/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "製品詳細",
+    "url": "https://www.kurita.co.jp/products/water-treatment/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "修理・サポート",
+    "url": "https://www.kurita.co.jp/support/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "サステナビリティ",
+    "url": "https://www.kurita.co.jp/csr/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "IR情報",
+    "url": "https://www.kurita.co.jp/ir/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "workthy",
+    "pt": "TOPページ",
+    "url": "https://www.workthy.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "採用情報",
+    "url": "https://www.kurita.co.jp/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "workthy",
+    "pt": "企業情報",
+    "url": "https://www.workthy.co.jp/about/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "お問い合わせ",
+    "url": "https://www.kurita.co.jp/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "workthy",
+    "pt": "ニュースリリース",
+    "url": "https://www.workthy.co.jp/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "kurita",
+    "pt": "技術・R&D",
+    "url": "https://www.kurita.co.jp/technology/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "workthy",
+    "pt": "サービス一覧",
+    "url": "https://www.workthy.co.jp/service/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "workthy",
+    "pt": "料金プラン",
+    "url": "https://www.workthy.co.jp/price/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "workthy",
+    "pt": "サポート・FAQ",
+    "url": "https://www.workthy.co.jp/support/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "workthy",
+    "pt": "採用情報",
+    "url": "https://www.workthy.co.jp/careers/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "workthy",
+    "pt": "お問い合わせ",
+    "url": "https://www.workthy.co.jp/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "TOPページ",
+    "url": "https://www.jal.co.jp/jp/ja/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "企業情報",
+    "url": "https://www.jal.com/ja/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "ニュースリリース",
+    "url": "https://press.jal.co.jp/ja/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "EC・購入",
+    "url": "https://www.jal.co.jp/jp/ja/dom/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "店舗検索",
+    "url": "https://www.jal.co.jp/jp/ja/dom/airport/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "ポイント・特典",
+    "url": "https://www.jal.co.jp/jp/ja/jmb/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "サステナビリティ",
+    "url": "https://www.jal.com/ja/sustainability/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "IR情報",
+    "url": "https://www.jal.com/ja/ir/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "採用情報",
+    "url": "https://www.jal.co.jp/jp/ja/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "retail",
+    "cid": "jal",
+    "pt": "お問い合わせ",
+    "url": "https://www.jal.co.jp/jp/ja/help/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "お問い合わせ",
+    "url": "https://www.loreal.co.jp/contact/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "loreal",
+    "pt": "技術・R&D",
+    "url": "https://www.loreal.co.jp/innovation/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "it",
+    "cid": "bizreach",
+    "pt": "技術・R&D",
+    "url": "https://hr-tech-lab.bizreach.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "cosme",
+    "cid": "esteelauder",
+    "pt": "IR情報",
+    "url": "https://ir.elcompanies.com/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "adcons",
+    "cid": "amt_law",
+    "pt": "ニュースリリース",
+    "url": "https://www.amt-law.com/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "hgls",
+    "pt": "企業情報",
+    "url": "https://www.hitachi-hgls.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "hgls",
+    "pt": "ニュースリリース",
+    "url": "https://www.hitachi-hgls.co.jp/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "hgls",
+    "pt": "サステナビリティ",
+    "url": "https://www.hitachi-hgls.co.jp/csr/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "hgls",
+    "pt": "採用情報",
+    "url": "https://www.hitachi-hgls.co.jp/recruit/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "electronics",
+    "cid": "hgls",
+    "pt": "技術・R&D",
+    "url": "https://www.hitachi-hgls.co.jp/technology/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "pharma",
+    "cid": "astellas",
+    "pt": "企業情報",
+    "url": "https://www.astellas.com/jp/about/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "pharma",
+    "cid": "astellas",
+    "pt": "IR情報",
+    "url": "https://www.astellas.com/jp/investors/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "pharma",
+    "cid": "astellas",
+    "pt": "採用情報",
+    "url": "https://www.astellas.com/jp/careers/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "pharma",
+    "cid": "daiichi",
+    "pt": "採用情報",
+    "url": "https://www.daiichisankyo-career.co.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "comic_s",
+    "pt": "TOPページ",
+    "url": "https://www.nttsolmare.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "comic_s",
+    "pt": "企業情報",
+    "url": "https://www.nttsolmare.jp/company/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "comic_s",
+    "pt": "ニュースリリース",
+    "url": "https://www.nttsolmare.jp/news/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "comic_s",
+    "pt": "番組・コンテンツ",
+    "url": "https://www.comic-seymour.jp/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "comic_s",
+    "pt": "タイトル一覧",
+    "url": "https://www.comic-seymour.jp/genre/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "media",
+    "cid": "comic_s",
+    "pt": "キャンペーン",
+    "url": "https://www.comic-seymour.jp/campaign/",
+    "status": "dead_err"
+  },
+  {
+    "iid": "gov",
+    "cid": "mhlw",
+    "pt": "手続き・申請",
+    "url": "https://www.mhlw.go.jp/sinsei/",
+    "status": "dead_404"
+  }
+]

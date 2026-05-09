@@ -1,0 +1,1213 @@
+[
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "企業情報",
+    "url": "https://www.mercedes-benz.co.jp/about/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "車種詳細",
+    "url": "https://www.mercedes-benz.co.jp/passengercars/mercedes-benz-cars/models/c-class/saloon.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "試乗予約",
+    "url": "https://www.mercedes-benz.co.jp/test-drive/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "ディーラー検索",
+    "url": "https://www.mercedes-benz.co.jp/passengercars/buy/dealer-locator.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "アフターサービス",
+    "url": "https://www.mercedes-benz.co.jp/passengercars/buy/after-sales.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "アクセサリー",
+    "url": "https://www.mercedes-benz.co.jp/passengercars/buy/accessories.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "キャンペーン",
+    "url": "https://www.mercedes-benz.co.jp/campaign/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "サステナビリティ",
+    "url": "https://www.mercedes-benz.co.jp/sustainability/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "お問い合わせ",
+    "url": "https://www.mercedes-benz.co.jp/contact/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "mercedes",
+    "pt": "技術・R&D",
+    "url": "https://www.mercedes-benz.co.jp/motorsport/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "企業情報",
+    "url": "https://www.bmw.co.jp/ja/footer/about-us.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "車種詳細",
+    "url": "https://www.bmw.co.jp/ja/all-models/3-series/sedan/2019/bmw-3series-sedan-inspiring.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "コンフィギュレーター",
+    "url": "https://www.bmw.co.jp/ja/configurator.html",
+    "status": "dead_body"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "見積もり",
+    "url": "https://www.bmw.co.jp/ja/configurator.html",
+    "status": "dead_body"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "試乗予約",
+    "url": "https://www.bmw.co.jp/ja/topics/experience/test-drive.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "ディーラー検索",
+    "url": "https://www.bmw.co.jp/ja/dealer-locator.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "認定中古車",
+    "url": "https://www.bmw.co.jp/ja/topics/experience/bmw-approved-used-cars.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "アフターサービス",
+    "url": "https://www.bmw.co.jp/ja/topics/experience/service.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "アクセサリー",
+    "url": "https://www.bmw.co.jp/ja/topics/experience/accessories.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "EV・電動車",
+    "url": "https://www.bmw.co.jp/ja/all-models/bmw-i.html",
+    "status": "dead_body"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "キャンペーン",
+    "url": "https://www.bmw.co.jp/ja/topics/offers.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "サステナビリティ",
+    "url": "https://www.bmwgroup.com/ja/sustainability.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "IR情報",
+    "url": "https://www.bmwgroup.com/ja/investor-relations.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "採用情報",
+    "url": "https://www.bmw.co.jp/ja/footer/about-us/careers.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "お問い合わせ",
+    "url": "https://www.bmw.co.jp/ja/footer/miscellaneous/contact.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "bmw",
+    "pt": "技術・R&D",
+    "url": "https://www.bmw.co.jp/ja/topics/fascination-bmw/bmw-m.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "ニュースリリース",
+    "url": "https://www.audi.co.jp/jp/web/ja/presse.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "車種詳細",
+    "url": "https://www.audi.co.jp/jp/web/ja/models/a4/a4-sedan.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "コンフィギュレーター",
+    "url": "https://www.audi.co.jp/jp/web/ja/configurator.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "見積もり",
+    "url": "https://www.audi.co.jp/jp/web/ja/configurator.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "試乗予約",
+    "url": "https://www.audi.co.jp/jp/web/ja/test-drive.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "ディーラー検索",
+    "url": "https://www.audi.co.jp/jp/web/ja/dealer-search.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "認定中古車",
+    "url": "https://www.audi.co.jp/jp/web/ja/used-cars.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "アフターサービス",
+    "url": "https://www.audi.co.jp/jp/web/ja/service.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "アクセサリー",
+    "url": "https://www.audi.co.jp/jp/web/ja/accessories.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "EV・電動車",
+    "url": "https://www.audi.co.jp/jp/web/ja/e-tron.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "キャンペーン",
+    "url": "https://www.audi.co.jp/jp/web/ja/special-edition.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "サステナビリティ",
+    "url": "https://www.audi.co.jp/jp/web/ja/sustainability.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "採用情報",
+    "url": "https://www.audi.co.jp/jp/web/ja/careers.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "お問い合わせ",
+    "url": "https://www.audi.co.jp/jp/web/ja/contact.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "audi",
+    "pt": "技術・R&D",
+    "url": "https://www.audi.co.jp/jp/web/ja/motorsport.html",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "企業情報",
+    "url": "https://www.volvocars.com/ja-jp/about/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "ニュースリリース",
+    "url": "https://www.volvocars.com/ja-jp/about/media/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "コンフィギュレーター",
+    "url": "https://www.volvocars.com/ja-jp/configurator/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "見積もり",
+    "url": "https://www.volvocars.com/ja-jp/configurator/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "認定中古車",
+    "url": "https://www.volvocars.com/ja-jp/certified-pre-owned/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "アフターサービス",
+    "url": "https://www.volvocars.com/ja-jp/service/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "アクセサリー",
+    "url": "https://www.volvocars.com/ja-jp/accessories/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "キャンペーン",
+    "url": "https://www.volvocars.com/ja-jp/special-edition/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "金融サービス",
+    "url": "https://www.volvocars.com/ja-jp/finance/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "サステナビリティ",
+    "url": "https://www.volvocars.com/ja-jp/sustainability/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "採用情報",
+    "url": "https://www.volvocars.com/ja-jp/careers/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "お問い合わせ",
+    "url": "https://www.volvocars.com/ja-jp/contact/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "volvo",
+    "pt": "技術・R&D",
+    "url": "https://www.volvocars.com/ja-jp/safety/",
+    "status": "dead"
+  },
+  {
+    "iid": "auto",
+    "cid": "suzuki",
+    "pt": "認定中古車",
+    "url": "https://www.suzuki.co.jp/usedcar/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "auto",
+    "cid": "suzuki",
+    "pt": "キャンペーン",
+    "url": "https://www.suzuki.co.jp/car/campaign/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "cosme",
+    "cid": "unilever",
+    "pt": "製品詳細",
+    "url": "https://www.dove.com/jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "cosme",
+    "cid": "pg",
+    "pt": "肌診断",
+    "url": "https://www.sk-ii.jp/diagnosis/",
+    "status": "dead"
+  },
+  {
+    "iid": "cosme",
+    "cid": "esteelauder",
+    "pt": "EC・購入",
+    "url": "https://www.esteelauder.co.jp/shop/",
+    "status": "dead"
+  },
+  {
+    "iid": "cosme",
+    "cid": "esteelauder",
+    "pt": "肌診断",
+    "url": "https://www.esteelauder.co.jp/diagnosis/",
+    "status": "dead"
+  },
+  {
+    "iid": "cosme",
+    "cid": "esteelauder",
+    "pt": "店舗検索",
+    "url": "https://www.esteelauder.co.jp/store-locator/",
+    "status": "dead"
+  },
+  {
+    "iid": "cosme",
+    "cid": "esteelauder",
+    "pt": "キャンペーン",
+    "url": "https://www.esteelauder.co.jp/campaign/",
+    "status": "dead"
+  },
+  {
+    "iid": "cosme",
+    "cid": "esteelauder",
+    "pt": "サステナビリティ",
+    "url": "https://www.elcompanies.com/ja/news-and-media/newsroom/responsibility/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "cosme",
+    "cid": "esteelauder",
+    "pt": "お問い合わせ",
+    "url": "https://www.esteelauder.co.jp/contact-us/",
+    "status": "dead"
+  },
+  {
+    "iid": "cosme",
+    "cid": "esteelauder",
+    "pt": "技術・R&D",
+    "url": "https://www.esteelauder.co.jp/our-ingredients/",
+    "status": "dead"
+  },
+  {
+    "iid": "food",
+    "cid": "suntory",
+    "pt": "製品一覧",
+    "url": "https://www.suntory.co.jp/softdrink/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "suntory",
+    "pt": "製品詳細",
+    "url": "https://www.suntory.co.jp/beer/premium-malt/",
+    "status": "dead"
+  },
+  {
+    "iid": "food",
+    "cid": "suntory",
+    "pt": "レシピ",
+    "url": "https://www.suntory.co.jp/cocktail/",
+    "status": "dead"
+  },
+  {
+    "iid": "food",
+    "cid": "suntory",
+    "pt": "キャンペーン",
+    "url": "https://www.suntory.co.jp/campaign/",
+    "status": "dead"
+  },
+  {
+    "iid": "food",
+    "cid": "suntory",
+    "pt": "サステナビリティ",
+    "url": "https://www.suntory.co.jp/csr/",
+    "status": "dead"
+  },
+  {
+    "iid": "food",
+    "cid": "suntory",
+    "pt": "採用情報",
+    "url": "https://www.suntory.co.jp/suntory/recruit/",
+    "status": "dead"
+  },
+  {
+    "iid": "food",
+    "cid": "kfc_jp",
+    "pt": "TOPページ",
+    "url": "https://www.kfc.co.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "kfc_jp",
+    "pt": "ニュースリリース",
+    "url": "https://www.kfc.co.jp/news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "kfc_jp",
+    "pt": "製品一覧",
+    "url": "https://www.kfc.co.jp/menu/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "kfc_jp",
+    "pt": "製品詳細",
+    "url": "https://www.kfc.co.jp/menu/chicken/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "jt",
+    "pt": "製品詳細",
+    "url": "https://www.ploom.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "pmj",
+    "pt": "企業情報",
+    "url": "https://www.philipmorrisinternational.com/ja-jp/who-we-are",
+    "status": "dead_body"
+  },
+  {
+    "iid": "food",
+    "cid": "pmj",
+    "pt": "サステナビリティ",
+    "url": "https://www.philipmorrisinternational.com/ja-jp/sustainability",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "ms_jp",
+    "pt": "TOPページ",
+    "url": "https://www.microsoft.com/ja-jp",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "ms_jp",
+    "pt": "企業情報",
+    "url": "https://www.microsoft.com/ja-jp/about/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "ms_jp",
+    "pt": "料金プラン",
+    "url": "https://www.microsoft.com/ja-jp/microsoft-365/business/compare-all-plans",
+    "status": "dead"
+  },
+  {
+    "iid": "it",
+    "cid": "ms_jp",
+    "pt": "キャンペーン",
+    "url": "https://www.microsoft.com/ja-jp/store/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "ms_jp",
+    "pt": "サステナビリティ",
+    "url": "https://www.microsoft.com/ja-jp/corporate/sustainability/",
+    "status": "dead"
+  },
+  {
+    "iid": "it",
+    "cid": "ms_jp",
+    "pt": "IR情報",
+    "url": "https://www.microsoft.com/ja-jp/investor/",
+    "status": "dead"
+  },
+  {
+    "iid": "it",
+    "cid": "lineyahoo",
+    "pt": "ニュースリリース",
+    "url": "https://www.lycorp.co.jp/ja/news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "lineyahoo",
+    "pt": "サポート・FAQ",
+    "url": "https://help.line.me/line/?lang=ja",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "amazon_jp",
+    "pt": "採用情報",
+    "url": "https://www.amazon.jobs/jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "septeni",
+    "pt": "TOPページ",
+    "url": "https://www.septeni-holdings.co.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "septeni",
+    "pt": "企業情報",
+    "url": "https://www.septeni-holdings.co.jp/about/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "septeni",
+    "pt": "ニュースリリース",
+    "url": "https://www.septeni-holdings.co.jp/news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "septeni",
+    "pt": "サステナビリティ",
+    "url": "https://www.septeni-holdings.co.jp/csr/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "septeni",
+    "pt": "IR情報",
+    "url": "https://www.septeni-holdings.co.jp/ir/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "septeni",
+    "pt": "お問い合わせ",
+    "url": "https://www.septeni-holdings.co.jp/contact/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "kyocera_cs",
+    "pt": "TOPページ",
+    "url": "https://www.kccs.co.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "kyocera_cs",
+    "pt": "ニュースリリース",
+    "url": "https://www.kccs.co.jp/news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "kyocera_cs",
+    "pt": "お問い合わせ",
+    "url": "https://www.kccs.co.jp/contact/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "scsk",
+    "pt": "TOPページ",
+    "url": "https://www.scsk.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "it",
+    "cid": "persol",
+    "pt": "企業情報",
+    "url": "https://www.persol-career.co.jp/company/",
+    "status": "dead"
+  },
+  {
+    "iid": "it",
+    "cid": "persol",
+    "pt": "サステナビリティ",
+    "url": "https://www.persol-career.co.jp/csr/",
+    "status": "dead"
+  },
+  {
+    "iid": "it",
+    "cid": "persol",
+    "pt": "技術・R&D",
+    "url": "https://www.persol-career.co.jp/technology/",
+    "status": "dead"
+  },
+  {
+    "iid": "electronics",
+    "cid": "panasonic",
+    "pt": "企業情報",
+    "url": "https://holdings.panasonic/jp/about/",
+    "status": "dead"
+  },
+  {
+    "iid": "electronics",
+    "cid": "panasonic",
+    "pt": "製品一覧",
+    "url": "https://www.panasonic.com/jp/products/",
+    "status": "dead"
+  },
+  {
+    "iid": "electronics",
+    "cid": "panasonic",
+    "pt": "製品詳細",
+    "url": "https://www.panasonic.com/jp/products/home-appliances/",
+    "status": "dead"
+  },
+  {
+    "iid": "electronics",
+    "cid": "panasonic",
+    "pt": "キャンペーン",
+    "url": "https://www.panasonic.com/jp/campaign/",
+    "status": "dead"
+  },
+  {
+    "iid": "electronics",
+    "cid": "panasonic",
+    "pt": "サステナビリティ",
+    "url": "https://holdings.panasonic/jp/corporate/sustainability.html",
+    "status": "dead_body"
+  },
+  {
+    "iid": "electronics",
+    "cid": "panasonic",
+    "pt": "IR情報",
+    "url": "https://holdings.panasonic/jp/ir.html",
+    "status": "dead"
+  },
+  {
+    "iid": "electronics",
+    "cid": "dell_jp",
+    "pt": "ニュースリリース",
+    "url": "https://www.dell.com/ja-jp/dt/microsites/newsroom.htm",
+    "status": "dead"
+  },
+  {
+    "iid": "electronics",
+    "cid": "dell_jp",
+    "pt": "お問い合わせ",
+    "url": "https://www.dell.com/ja-jp/dt/contact-us/",
+    "status": "dead"
+  },
+  {
+    "iid": "electronics",
+    "cid": "lenovo_jp",
+    "pt": "お問い合わせ",
+    "url": "https://support.lenovo.com/jp/ja/solutions/ht003853",
+    "status": "dead_body"
+  },
+  {
+    "iid": "electronics",
+    "cid": "anest",
+    "pt": "TOPページ",
+    "url": "https://www.anest-iwata.co.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "electronics",
+    "cid": "anest",
+    "pt": "ニュースリリース",
+    "url": "https://www.anest-iwata.co.jp/news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "electronics",
+    "cid": "anest",
+    "pt": "お問い合わせ",
+    "url": "https://www.anest-iwata.co.jp/contact/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "electronics",
+    "cid": "smc",
+    "pt": "TOPページ",
+    "url": "https://www.smcworld.com/ja-jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "electronics",
+    "cid": "daikin",
+    "pt": "サステナビリティ",
+    "url": "https://www.daikin.co.jp/sustainability/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "pharma",
+    "cid": "rohto",
+    "pt": "企業情報",
+    "url": "https://www.rohto.co.jp/company/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "pharma",
+    "cid": "rohto",
+    "pt": "採用情報",
+    "url": "https://www.rohto.co.jp/recruit/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "pharma",
+    "cid": "astellas",
+    "pt": "TOPページ",
+    "url": "https://www.astellas.com/jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "adcons",
+    "cid": "bcg_jp",
+    "pt": "企業情報",
+    "url": "https://www.bcg.com/ja-jp/about/about-bcg",
+    "status": "dead"
+  },
+  {
+    "iid": "adcons",
+    "cid": "bcg_jp",
+    "pt": "ニュースリリース",
+    "url": "https://www.bcg.com/ja-jp/about/media/press-releases",
+    "status": "dead"
+  },
+  {
+    "iid": "adcons",
+    "cid": "bcg_jp",
+    "pt": "サステナビリティ",
+    "url": "https://www.bcg.com/ja-jp/capabilities/social-impact-sustainability",
+    "status": "dead"
+  },
+  {
+    "iid": "adcons",
+    "cid": "bcg_jp",
+    "pt": "お問い合わせ",
+    "url": "https://www.bcg.com/ja-jp/about/contact-us",
+    "status": "dead"
+  },
+  {
+    "iid": "adcons",
+    "cid": "bcg_jp",
+    "pt": "技術・R&D",
+    "url": "https://www.bcg.com/ja-jp/capabilities/digital-technology-data",
+    "status": "dead"
+  },
+  {
+    "iid": "media",
+    "cid": "mechacomic",
+    "pt": "タイトル一覧",
+    "url": "https://mechacomic.jp/books",
+    "status": "dead_body"
+  },
+  {
+    "iid": "media",
+    "cid": "pokemon",
+    "pt": "動画配信",
+    "url": "https://www.pokemon.co.jp/anime/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "media",
+    "cid": "disney_jp",
+    "pt": "TOPページ",
+    "url": "https://www.disney.co.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "media",
+    "cid": "disney_jp",
+    "pt": "企業情報",
+    "url": "https://www.disney.co.jp/corporate.html",
+    "status": "dead_body"
+  },
+  {
+    "iid": "media",
+    "cid": "disney_jp",
+    "pt": "番組・コンテンツ",
+    "url": "https://www.disney.co.jp/content.html",
+    "status": "dead"
+  },
+  {
+    "iid": "media",
+    "cid": "disney_jp",
+    "pt": "タイトル一覧",
+    "url": "https://www.disney.co.jp/movie.html",
+    "status": "dead_body"
+  },
+  {
+    "iid": "media",
+    "cid": "disney_jp",
+    "pt": "キャンペーン",
+    "url": "https://www.disney.co.jp/campaign.html",
+    "status": "dead_body"
+  },
+  {
+    "iid": "media",
+    "cid": "disney_jp",
+    "pt": "お問い合わせ",
+    "url": "https://www.disney.co.jp/help.html",
+    "status": "dead"
+  },
+  {
+    "iid": "infra",
+    "cid": "jr_east",
+    "pt": "物件・サービス検索",
+    "url": "https://www.jreast.co.jp/train/",
+    "status": "dead"
+  },
+  {
+    "iid": "infra",
+    "cid": "jr_east",
+    "pt": "料金・プラン",
+    "url": "https://www.jreast.co.jp/fare/",
+    "status": "dead"
+  },
+  {
+    "iid": "infra",
+    "cid": "jr_east",
+    "pt": "キャンペーン",
+    "url": "https://www.jreast.co.jp/campaign/",
+    "status": "dead"
+  },
+  {
+    "iid": "infra",
+    "cid": "jr_east",
+    "pt": "サステナビリティ",
+    "url": "https://www.jreast.co.jp/sustainability/",
+    "status": "dead"
+  },
+  {
+    "iid": "infra",
+    "cid": "jr_east",
+    "pt": "お問い合わせ",
+    "url": "https://www.jreast.co.jp/contact/",
+    "status": "dead"
+  },
+  {
+    "iid": "infra",
+    "cid": "mitsui_fd",
+    "pt": "ニュースリリース",
+    "url": "https://www.mitsuifudosan.co.jp/corporate/news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "infra",
+    "cid": "daiwa_house",
+    "pt": "ニュースリリース",
+    "url": "https://www.daiwahouse.co.jp/press/",
+    "status": "dead"
+  },
+  {
+    "iid": "infra",
+    "cid": "daiwa_house",
+    "pt": "工事・施工依頼",
+    "url": "https://www.daiwahouse.co.jp/contact/",
+    "status": "dead"
+  },
+  {
+    "iid": "infra",
+    "cid": "daiwa_house",
+    "pt": "お問い合わせ",
+    "url": "https://www.daiwahouse.co.jp/contact/",
+    "status": "dead"
+  },
+  {
+    "iid": "infra",
+    "cid": "daiwa_house",
+    "pt": "技術・R&D",
+    "url": "https://www.daiwahouse.co.jp/technology/",
+    "status": "dead"
+  },
+  {
+    "iid": "gov",
+    "cid": "tokyo_metro",
+    "pt": "TOPページ",
+    "url": "https://www.metro.tokyo.lg.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "tokyo_metro",
+    "pt": "お知らせ",
+    "url": "https://www.metro.tokyo.lg.jp/tosei/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "tokyo_metro",
+    "pt": "ニュースリリース",
+    "url": "https://www.metro.tokyo.lg.jp/tosei/hodohappyo/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "tokyo_metro",
+    "pt": "広報・広聴",
+    "url": "https://www.metro.tokyo.lg.jp/tosei/koho/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "shibuya_w",
+    "pt": "TOPページ",
+    "url": "https://www.city.shibuya.tokyo.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "shibuya_w",
+    "pt": "政策・施策",
+    "url": "https://www.city.shibuya.tokyo.jp/kusei/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "meti",
+    "pt": "採用情報",
+    "url": "https://www.meti.go.jp/intro/recruit/",
+    "status": "dead"
+  },
+  {
+    "iid": "gov",
+    "cid": "meti",
+    "pt": "お問い合わせ",
+    "url": "https://www.meti.go.jp/contact/",
+    "status": "dead"
+  },
+  {
+    "iid": "gov",
+    "cid": "soumu",
+    "pt": "TOPページ",
+    "url": "https://www.soumu.go.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "soumu",
+    "pt": "お知らせ",
+    "url": "https://www.soumu.go.jp/menu_news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "soumu",
+    "pt": "ニュースリリース",
+    "url": "https://www.soumu.go.jp/menu_news/s-news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "soumu",
+    "pt": "手続き・申請",
+    "url": "https://www.soumu.go.jp/menu_sinsei/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "soumu",
+    "pt": "政策・施策",
+    "url": "https://www.soumu.go.jp/menu_seisaku/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "soumu",
+    "pt": "統計・データ",
+    "url": "https://www.soumu.go.jp/toukei_toukatsu/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "soumu",
+    "pt": "採用情報",
+    "url": "https://www.soumu.go.jp/jinji/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "chukai",
+    "pt": "TOPページ",
+    "url": "https://www.jcci.or.jp/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "chukai",
+    "pt": "お知らせ",
+    "url": "https://www.jcci.or.jp/news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "chukai",
+    "pt": "ニュースリリース",
+    "url": "https://www.jcci.or.jp/news/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "chukai",
+    "pt": "政策・施策",
+    "url": "https://www.jcci.or.jp/recommend/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "chukai",
+    "pt": "統計・データ",
+    "url": "https://www.jcci.or.jp/research/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "gov",
+    "cid": "chukai",
+    "pt": "お問い合わせ",
+    "url": "https://www.jcci.or.jp/contact/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "retail",
+    "cid": "nitori",
+    "pt": "店舗検索",
+    "url": "https://www.nitori-net.jp/ec/shop/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "nitori",
+    "pt": "ポイント・特典",
+    "url": "https://www.nitori-net.jp/ec/point/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "nitori",
+    "pt": "お問い合わせ",
+    "url": "https://www.nitori-net.jp/ec/contact/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "mufg",
+    "pt": "口座開設・申込",
+    "url": "https://www.bk.mufg.jp/kouza/",
+    "status": "dead_body"
+  },
+  {
+    "iid": "retail",
+    "cid": "mizuho",
+    "pt": "店舗検索",
+    "url": "https://www.mizuhobank.co.jp/tenpoatm/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "mizuho",
+    "pt": "口座開設・申込",
+    "url": "https://www.mizuhobank.co.jp/kouza/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "mizuho",
+    "pt": "ローン・保険",
+    "url": "https://www.mizuhobank.co.jp/kariru/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "mizuho",
+    "pt": "ポイント・特典",
+    "url": "https://www.mizuhobank.co.jp/point/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "mizuho",
+    "pt": "採用情報",
+    "url": "https://www.mizuho-fg.co.jp/career/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "mizuho",
+    "pt": "お問い合わせ",
+    "url": "https://www.mizuhobank.co.jp/contact/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "ana",
+    "pt": "EC・購入",
+    "url": "https://www.ana.co.jp/ja/jp/domtop/",
+    "status": "dead"
+  },
+  {
+    "iid": "retail",
+    "cid": "ana",
+    "pt": "お問い合わせ",
+    "url": "https://www.ana.co.jp/ja/jp/help/",
+    "status": "dead"
+  }
+]
