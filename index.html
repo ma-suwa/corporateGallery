@@ -356,6 +356,10 @@
       text-decoration: underline;
     }
 
+    .url-link:visited {
+      color: #9b59b6;
+    }
+
     .url-na {
       color: var(--subtext);
       font-size: 12px;
@@ -544,11 +548,6 @@
     <div class="toolbar">
       <div class="stats" id="statsBar">読み込み中…</div>
       <div class="toolbar-right">
-        <div class="legend">
-          <span><span class="legend-dot" style="background:var(--green)"></span>確認済み</span>
-          <span><span class="legend-dot" style="background:var(--orange)"></span>要確認</span>
-          <span><span class="legend-dot" style="background:var(--border)"></span>N/A</span>
-        </div>
         <div class="view-toggle">
           <button class="view-btn active" id="btnList" onclick="setView('list',this)">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
@@ -581,7 +580,6 @@
               <th onclick="sortBy('company')">企業名</th>
               <th onclick="sortBy('pageType')">ページ種別</th>
               <th>URL</th>
-              <th style="width:60px; text-align:center;">状態</th>
             </tr>
           </thead>
           <tbody id="tableBody"></tbody>
@@ -5873,9 +5871,9 @@
       ["railway", "tokyu_train", "TOPページ", "https://www.tokyu.co.jp/", null],
       ["railway", "tokyu_train", "企業情報", "https://www.tokyu.co.jp/company/", null],
       ["railway", "tokyu_train", "採用情報", "https://www.tokyu.co.jp/recruit/", null],
-      ["railway", "seibu_hd", "TOPページ", "https://www.seibu-hd.co.jp/", null],
-      ["railway", "seibu_hd", "企業情報", "https://www.seibu-hd.co.jp/company/", null],
-      ["railway", "seibu_hd", "採用情報", "https://www.seibu-hd.co.jp/recruit/", null],
+      ["railway", "seibu_hd", "TOPページ", "https://www.seibuholdings.co.jp/", null],
+      ["railway", "seibu_hd", "企業情報", "https://www.seibuholdings.co.jp/company/", null],
+      ["railway", "seibu_hd", "採用情報", "https://www.seibuholdings.co.jp/recruit/", null],
       ["railway", "tobu", "TOPページ", "https://www.tobu.co.jp/", null],
       ["railway", "tobu", "企業情報", "https://www.tobu.co.jp/company/", null],
       ["railway", "tobu", "採用情報", "https://www.tobu.co.jp/recruit/", null],
@@ -5971,20 +5969,45 @@
     /* ============================================================
        PROCESS
     ============================================================ */
-    const allData = RAW.map(([iid, cid, pt, url, verified]) => ({
-      industryId: iid,
-      industry:   INDUSTRIES[iid],
-      companyId:  cid,
-      company:    COMPANIES[cid],
-      pageType:   pt,
-      url,
-      verified
-    }));
+    const INDUSTRY_MAP = {
+      auto: 'auto', autoparts: 'auto', transport: 'auto',
+      cosme: 'cosme', cosme2: 'cosme',
+      food: 'food', foodfish: 'food', restaurant: 'food', agri: 'food',
+      it: 'it', syssoft: 'it', telecom: 'it',
+      electronics: 'electronics', elecparts: 'electronics', elecdev: 'electronics',
+      machinery: 'electronics', chem: 'electronics', glass: 'electronics',
+      steel: 'electronics', nonferrous: 'electronics', metal: 'electronics',
+      othermfg: 'electronics', print: 'electronics', textile: 'electronics',
+      pharma: 'pharma', pharma2: 'pharma', meddevice: 'pharma',
+      adcons: 'adcons', think: 'adcons', research: 'adcons', hred: 'adcons',
+      media: 'media', tv: 'media', newspaper: 'media', gaming: 'media', leisure: 'media',
+      infra: 'infra', construction: 'infra', housing: 'infra', realestate: 'infra',
+      energy: 'infra', oil: 'infra', seaair: 'infra', logistics: 'infra', railway: 'infra',
+      gov: 'gov',
+      trading: 'trading',
+      retail: 'retail', bank: 'retail', securities: 'retail', lifeins: 'retail',
+      nonlifeins: 'retail', finlease: 'retail', dept: 'retail', convenience: 'retail',
+      supermarket: 'retail', retail3: 'retail', otherretail: 'retail',
+      otherservice: 'retail', hotel: 'retail',
+    };
+
+    const allData = RAW.map(([iid, cid, pt, url, verified]) => {
+      const parentId = INDUSTRY_MAP[iid] ?? iid;
+      return {
+        industryId: parentId,
+        industry:   INDUSTRIES[parentId],
+        companyId:  cid,
+        company:    COMPANIES[cid],
+        pageType:   pt,
+        url,
+        verified
+      };
+    });
 
     /* ============================================================
        STATE
     ============================================================ */
-    let state = { industry: 'all', pageType: 'all' };
+    let state = { industry: 'all', pageType: 'TOPページ' };
     let currentView = 'list';
     let sortKey = null, sortAsc = true;
 
@@ -5995,14 +6018,16 @@
       return `<button class="pill${active ? ' active' : ''}" data-value="${value}" onclick="setFilter('${axis}','${value}')">${label}</button>`;
     }
 
+    const INDUSTRY_IDS = ['auto', 'cosme', 'food', 'it', 'electronics', 'pharma', 'adcons', 'media', 'infra', 'gov', 'trading', 'retail'];
+    const PAGE_FILTER = ['TOPページ', '企業情報', '採用情報'];
+
     let _industryPillsBuilt = false;
     function buildDynamicPills() {
-      // Build industry pills once from INDUSTRIES object
       if (!_industryPillsBuilt) {
         const el = document.getElementById('pillsIndustry');
         el.innerHTML = mkPill('industry', 'all', 'すべて', state.industry === 'all') +
-          Object.entries(INDUSTRIES)
-            .map(([id, label]) => mkPill('industry', id, label, state.industry === id))
+          INDUSTRY_IDS
+            .map(id => mkPill('industry', id, INDUSTRIES[id], state.industry === id))
             .join('');
         _industryPillsBuilt = true;
       } else {
@@ -6011,16 +6036,9 @@
         });
       }
 
-      // Page type pills — only types present in the selected industry
-      const availPt = new Set(
-        allData
-          .filter(d => state.industry === 'all' || d.industryId === state.industry)
-          .map(d => d.pageType)
-      );
       document.getElementById('pillsPage').innerHTML =
         mkPill('pageType', 'all', 'すべて', state.pageType === 'all') +
-        PAGE_TYPES
-          .filter(pt => availPt.has(pt))
+        PAGE_FILTER
           .map(pt => mkPill('pageType', pt, pt, state.pageType === pt))
           .join('');
     }
@@ -6038,7 +6056,7 @@
     ============================================================ */
     function setFilter(axis, value) {
       state[axis] = (state[axis] === value && value !== 'all') ? 'all' : value;
-      if (axis === 'industry') { state.pageType = 'all'; }
+      if (axis === 'industry') { state.pageType = 'TOPページ'; }
       buildDynamicPills();
       applyFilters();
     }
@@ -6100,21 +6118,14 @@
       noRes.classList.add('hidden');
 
       tbody.innerHTML = sorted.map(d => {
-        const [dot, urlCell] = d.url === null
-          ? [
-              `<span class="dot" style="background:var(--border)" title="N/A"></span>`,
-              `<span class="url-na">—</span>`
-            ]
-          : [
-              `<span class="dot ${d.verified ? 'dot-green' : 'dot-orange'}" title="${d.verified ? '確認済み' : '要確認'}"></span>`,
-              `<a class="url-link" href="${d.url}" target="_blank" rel="noopener noreferrer">${d.url}</a>`
-            ];
+        const urlCell = d.url === null
+          ? `<span class="url-na">—</span>`
+          : `<a class="url-link" href="${d.url}" target="_blank" rel="noopener noreferrer">${d.url}</a>`;
         return `<tr>
       <td class="td-industry">${d.industry}</td>
       <td class="td-company">${d.company}</td>
       <td class="td-page"><span class="page-badge">${d.pageType}</span></td>
       <td class="td-url">${urlCell}</td>
-      <td style="text-align:center;">${dot}</td>
     </tr>`;
       }).join('');
     }
@@ -6141,7 +6152,7 @@
       function cell(entry) {
         if (!entry || entry.url === null)
           return `<td class="matrix-na">${entry ? '—' : ''}</td>`;
-        return `<td class="matrix-cell"><a href="${entry.url}" target="_blank" rel="noopener noreferrer" title="${entry.url}">${entry.verified ? '🟢' : '🟡'}</a></td>`;
+        return `<td class="matrix-cell"><a href="${entry.url}" target="_blank" rel="noopener noreferrer" title="${entry.url}">→</a></td>`;
       }
 
       wrap.innerHTML = `<table class="matrix-table">
