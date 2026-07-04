@@ -213,23 +213,6 @@
       gap: 12px;
     }
 
-    .legend {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 12px;
-      color: var(--subtext);
-    }
-
-    .legend-dot {
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      margin-right: 4px;
-      vertical-align: middle;
-    }
-
     .view-toggle {
       display: flex;
       gap: 2px;
@@ -360,106 +343,6 @@
       color: #9b59b6;
     }
 
-    .url-na {
-      color: var(--subtext);
-      font-size: 12px;
-    }
-
-    .dot {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      margin-left: 5px;
-      vertical-align: middle;
-      flex-shrink: 0;
-    }
-
-    .dot-green {
-      background: var(--green);
-    }
-
-    .dot-orange {
-      background: var(--orange);
-    }
-
-    /* ── Matrix View ── */
-    .matrix-wrap {
-      overflow-x: auto;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-    }
-
-    table.matrix-table {
-      border-collapse: collapse;
-      font-size: 12px;
-      min-width: 100%;
-    }
-
-    .matrix-table th,
-    .matrix-table td {
-      border: 1px solid var(--border);
-    }
-
-    .matrix-table thead th {
-      background: var(--gray);
-      padding: 6px;
-      font-size: 10px;
-      font-weight: 600;
-      color: var(--subtext);
-      text-align: center;
-      white-space: nowrap;
-      min-width: 72px;
-    }
-
-    .matrix-table thead th.col-company {
-      min-width: 160px;
-      text-align: left;
-      padding: 10px 14px;
-      font-size: 11px;
-    }
-
-    .matrix-table tbody th {
-      background: var(--gray);
-      padding: 10px 14px;
-      font-weight: 500;
-      white-space: nowrap;
-      text-align: left;
-      font-size: 13px;
-      color: var(--text);
-      position: sticky;
-      left: 0;
-      z-index: 2;
-    }
-
-    .matrix-table td.matrix-cell {
-      text-align: center;
-      padding: 6px;
-      background: var(--bg);
-      transition: background 0.1s;
-    }
-
-    .matrix-table td.matrix-cell:hover {
-      background: #eef5fd;
-    }
-
-    .matrix-table td.matrix-cell a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-      font-size: 15px;
-    }
-
-    .matrix-table td.matrix-na {
-      background: var(--gray);
-      color: var(--border);
-      text-align: center;
-      font-size: 11px;
-    }
-
     /* ── No Results ── */
     .no-results {
       text-align: center;
@@ -500,8 +383,239 @@
       .filter-label {
         min-width: 44px;
       }
+    }
 
-      .legend {
+    /* ── Gallery View ── */
+    .gallery-note {
+      font-size: 12px;
+      color: var(--subtext);
+      background: var(--gray);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .gcard {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--bg);
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gcard:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .gcard-thumb {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      background: var(--gray);
+    }
+
+    .gcard-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .gcard-expand {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.55);
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    .gcard:hover .gcard-expand {
+      opacity: 1;
+    }
+
+    .gcard-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .gcard-company {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .gcard-sub {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--subtext);
+    }
+
+    .gcard-industry {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .gcard-url {
+      font-size: 12px;
+      color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-decoration: none;
+    }
+
+    .gcard-url:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .lightbox-panel {
+      background: var(--bg);
+      border-radius: 16px;
+      width: min(760px, 100%);
+      max-height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+    }
+
+    .lightbox-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .lightbox-title {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .lightbox-company {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .lightbox-meta {
+      font-size: 12px;
+      color: var(--subtext);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .lightbox-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .lightbox-open {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 7px 14px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .lightbox-open:hover {
+      background: var(--gray);
+    }
+
+    .lightbox-close {
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 50%;
+      background: var(--gray);
+      color: var(--text);
+      font-size: 14px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .lightbox-close:hover {
+      background: var(--gray-dark);
+    }
+
+    .lightbox-body {
+      overflow-y: auto;
+      background: var(--gray);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .lightbox-body img {
+      width: 100%;
+      max-width: 640px;
+      border-radius: 8px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
+      display: block;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 640px) {
+      .lightbox {
+        padding: 0;
+      }
+
+      .lightbox-panel {
+        border-radius: 0;
+        height: 100%;
+        max-height: 100%;
+      }
+
+      .lightbox-open {
         display: none;
       }
     }
@@ -557,14 +671,14 @@
             </svg>
             リスト
           </button>
-          <button class="view-btn" id="btnMatrix" onclick="setView('matrix',this)">
+          <button class="view-btn" id="btnGallery" onclick="setView('gallery',this)">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
-              <rect x="0" y="0" width="6" height="6" rx="1" />
-              <rect x="8" y="0" width="6" height="6" rx="1" />
-              <rect x="0" y="8" width="6" height="6" rx="1" />
-              <rect x="8" y="8" width="6" height="6" rx="1" />
+              <rect x="0" y="0" width="6" height="9" rx="1" />
+              <rect x="8" y="0" width="6" height="4" rx="1" />
+              <rect x="8" y="6" width="6" height="8" rx="1" />
+              <rect x="0" y="11" width="6" height="3" rx="1" />
             </svg>
-            マトリクス
+            ギャラリー
           </button>
         </div>
       </div>
@@ -591,10 +705,13 @@
       </div>
     </div>
 
-    <!-- Matrix View -->
-    <div id="viewMatrix" class="hidden">
-      <div class="matrix-wrap" id="matrixWrap"></div>
-      <div id="noResultsMatrix" class="no-results hidden">
+    <!-- Gallery View -->
+    <div id="viewGallery" class="hidden">
+      <div class="gallery-note">
+        ※ 画像は検証用のダミー（placehold.jp）です。実際のスクリーンショットではありません。
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+      <div id="noResultsGallery" class="no-results hidden">
         <h3>該当なし</h3>
         <p>検索条件を変更してみてください。</p>
       </div>
@@ -602,11 +719,28 @@
 
   </main>
 
+  <!-- Lightbox (full-page image viewer) -->
+  <div id="lightbox" class="lightbox hidden" onclick="closeLightbox(event)">
+    <div class="lightbox-panel" onclick="event.stopPropagation()">
+      <div class="lightbox-head">
+        <div class="lightbox-title">
+          <span class="lightbox-company" id="lbCompany"></span>
+          <span class="lightbox-meta" id="lbMeta"></span>
+        </div>
+        <div class="lightbox-actions">
+          <a id="lbLink" class="lightbox-open" href="#" target="_blank" rel="noopener noreferrer">サイトを開く ↗</a>
+          <button class="lightbox-close" onclick="closeLightbox()" aria-label="閉じる">✕</button>
+        </div>
+      </div>
+      <div class="lightbox-body" id="lightboxBody"></div>
+    </div>
+  </div>
+
   <script>
     /* ============================================================
        DATA
-       [industryId, companyId, pageType, url | null, verified]
-       verified: true = 確認済み, false = 要確認, null = N/A
+       [industryId, companyId, pageType, url, ...]
+       url は必須（URL未登録の行は削除済み）。5要素目以降は未使用。
     ============================================================ */
 
     const INDUSTRIES = {
@@ -1574,9 +1708,8 @@
       "口座開設・申込", "ローン・保険", "ポイント・特典"
     ];
 
-    /* raw rows: [industryId, companyId, pageType, url, verified] */
+    /* raw rows: [industryId, companyId, pageType, url] */
     const RAW = [
-      // ── メルセデス・ベンツ日本 ──────────────────────────────────────
       ["auto", "mercedes", "TOPページ", "https://www.mercedes-benz.co.jp/", true],
       ["auto", "mercedes", "ニュースリリース", "https://media.mercedes-benz.co.jp/", true],
       ["auto", "mercedes", "車種ラインアップ", "https://www.mercedes-benz.co.jp/passengercars/models.html", false],
@@ -1586,20 +1719,14 @@
       ["auto", "mercedes", "EV・電動車", "https://www.mercedes-benz.co.jp/eq/", true],
       ["auto", "mercedes", "金融サービス", "https://www.mercedes-benz-financial.co.jp/", true],
       ["auto", "mercedes", "IR情報", "https://group.mercedes-benz.com/investors/", true],
-
-      // ── BMWジャパン ─────────────────────────────────────────────────
       ["auto", "bmw", "TOPページ", "https://www.bmw.co.jp/", true],
       ["auto", "bmw", "ニュースリリース", "https://www.press.bmwgroup.com/japan/", true],
       ["auto", "bmw", "車種ラインアップ", "https://www.bmw.co.jp/ja/all-models.html", true],
       ["auto", "bmw", "金融サービス", "https://www.bmw-financial-services.co.jp/", true],
-
-      // ── アウディジャパン ────────────────────────────────────────────
       ["auto", "audi", "TOPページ", "https://www.audi.co.jp/", true],
       ["auto", "audi", "企業情報", "https://www.audi.co.jp/jp/web/ja/company.html", false],
       ["auto", "audi", "車種ラインアップ", "https://www.audi.co.jp/jp/web/ja/models.html", true],
       ["auto", "audi", "IR情報", "https://www.audi-mediacenter.com/ja/", false, true],
-
-      // ── ボルボ・カー・ジャパン ───────────────────────────────────────
       ["auto", "volvo", "TOPページ", "https://www.volvocars.com/ja-jp/", true],
       ["auto", "volvo", "車種ラインアップ", "https://www.volvocars.com/ja-jp/cars/", true],
       ["auto", "volvo", "車種詳細", "https://www.volvocars.com/ja-jp/cars/xc60/", true],
@@ -1607,8 +1734,6 @@
       ["auto", "volvo", "ディーラー検索", "https://www.volvocars.com/ja-jp/dealers/", true],
       ["auto", "volvo", "EV・電動車", "https://www.volvocars.com/ja-jp/electric/", true],
       ["auto", "volvo", "IR情報", "https://investors.volvocars.com/", false],
-
-      // ── テスラジャパン ───────────────────────────────────────────────
       ["auto", "tesla", "TOPページ", "https://www.tesla.com/ja_JP/", true],
       ["auto", "tesla", "企業情報", "https://www.tesla.com/ja_JP/about", true],
       ["auto", "tesla", "ニュースリリース", "https://www.tesla.com/ja_JP/press", true],
@@ -1629,8 +1754,6 @@
       ["auto", "tesla", "採用情報", "https://www.tesla.com/ja_JP/careers", true],
       ["auto", "tesla", "お問い合わせ", "https://www.tesla.com/ja_JP/contact", true],
       ["auto", "tesla", "技術・R&D", "https://www.tesla.com/ja_JP/autopilot", true],
-
-      // ── トヨタ自動車 ─────────────────────────────────────────────────
       ["auto", "toyota", "TOPページ", "https://toyota.jp/", true],
       ["auto", "toyota", "企業情報", "https://global.toyota/jp/", true],
       ["auto", "toyota", "ニュースリリース", "https://newsroom.toyota.co.jp/", true],
@@ -1650,8 +1773,6 @@
       ["auto", "toyota", "採用情報", "https://www.toyota-careers.com/", true],
       ["auto", "toyota", "お問い合わせ", "https://toyota.jp/contact/", false, true],
       ["auto", "toyota", "技術・R&D", "https://global.toyota/jp/technology/", true, true],
-
-      // ── ホンダ ───────────────────────────────────────────────────────
       ["auto", "honda", "TOPページ", "https://www.honda.co.jp/", true],
       ["auto", "honda", "企業情報", "https://www.honda.co.jp/about/", true, true],
       ["auto", "honda", "ニュースリリース", "https://www.honda.co.jp/news/", true],
@@ -1671,8 +1792,6 @@
       ["auto", "honda", "採用情報", "https://www.honda-recruit.com/", true],
       ["auto", "honda", "お問い合わせ", "https://www.honda.co.jp/contact/", false, true],
       ["auto", "honda", "技術・R&D", "https://www.honda.co.jp/technology/", true, true],
-
-      // ── SUBARU ───────────────────────────────────────────────────────
       ["auto", "subaru", "TOPページ", "https://www.subaru.co.jp/", true],
       ["auto", "subaru", "企業情報", "https://www.subaru.co.jp/about/", false, true],
       ["auto", "subaru", "ニュースリリース", "https://www.subaru.co.jp/news/", true],
@@ -1692,8 +1811,6 @@
       ["auto", "subaru", "IR情報", "https://www.subaru.co.jp/ir/", true],
       ["auto", "subaru", "お問い合わせ", "https://www.subaru.co.jp/contact/", false, true],
       ["auto", "subaru", "技術・R&D", "https://www.subaru.co.jp/technology/", false, true],
-
-      // ── 日産自動車 ───────────────────────────────────────────────────
       ["auto", "nissan", "TOPページ", "https://www.nissan.co.jp/", true],
       ["auto", "nissan", "企業情報", "https://www.nissan-global.com/JP/", true],
       ["auto", "nissan", "ニュースリリース", "https://global.nissannews.com/ja-JP/", true],
@@ -1713,8 +1830,6 @@
       ["auto", "nissan", "採用情報", "https://www.nissan-recruit.com/", false],
       ["auto", "nissan", "お問い合わせ", "https://www.nissan.co.jp/CONNECT/", false],
       ["auto", "nissan", "技術・R&D", "https://www.nissan-global.com/JP/TECHNOLOGY/", true, true],
-
-      // ── 三菱自動車工業 ───────────────────────────────────────────────
       ["auto", "mitsubishi", "TOPページ", "https://www.mitsubishi-motors.co.jp/", true],
       ["auto", "mitsubishi", "企業情報", "https://www.mitsubishi-motors.co.jp/corporate/", false, true],
       ["auto", "mitsubishi", "ニュースリリース", "https://www.mitsubishi-motors.co.jp/news/", false, true],
@@ -1735,8 +1850,6 @@
       ["auto", "mitsubishi", "採用情報", "https://www.mitsubishi-motors.co.jp/recruit/", false, true],
       ["auto", "mitsubishi", "お問い合わせ", "https://www.mitsubishi-motors.co.jp/contact/", false, true],
       ["auto", "mitsubishi", "技術・R&D", "https://www.mitsubishi-motors.co.jp/technology/", false, true],
-
-      // ── マツダ ───────────────────────────────────────────────────────
       ["auto", "mazda", "TOPページ", "https://www.mazda.co.jp/", true],
       ["auto", "mazda", "企業情報", "https://www.mazda.com/ja/", true],
       ["auto", "mazda", "ニュースリリース", "https://www.mazda.co.jp/news/", true, true],
@@ -1754,8 +1867,6 @@
       ["auto", "mazda", "IR情報", "https://www.mazda.com/ja/investors/", true],
       ["auto", "mazda", "お問い合わせ", "https://www.mazda.co.jp/contact/", false, true],
       ["auto", "mazda", "技術・R&D", "https://www.mazda.com/ja/innovation/", false],
-
-      // ── スズキ ───────────────────────────────────────────────────────
       ["auto", "suzuki", "TOPページ", "https://www.suzuki.co.jp/", true],
       ["auto", "suzuki", "企業情報", "https://www.suzuki.co.jp/about/", false, true],
       ["auto", "suzuki", "ニュースリリース", "https://www.suzuki.co.jp/news/", true, true],
@@ -1773,8 +1884,6 @@
       ["auto", "suzuki", "IR情報", "https://www.suzuki.co.jp/ir/", true],
       ["auto", "suzuki", "お問い合わせ", "https://www.suzuki.co.jp/contact/", false, true],
       ["auto", "suzuki", "技術・R&D", "https://www.suzuki.co.jp/motor_sports/", false, true],
-
-      // ── ダイハツ工業 ─────────────────────────────────────────────────
       ["auto", "daihatsu", "TOPページ", "https://www.daihatsu.co.jp/", true],
       ["auto", "daihatsu", "企業情報", "https://www.daihatsu.co.jp/about/", false, true],
       ["auto", "daihatsu", "ニュースリリース", "https://www.daihatsu.co.jp/news/", true],
@@ -1795,15 +1904,11 @@
       ["auto", "daihatsu", "採用情報", "https://www.daihatsu.co.jp/recruit/", false, true],
       ["auto", "daihatsu", "お問い合わせ", "https://www.daihatsu.co.jp/contact/", false, true],
       ["auto", "daihatsu", "技術・R&D", "https://www.daihatsu.co.jp/technology/", false, true],
-
-      // ── ヤマハ発動機 ─────────────────────────────────────────────────
       ["auto", "yamaha", "TOPページ", "https://www.yamaha-motor.co.jp/", true],
       ["auto", "yamaha", "企業情報", "https://www.yamaha-motor.co.jp/profile/", true, true],
       ["auto", "yamaha", "ニュースリリース", "https://www.yamaha-motor.co.jp/news/", true, true],
       ["auto", "yamaha", "車種ラインアップ", "https://www.yamaha-motor.co.jp/mc/", true],
       ["auto", "yamaha", "車種詳細", "https://www.yamaha-motor.co.jp/mc/lineup/mt-09/", false],
-      ["auto", "yamaha", "コンフィギュレーター", null, null],
-      ["auto", "yamaha", "見積もり", null, null],
       ["auto", "yamaha", "試乗予約", "https://www.yamaha-motor.co.jp/mc/testride/", false, true],
       ["auto", "yamaha", "ディーラー検索", "https://www.yamaha-motor.co.jp/mc/dealer/", false, true],
       ["auto", "yamaha", "認定中古車", "https://www.yamaha-motor.co.jp/mc/certified/", false, true],
@@ -1817,77 +1922,51 @@
       ["auto", "yamaha", "採用情報", "https://www.yamaha-motor.co.jp/recruit/", false, true],
       ["auto", "yamaha", "お問い合わせ", "https://www.yamaha-motor.co.jp/contact/", false, true],
       ["auto", "yamaha", "技術・R&D", "https://www.yamaha-motor.co.jp/motorsports/", false, true],
-
-      // ── 川崎重工業 ───────────────────────────────────────────────────
       ["auto", "kawasaki", "TOPページ", "https://www.kawasaki-motors.com/ja/", true],
       ["auto", "kawasaki", "企業情報", "https://www.khi.co.jp/company/", true],
       ["auto", "kawasaki", "ニュースリリース", "https://www.khi.co.jp/news/", true],
       ["auto", "kawasaki", "車種詳細", "https://www.kawasaki-motors.com/ja/motorcycles/ninja-series/ninja-zx-10r/", false],
-      ["auto", "kawasaki", "コンフィギュレーター", null, null],
-      ["auto", "kawasaki", "見積もり", null, null],
       ["auto", "kawasaki", "試乗予約", "https://www.kawasaki-motors.com/ja/testride/", false],
       ["auto", "kawasaki", "ディーラー検索", "https://www.kawasaki-motors.com/ja/dealer/", false],
-      ["auto", "kawasaki", "認定中古車", null, null],
       ["auto", "kawasaki", "アフターサービス", "https://www.kawasaki-motors.com/ja/service/", false],
       ["auto", "kawasaki", "アクセサリー", "https://www.kawasaki-motors.com/ja/accessories/", false],
       ["auto", "kawasaki", "EV・電動車", "https://www.kawasaki-motors.com/ja/electric/", false],
       ["auto", "kawasaki", "キャンペーン", "https://www.kawasaki-motors.com/ja/campaign/", false],
-      ["auto", "kawasaki", "金融サービス", null, null],
       ["auto", "kawasaki", "サステナビリティ", "https://www.khi.co.jp/sustainability/", false],
       ["auto", "kawasaki", "IR情報", "https://www.khi.co.jp/ir/", true],
       ["auto", "kawasaki", "採用情報", "https://www.khi.co.jp/recruit/", false],
       ["auto", "kawasaki", "お問い合わせ", "https://www.kawasaki-motors.com/ja/contact/", false],
       ["auto", "kawasaki", "技術・R&D", "https://www.kawasaki-motors.com/ja/motorsports/", false],
-
-      // ── 日野自動車 ───────────────────────────────────────────────────
       ["auto", "hino", "TOPページ", "https://www.hino.co.jp/", true],
       ["auto", "hino", "企業情報", "https://www.hino.co.jp/corp/", true],
       ["auto", "hino", "ニュースリリース", "https://www.hino.co.jp/corp/news/", true],
       ["auto", "hino", "車種ラインアップ", "https://www.hino.co.jp/product/", true, true],
       ["auto", "hino", "車種詳細", "https://www.hino.co.jp/product/truck/", false, true],
-      ["auto", "hino", "コンフィギュレーター", null, null],
-      ["auto", "hino", "見積もり", null, null],
-      ["auto", "hino", "試乗予約", null, null],
       ["auto", "hino", "ディーラー検索", "https://www.hino.co.jp/dealer/", false, true],
       ["auto", "hino", "認定中古車", "https://www.hino.co.jp/certified/", false, true],
       ["auto", "hino", "アフターサービス", "https://www.hino.co.jp/service/", false, true],
-      ["auto", "hino", "アクセサリー", null, null],
       ["auto", "hino", "EV・電動車", "https://www.hino.co.jp/ev/", false, true],
       ["auto", "hino", "キャンペーン", "https://www.hino.co.jp/campaign/", false, true],
-      ["auto", "hino", "金融サービス", null, null],
       ["auto", "hino", "サステナビリティ", "https://www.hino.co.jp/sustainability/", false, true],
       ["auto", "hino", "IR情報", "https://www.hino.co.jp/corp/ir/", true, true],
       ["auto", "hino", "採用情報", "https://www.hino.co.jp/recruit/", false],
       ["auto", "hino", "お問い合わせ", "https://www.hino.co.jp/contact/", false, true],
       ["auto", "hino", "技術・R&D", "https://www.hino.co.jp/technology/", false],
-
-      // ── いすゞ自動車 ─────────────────────────────────────────────────
       ["auto", "isuzu", "TOPページ", "https://www.isuzu.co.jp/", true],
       ["auto", "isuzu", "企業情報", "https://www.isuzu.co.jp/company/", true],
       ["auto", "isuzu", "ニュースリリース", "https://www.isuzu.co.jp/press/", true],
       ["auto", "isuzu", "車種ラインアップ", "https://www.isuzu.co.jp/lineup/", false, true],
       ["auto", "isuzu", "車種詳細", "https://www.isuzu.co.jp/lineup/elf/", false, true],
-      ["auto", "isuzu", "コンフィギュレーター", null, null],
-      ["auto", "isuzu", "見積もり", null, null],
-      ["auto", "isuzu", "試乗予約", null, null],
       ["auto", "isuzu", "ディーラー検索", "https://www.isuzu.co.jp/dealer/", false, true],
       ["auto", "isuzu", "認定中古車", "https://www.isuzu.co.jp/certified/", false, true],
       ["auto", "isuzu", "アフターサービス", "https://www.isuzu.co.jp/service/", false, true],
-      ["auto", "isuzu", "アクセサリー", null, null],
       ["auto", "isuzu", "EV・電動車", "https://www.isuzu.co.jp/ev/", false, true],
       ["auto", "isuzu", "キャンペーン", "https://www.isuzu.co.jp/campaign/", false, true],
-      ["auto", "isuzu", "金融サービス", null, null],
       ["auto", "isuzu", "サステナビリティ", "https://www.isuzu.co.jp/csr/", false, true],
       ["auto", "isuzu", "IR情報", "https://www.isuzu.co.jp/ir/", true, true],
       ["auto", "isuzu", "採用情報", "https://www.isuzu.co.jp/recruit/", false, true],
       ["auto", "isuzu", "お問い合わせ", "https://www.isuzu.co.jp/contact/", false, true],
       ["auto", "isuzu", "技術・R&D", "https://www.isuzu.co.jp/technology/", false, true],
-
-      // ══════════════════════════════════════════════════════════════
-      //  化粧品・トイレタリー
-      // ══════════════════════════════════════════════════════════════
-
-      // ── 資生堂 ───────────────────────────────────────────────────
       ["cosme", "shiseido", "TOPページ", "https://www.shiseido.co.jp/", false],
       ["cosme", "shiseido", "企業情報", "https://corp.shiseido.com/jp/", false],
       ["cosme", "shiseido", "ニュースリリース", "https://corp.shiseido.com/jp/news/", false],
@@ -1902,8 +1981,6 @@
       ["cosme", "shiseido", "採用情報", "https://careers.shiseido.com/jp/", false],
       ["cosme", "shiseido", "お問い合わせ", "https://www.shiseido.co.jp/contact/", false, true],
       ["cosme", "shiseido", "技術・R&D", "https://corp.shiseido.com/jp/r-d/", false, true],
-
-      // ── 花王 ─────────────────────────────────────────────────────
       ["cosme", "kao", "TOPページ", "https://www.kao.com/jp/", false],
       ["cosme", "kao", "企業情報", "https://www.kao.com/jp/corporate/", false],
       ["cosme", "kao", "ニュースリリース", "https://www.kao.com/jp/corporate/news/", false],
@@ -1916,8 +1993,6 @@
       ["cosme", "kao", "採用情報", "https://www.kao.com/jp/recruit/", false, true],
       ["cosme", "kao", "お問い合わせ", "https://www.kao.com/jp/contact/", false, true],
       ["cosme", "kao", "技術・R&D", "https://www.kao.com/jp/innovation/", false],
-
-      // ── コーセー ─────────────────────────────────────────────────
       ["cosme", "kose", "TOPページ", "https://www.kose.co.jp/", false],
       ["cosme", "kose", "企業情報", "https://www.kose.co.jp/company/", false],
       ["cosme", "kose", "ニュースリリース", "https://www.kose.co.jp/company/news/", false, true],
@@ -1932,8 +2007,6 @@
       ["cosme", "kose", "IR情報", "https://www.kose.co.jp/ir/", false, true],
       ["cosme", "kose", "お問い合わせ", "https://www.kose.co.jp/contact/", false, true],
       ["cosme", "kose", "技術・R&D", "https://www.kose.co.jp/rd/", false, true],
-
-      // ── ポーラ ───────────────────────────────────────────────────
       ["cosme", "pola", "TOPページ", "https://www.pola.co.jp/", false],
       ["cosme", "pola", "企業情報", "https://www.pola.co.jp/about/", false],
       ["cosme", "pola", "ニュースリリース", "https://www.pola.co.jp/news/", false, true],
@@ -1947,15 +2020,12 @@
       ["cosme", "pola", "採用情報", "https://www.pola.co.jp/recruit/", false, true],
       ["cosme", "pola", "お問い合わせ", "https://www.pola.co.jp/contact/", false, true],
       ["cosme", "pola", "技術・R&D", "https://www.pola.co.jp/research/", false, true],
-
-      // ── ライオン ─────────────────────────────────────────────────
       ["cosme", "lion", "TOPページ", "https://www.lion.co.jp/", false],
       ["cosme", "lion", "企業情報", "https://www.lion.co.jp/ja/company/", false],
       ["cosme", "lion", "ニュースリリース", "https://www.lion.co.jp/ja/news/", false],
       ["cosme", "lion", "ブランド一覧", "https://www.lion.co.jp/ja/products/brand/", false],
       ["cosme", "lion", "製品一覧", "https://www.lion.co.jp/ja/products/", false],
       ["cosme", "lion", "製品詳細", "https://www.lion.co.jp/ja/products/dental/", false, true],
-      ["cosme", "lion", "肌診断", null, null],
       ["cosme", "lion", "店舗検索", "https://www.lion.co.jp/ja/storelist/", false, true],
       ["cosme", "lion", "キャンペーン", "https://www.lion.co.jp/ja/campaign/", false],
       ["cosme", "lion", "サステナビリティ", "https://www.lion.co.jp/ja/csr/", false],
@@ -1963,43 +2033,30 @@
       ["cosme", "lion", "採用情報", "https://www.lion.co.jp/ja/recruit/", false],
       ["cosme", "lion", "お問い合わせ", "https://www.lion.co.jp/ja/contact/", false],
       ["cosme", "lion", "技術・R&D", "https://www.lion.co.jp/ja/rd/", false],
-
-      // ── ユニリーバジャパン ──────────────────────────────────────
       ["cosme", "unilever", "TOPページ", "https://www.unilever.com/ja-jp/", false, true],
       ["cosme", "unilever", "企業情報", "https://www.unilever.com/ja-jp/about/", false, true],
       ["cosme", "unilever", "ニュースリリース", "https://www.unilever.com/ja-jp/news/", false, true],
       ["cosme", "unilever", "ブランド一覧", "https://www.unilever.com/ja-jp/brands/", false, true],
       ["cosme", "unilever", "製品一覧", "https://www.unilever.com/ja-jp/brands/", false, true],
-      ["cosme", "unilever", "EC・購入", null, null],
-      ["cosme", "unilever", "肌診断", null, null],
-      ["cosme", "unilever", "店舗検索", null, null],
       ["cosme", "unilever", "キャンペーン", "https://www.unilever.com/ja-jp/campaign/", false, true],
       ["cosme", "unilever", "サステナビリティ", "https://www.unilever.com/ja-jp/sustainability/", false, true],
       ["cosme", "unilever", "採用情報", "https://careers.unilever.com/", false],
       ["cosme", "unilever", "お問い合わせ", "https://www.unilever.com/ja-jp/contact/", false, true],
       ["cosme", "unilever", "技術・R&D", "https://www.unilever.com/ja-jp/innovation/", false, true],
-
-      // ── P&Gジャパン ──────────────────────────────────────────────
       ["cosme", "pg", "TOPページ", "https://jp.pg.com/", false],
       ["cosme", "pg", "企業情報", "https://jp.pg.com/about-pg/", false, true],
       ["cosme", "pg", "ニュースリリース", "https://jp.pg.com/news/", false, true],
       ["cosme", "pg", "ブランド一覧", "https://jp.pg.com/brands/", false],
       ["cosme", "pg", "製品一覧", "https://jp.pg.com/brands/", false],
       ["cosme", "pg", "製品詳細", "https://pantene.jp/", false],
-      ["cosme", "pg", "EC・購入", null, null],
-      ["cosme", "pg", "店舗検索", null, null],
       ["cosme", "pg", "キャンペーン", "https://jp.pg.com/campaign/", false, true],
       ["cosme", "pg", "サステナビリティ", "https://jp.pg.com/sustainability/", false, true],
       ["cosme", "pg", "IR情報", "https://www.pginvestor.com/", false],
       ["cosme", "pg", "採用情報", "https://www.pgcareers.com/", false],
       ["cosme", "pg", "お問い合わせ", "https://jp.pg.com/contact/", false, true],
       ["cosme", "pg", "技術・R&D", "https://jp.pg.com/innovation/", false],
-
-      // ── ロレアルジャパン ─────────────────────────────────────────
       ["cosme", "loreal", "IR情報", "https://www.loreal-finance.com/en/", false],
       ["cosme", "loreal", "採用情報", "https://careers.loreal.com/", false],
-
-      // ── エスティ ローダー ジャパン ────────────────────────────────
       ["cosme", "esteelauder", "TOPページ", "https://www.esteelauder.co.jp/", false],
       ["cosme", "esteelauder", "企業情報", "https://www.elcompanies.com/ja/", false],
       ["cosme", "esteelauder", "ニュースリリース", "https://www.elcompanies.com/ja/news-and-media/", false],
@@ -2007,77 +2064,53 @@
       ["cosme", "esteelauder", "製品一覧", "https://www.esteelauder.co.jp/products/", false],
       ["cosme", "esteelauder", "製品詳細", "https://www.esteelauder.co.jp/products/advanced-night-repair/", false],
       ["cosme", "esteelauder", "採用情報", "https://www.elcompanies.com/ja/careers/", false],
-
-      // ══════════════════════════════════════════════════════════════
-      //  食品・飲料・外食
-      // ══════════════════════════════════════════════════════════════
-
-      // ── キリンビール ─────────────────────────────────────────────
       ["food", "kirin", "TOPページ", "https://www.kirin.co.jp/", false],
       ["food", "kirin", "企業情報", "https://www.kirinholdings.com/jp/", false],
       ["food", "kirin", "ニュースリリース", "https://www.kirinholdings.com/jp/newsroom/", false],
       ["food", "kirin", "製品一覧", "https://www.kirin.co.jp/products/", false],
       ["food", "kirin", "製品詳細", "https://www.kirin.co.jp/products/beer/ichiban/", false],
       ["food", "kirin", "レシピ", "https://www.kirin.co.jp/recipe/", false],
-      ["food", "kirin", "店舗検索", null, null],
       ["food", "kirin", "キャンペーン", "https://www.kirin.co.jp/campaign/", false],
       ["food", "kirin", "サステナビリティ", "https://www.kirinholdings.com/jp/impact/", false],
       ["food", "kirin", "IR情報", "https://www.kirinholdings.com/jp/investors/", false],
       ["food", "kirin", "採用情報", "https://www.kirinholdings.com/jp/careers/", false],
       ["food", "kirin", "お問い合わせ", "https://www.kirin.co.jp/contact/", false, true],
-
-      // ── アサヒビール ─────────────────────────────────────────────
       ["food", "asahi_b", "TOPページ", "https://www.asahibeer.co.jp/", false],
       ["food", "asahi_b", "企業情報", "https://www.asahigroup-holdings.com/", false],
       ["food", "asahi_b", "ニュースリリース", "https://www.asahigroup-holdings.com/news/", false, true],
       ["food", "asahi_b", "製品一覧", "https://www.asahibeer.co.jp/products/", false],
       ["food", "asahi_b", "製品詳細", "https://www.asahibeer.co.jp/superdry/", false],
       ["food", "asahi_b", "レシピ", "https://www.asahibeer.co.jp/recipe/", false],
-      ["food", "asahi_b", "店舗検索", null, null],
       ["food", "asahi_b", "キャンペーン", "https://www.asahibeer.co.jp/campaign/", false],
       ["food", "asahi_b", "サステナビリティ", "https://www.asahigroup-holdings.com/sustainability/", false],
       ["food", "asahi_b", "IR情報", "https://www.asahigroup-holdings.com/ir/", false],
       ["food", "asahi_b", "採用情報", "https://www.asahigroup-holdings.com/recruit/", false, true],
       ["food", "asahi_b", "お問い合わせ", "https://www.asahibeer.co.jp/contact/", false, true],
-
-      // ── サッポロビール ───────────────────────────────────────────
       ["food", "sapporo", "TOPページ", "https://www.sapporobeer.jp/", false],
       ["food", "sapporo", "企業情報", "https://www.sapporoholdings.jp/", false],
       ["food", "sapporo", "ニュースリリース", "https://www.sapporoholdings.jp/news/", false],
       ["food", "sapporo", "製品一覧", "https://www.sapporobeer.jp/products/", false, true],
       ["food", "sapporo", "製品詳細", "https://www.sapporobeer.jp/products/yebisu/", false, true],
       ["food", "sapporo", "レシピ", "https://www.sapporobeer.jp/recipe/", false],
-      ["food", "sapporo", "店舗検索", null, null],
       ["food", "sapporo", "キャンペーン", "https://www.sapporobeer.jp/campaign/", false],
       ["food", "sapporo", "サステナビリティ", "https://www.sapporoholdings.jp/csr/", false],
       ["food", "sapporo", "IR情報", "https://www.sapporoholdings.jp/ir/", false],
       ["food", "sapporo", "採用情報", "https://www.sapporoholdings.jp/recruit/", false, true],
       ["food", "sapporo", "お問い合わせ", "https://www.sapporobeer.jp/contact/", false, true],
-
-      // ── サントリーホールディングス ───────────────────────────────
       ["food", "suntory", "TOPページ", "https://www.suntory.co.jp/", false],
       ["food", "suntory", "企業情報", "https://www.suntory.co.jp/company/", false],
       ["food", "suntory", "ニュースリリース", "https://www.suntory.co.jp/news/", false],
-      ["food", "suntory", "店舗検索", null, null],
-      ["food", "suntory", "IR情報", null, null],
       ["food", "suntory", "お問い合わせ", "https://www.suntory.co.jp/customer/", false],
-
-      // ── 日本コカ・コーラ ─────────────────────────────────────────
       ["food", "cocacola", "TOPページ", "https://www.coca-cola.com/jp/ja", false],
       ["food", "cocacola", "企業情報", "https://www.coca-cola.com/jp/ja/about-us", false, true],
       ["food", "cocacola", "ニュースリリース", "https://www.coca-cola.com/jp/ja/media-center", false],
       ["food", "cocacola", "製品一覧", "https://www.coca-cola.com/jp/ja/brands", false],
       ["food", "cocacola", "製品詳細", "https://www.coca-cola.com/jp/ja/brands/coca-cola", false],
-      ["food", "cocacola", "EC・購入", null, null],
       ["food", "cocacola", "レシピ", "https://www.coca-cola.com/jp/ja/recipes", false, true],
-      ["food", "cocacola", "店舗検索", null, null],
       ["food", "cocacola", "キャンペーン", "https://www.coca-cola.com/jp/ja/campaigns", false, true],
       ["food", "cocacola", "サステナビリティ", "https://www.coca-cola.com/jp/ja/sustainability", false],
-      ["food", "cocacola", "IR情報", null, null],
       ["food", "cocacola", "採用情報", "https://www.coca-cola.com/jp/ja/careers", false, true],
       ["food", "cocacola", "お問い合わせ", "https://www.coca-cola.com/jp/ja/contact", false, true],
-
-      // ── サンヨー食品 ─────────────────────────────────────────────
       ["food", "sanyo_food", "TOPページ", "https://www.sanyofoods.co.jp/", false],
       ["food", "sanyo_food", "企業情報", "https://www.sanyofoods.co.jp/company/", false],
       ["food", "sanyo_food", "ニュースリリース", "https://www.sanyofoods.co.jp/news/", false],
@@ -2085,14 +2118,11 @@
       ["food", "sanyo_food", "製品詳細", "https://www.sanyofoods.co.jp/products/sapporo-ichiban/", false, true],
       ["food", "sanyo_food", "EC・購入", "https://www.sanyofoods.co.jp/shop/", false, true],
       ["food", "sanyo_food", "レシピ", "https://www.sanyofoods.co.jp/recipe/", false],
-      ["food", "sanyo_food", "店舗検索", null, null],
       ["food", "sanyo_food", "キャンペーン", "https://www.sanyofoods.co.jp/campaign/", false, true],
       ["food", "sanyo_food", "サステナビリティ", "https://www.sanyofoods.co.jp/csr/", false],
       ["food", "sanyo_food", "IR情報", "https://www.sanyofoods.co.jp/ir/", false, true],
       ["food", "sanyo_food", "採用情報", "https://www.sanyofoods.co.jp/recruit/", false],
       ["food", "sanyo_food", "お問い合わせ", "https://www.sanyofoods.co.jp/contact/", false],
-
-      // ── 日清食品ホールディングス ─────────────────────────────────
       ["food", "nisshin", "TOPページ", "https://www.nissin.com/jp/", false],
       ["food", "nisshin", "企業情報", "https://www.nissin.com/jp/company/", false],
       ["food", "nisshin", "ニュースリリース", "https://www.nissin.com/jp/news/", false],
@@ -2100,14 +2130,11 @@
       ["food", "nisshin", "製品詳細", "https://www.nissin.com/jp/products/items/cupnoodle/", false, true],
       ["food", "nisshin", "EC・購入", "https://store.nissin.com/", false, true],
       ["food", "nisshin", "レシピ", "https://www.nissin.com/jp/recipe/", false, true],
-      ["food", "nisshin", "店舗検索", null, null],
       ["food", "nisshin", "キャンペーン", "https://www.nissin.com/jp/campaign/", false, true],
       ["food", "nisshin", "サステナビリティ", "https://www.nissin.com/jp/sustainability/", false],
       ["food", "nisshin", "IR情報", "https://www.nissin.com/jp/ir/", false],
       ["food", "nisshin", "採用情報", "https://www.nissin.com/jp/recruit/", false],
       ["food", "nisshin", "お問い合わせ", "https://www.nissin.com/jp/contact/", false, true],
-
-      // ── 東洋水産 (マルちゃん) ────────────────────────────────────
       ["food", "toyo_suisan", "TOPページ", "https://www.maruchan.co.jp/", false],
       ["food", "toyo_suisan", "企業情報", "https://www.maruchan.co.jp/company/", false],
       ["food", "toyo_suisan", "ニュースリリース", "https://www.maruchan.co.jp/news/", false, true],
@@ -2115,12 +2142,9 @@
       ["food", "toyo_suisan", "製品詳細", "https://www.maruchan.co.jp/products/noodle/", false, true],
       ["food", "toyo_suisan", "EC・購入", "https://www.maruchan.co.jp/shop/", false],
       ["food", "toyo_suisan", "レシピ", "https://www.maruchan.co.jp/recipe/", false],
-      ["food", "toyo_suisan", "店舗検索", null, null],
       ["food", "toyo_suisan", "キャンペーン", "https://www.maruchan.co.jp/campaign/", false],
       ["food", "toyo_suisan", "採用情報", "https://www.maruchan.co.jp/recruit/", false],
       ["food", "toyo_suisan", "お問い合わせ", "https://www.maruchan.co.jp/contact/", false, true],
-
-      // ── 明星食品 ─────────────────────────────────────────────────
       ["food", "myojo", "TOPページ", "https://www.myojofoods.co.jp/", false],
       ["food", "myojo", "企業情報", "https://www.myojofoods.co.jp/company/", false],
       ["food", "myojo", "ニュースリリース", "https://www.myojofoods.co.jp/news/", false],
@@ -2128,163 +2152,117 @@
       ["food", "myojo", "製品詳細", "https://www.myojofoods.co.jp/products/charumera/", false],
       ["food", "myojo", "EC・購入", "https://www.myojofoods.co.jp/shop/", false, true],
       ["food", "myojo", "レシピ", "https://www.myojofoods.co.jp/recipe/", false],
-      ["food", "myojo", "店舗検索", null, null],
       ["food", "myojo", "キャンペーン", "https://www.myojofoods.co.jp/campaign/", false],
       ["food", "myojo", "サステナビリティ", "https://www.myojofoods.co.jp/csr/", false, true],
-      ["food", "myojo", "IR情報", null, null],
       ["food", "myojo", "採用情報", "https://www.myojofoods.co.jp/recruit/", false],
       ["food", "myojo", "お問い合わせ", "https://www.myojofoods.co.jp/contact/", false, true],
-
-      // ── 日本マクドナルド ─────────────────────────────────────────
       ["food", "mcdonalds", "TOPページ", "https://www.mcdonalds.co.jp/", false],
       ["food", "mcdonalds", "企業情報", "https://www.mcdonalds.co.jp/company/", false],
       ["food", "mcdonalds", "ニュースリリース", "https://www.mcdonalds.co.jp/news/", false],
       ["food", "mcdonalds", "製品一覧", "https://www.mcdonalds.co.jp/menu/", false],
       ["food", "mcdonalds", "製品詳細", "https://www.mcdonalds.co.jp/menu/burger/bigmac/", false, true],
       ["food", "mcdonalds", "EC・購入", "https://www.mcdonalds.co.jp/app/", false, true],
-      ["food", "mcdonalds", "レシピ", null, null],
       ["food", "mcdonalds", "店舗検索", "https://www.mcdonalds.co.jp/shop/", false],
       ["food", "mcdonalds", "キャンペーン", "https://www.mcdonalds.co.jp/campaign/", false],
       ["food", "mcdonalds", "サステナビリティ", "https://www.mcdonalds.co.jp/quality/", false],
       ["food", "mcdonalds", "IR情報", "https://www.mcdonalds.co.jp/company/ir/", false, true],
       ["food", "mcdonalds", "採用情報", "https://www.mcdonalds.co.jp/recruit/", false],
       ["food", "mcdonalds", "お問い合わせ", "https://www.mcdonalds.co.jp/contact/", false, true],
-
-      // ── モスフードサービス ───────────────────────────────────────
       ["food", "mos", "TOPページ", "https://www.mos.co.jp/", false],
       ["food", "mos", "企業情報", "https://www.mos.co.jp/company/", false],
       ["food", "mos", "ニュースリリース", "https://www.mos.co.jp/company/press/", false, true],
       ["food", "mos", "製品一覧", "https://www.mos.co.jp/menu/", false, true],
       ["food", "mos", "製品詳細", "https://www.mos.co.jp/menu/burger/", false, true],
       ["food", "mos", "EC・購入", "https://www.mos.co.jp/app/", false, true],
-      ["food", "mos", "レシピ", null, null],
       ["food", "mos", "店舗検索", "https://www.mos.co.jp/store/", false, true],
       ["food", "mos", "キャンペーン", "https://www.mos.co.jp/campaign/", false, true],
       ["food", "mos", "サステナビリティ", "https://www.mos.co.jp/company/csr/", false],
       ["food", "mos", "IR情報", "https://www.mos.co.jp/company/ir/", false],
       ["food", "mos", "採用情報", "https://www.mos.co.jp/recruit/", false, true],
       ["food", "mos", "お問い合わせ", "https://www.mos.co.jp/contact/", false, true],
-
-      // ── 日本ケンタッキー・フライド・チキン ──────────────────────
       ["food", "kfc_jp", "企業情報", "https://www.kfc.co.jp/company/", false, true],
       ["food", "kfc_jp", "EC・購入", "https://www.kfc.co.jp/order/", false, true],
-      ["food", "kfc_jp", "レシピ", null, null],
       ["food", "kfc_jp", "店舗検索", "https://www.kfc.co.jp/store/", false, true],
       ["food", "kfc_jp", "キャンペーン", "https://www.kfc.co.jp/campaign/", false, true],
       ["food", "kfc_jp", "サステナビリティ", "https://www.kfc.co.jp/company/csr/", false, true],
-      ["food", "kfc_jp", "IR情報", null, null],
       ["food", "kfc_jp", "採用情報", "https://www.kfc.co.jp/recruit/", false, true],
       ["food", "kfc_jp", "お問い合わせ", "https://www.kfc.co.jp/contact/", false, true],
-
-      // ── ゼンショーホールディングス (すき家等) ───────────────────
       ["food", "zensho", "TOPページ", "https://www.zensho.co.jp/jp/", false],
       ["food", "zensho", "企業情報", "https://www.zensho.co.jp/jp/company/", false],
       ["food", "zensho", "ニュースリリース", "https://www.zensho.co.jp/jp/news/", false, true],
       ["food", "zensho", "製品一覧", "https://www.sukiya.jp/menu/", false],
       ["food", "zensho", "製品詳細", "https://www.sukiya.jp/menu/beef/", false, true],
       ["food", "zensho", "EC・購入", "https://www.sukiya.jp/order/", false, true],
-      ["food", "zensho", "レシピ", null, null],
       ["food", "zensho", "店舗検索", "https://www.sukiya.jp/shop/", false, true],
       ["food", "zensho", "キャンペーン", "https://www.zensho.co.jp/jp/campaign/", false, true],
       ["food", "zensho", "サステナビリティ", "https://www.zensho.co.jp/jp/csr/", false, true],
       ["food", "zensho", "IR情報", "https://www.zensho.co.jp/jp/ir/", false],
       ["food", "zensho", "採用情報", "https://www.zensho.co.jp/jp/recruit/", false],
       ["food", "zensho", "お問い合わせ", "https://www.zensho.co.jp/jp/contact/", false, true],
-
-      // ── 吉野家ホールディングス ───────────────────────────────────
       ["food", "yoshinoya", "TOPページ", "https://www.yoshinoya.com/", false],
       ["food", "yoshinoya", "企業情報", "https://www.yoshinoya.com/company/", false],
       ["food", "yoshinoya", "ニュースリリース", "https://www.yoshinoya.com/news/", false],
       ["food", "yoshinoya", "製品一覧", "https://www.yoshinoya.com/menu/", false],
       ["food", "yoshinoya", "製品詳細", "https://www.yoshinoya.com/menu/gyudon/", false],
       ["food", "yoshinoya", "EC・購入", "https://www.yoshinoya.com/app/", false],
-      ["food", "yoshinoya", "レシピ", null, null],
       ["food", "yoshinoya", "店舗検索", "https://www.yoshinoya.com/store/", false, true],
       ["food", "yoshinoya", "キャンペーン", "https://www.yoshinoya.com/campaign/", false],
       ["food", "yoshinoya", "サステナビリティ", "https://www.yoshinoya.com/company/csr/", false, true],
       ["food", "yoshinoya", "IR情報", "https://www.yoshinoya.com/ir/", false, true],
       ["food", "yoshinoya", "採用情報", "https://www.yoshinoya.com/recruit/", false],
       ["food", "yoshinoya", "お問い合わせ", "https://www.yoshinoya.com/contact/", false],
-
-      // ── 日本たばこ産業 (JT) ──────────────────────────────────────
       ["food", "jt", "TOPページ", "https://www.jti.co.jp/", false],
       ["food", "jt", "企業情報", "https://www.jti.co.jp/corporate/", false],
       ["food", "jt", "ニュースリリース", "https://www.jti.co.jp/news/", false],
       ["food", "jt", "製品一覧", "https://www.jti.co.jp/products/", false, true],
-      ["food", "jt", "EC・購入", null, null],
-      ["food", "jt", "レシピ", null, null],
-      ["food", "jt", "店舗検索", null, null],
-      ["food", "jt", "キャンペーン", null, null],
       ["food", "jt", "サステナビリティ", "https://www.jti.co.jp/csr/", false],
       ["food", "jt", "IR情報", "https://www.jti.co.jp/ir/", false, true],
       ["food", "jt", "採用情報", "https://www.jti.co.jp/recruit/", false],
       ["food", "jt", "お問い合わせ", "https://www.jti.co.jp/contact/", false, true],
-
-      // ── フィリップ モリス ジャパン ───────────────────────────────
       ["food", "pmj", "TOPページ", "https://www.philipmorrisinternational.com/ja-jp", false],
       ["food", "pmj", "ニュースリリース", "https://www.philipmorrisinternational.com/ja-jp/media-center", false],
       ["food", "pmj", "製品一覧", "https://www.iqos.com/jp/ja/", false, true],
       ["food", "pmj", "製品詳細", "https://www.iqos.com/jp/ja/iqos-iluma/", false, true],
       ["food", "pmj", "EC・購入", "https://www.iqos.com/jp/ja/shop/", false, true],
-      ["food", "pmj", "レシピ", null, null],
       ["food", "pmj", "店舗検索", "https://www.iqos.com/jp/ja/store-locator/", false, true],
-      ["food", "pmj", "キャンペーン", null, null],
       ["food", "pmj", "IR情報", "https://www.pmi.com/ir", false, true],
       ["food", "pmj", "採用情報", "https://www.philipmorrisinternational.com/ja-jp/careers", false],
       ["food", "pmj", "お問い合わせ", "https://www.iqos.com/jp/ja/contact/", false, true],
-
-      // ── ブリティッシュ・アメリカン・タバコ・ジャパン ─────────────
       ["food", "bat_jp", "企業情報", "https://www.bat.com/ja_jp", false],
       ["food", "bat_jp", "ニュースリリース", "https://www.bat.com/ja_jp/news", false],
       ["food", "bat_jp", "製品一覧", "https://www.glo.co.jp/", false],
       ["food", "bat_jp", "製品詳細", "https://www.glo.co.jp/devices/", false, true],
       ["food", "bat_jp", "EC・購入", "https://www.glo.co.jp/shop/", false, true],
-      ["food", "bat_jp", "レシピ", null, null],
       ["food", "bat_jp", "店舗検索", "https://www.glo.co.jp/store-locator/", false, true],
-      ["food", "bat_jp", "キャンペーン", null, null],
       ["food", "bat_jp", "お問い合わせ", "https://www.glo.co.jp/contact/", false, true],
-
-      // ══════════════════════════════════════════════════════════════
-      //  IT・デジタル
-      // ══════════════════════════════════════════════════════════════
-
-      // ── グーグル合同会社 ─────────────────────────────────────────
       ["it", "google_jp", "TOPページ", "https://about.google/intl/ja_jp/", false],
       ["it", "google_jp", "企業情報", "https://about.google/intl/ja_jp/products/", false],
       ["it", "google_jp", "ニュースリリース", "https://japan.googleblog.com/", false],
       ["it", "google_jp", "サービス一覧", "https://about.google/intl/ja_jp/products/", false],
       ["it", "google_jp", "料金プラン", "https://workspace.google.com/intl/ja/pricing.html", false],
       ["it", "google_jp", "サポート・FAQ", "https://support.google.com/?hl=ja", false],
-      ["it", "google_jp", "キャンペーン", null, null],
       ["it", "google_jp", "サステナビリティ", "https://sustainability.google/", false],
       ["it", "google_jp", "IR情報", "https://abc.xyz/investor/", false],
       ["it", "google_jp", "採用情報", "https://careers.google.com/?hl=ja", false],
       ["it", "google_jp", "お問い合わせ", "https://support.google.com/?hl=ja", false],
       ["it", "google_jp", "技術・R&D", "https://research.google/", false],
-
-      // ── 日本マイクロソフト ───────────────────────────────────────
       ["it", "ms_jp", "ニュースリリース", "https://news.microsoft.com/ja-jp/", false],
       ["it", "ms_jp", "サービス一覧", "https://www.microsoft.com/ja-jp/microsoft-365/", false],
       ["it", "ms_jp", "サポート・FAQ", "https://support.microsoft.com/ja-jp", false],
       ["it", "ms_jp", "採用情報", "https://careers.microsoft.com/", false],
       ["it", "ms_jp", "お問い合わせ", "https://support.microsoft.com/ja-jp/contactus/", false],
       ["it", "ms_jp", "技術・R&D", "https://www.microsoft.com/ja-jp/ai/", false],
-
-      // ── Meta日本法人 ─────────────────────────────────────────────
       ["it", "meta_jp", "TOPページ", "https://www.facebook.com/", false],
       ["it", "meta_jp", "企業情報", "https://about.meta.com/ja/", false],
       ["it", "meta_jp", "ニュースリリース", "https://about.fb.com/ja/news/", false],
       ["it", "meta_jp", "サービス一覧", "https://about.meta.com/ja/technologies/", false],
       ["it", "meta_jp", "料金プラン", "https://www.facebook.com/business/ads", false],
       ["it", "meta_jp", "サポート・FAQ", "https://www.facebook.com/help/", false],
-      ["it", "meta_jp", "キャンペーン", null, null],
       ["it", "meta_jp", "サステナビリティ", "https://sustainability.fb.com/", false],
       ["it", "meta_jp", "IR情報", "https://investor.fb.com/", false],
       ["it", "meta_jp", "採用情報", "https://www.metacareers.com/", false],
       ["it", "meta_jp", "お問い合わせ", "https://www.facebook.com/help/contact/", false, true],
       ["it", "meta_jp", "技術・R&D", "https://research.facebook.com/", false],
-
-      // ── LINEヤフー ───────────────────────────────────────────────
       ["it", "lineyahoo", "TOPページ", "https://www.lycorp.co.jp/ja/", false],
       ["it", "lineyahoo", "企業情報", "https://www.lycorp.co.jp/ja/company/", false],
       ["it", "lineyahoo", "料金プラン", "https://biz.line.me/ja/service/", false],
@@ -2294,8 +2272,6 @@
       ["it", "lineyahoo", "採用情報", "https://www.lycorp.co.jp/ja/recruit/", false],
       ["it", "lineyahoo", "お問い合わせ", "https://www.lycorp.co.jp/ja/contact/", false],
       ["it", "lineyahoo", "技術・R&D", "https://engineering.linecorp.com/", false],
-
-      // ── 楽天グループ ─────────────────────────────────────────────
       ["it", "rakuten", "TOPページ", "https://corp.rakuten.co.jp/", false],
       ["it", "rakuten", "企業情報", "https://corp.rakuten.co.jp/about/", false],
       ["it", "rakuten", "ニュースリリース", "https://corp.rakuten.co.jp/news/", false],
@@ -2308,8 +2284,6 @@
       ["it", "rakuten", "採用情報", "https://corp.rakuten.co.jp/careers/", false],
       ["it", "rakuten", "お問い合わせ", "https://corp.rakuten.co.jp/contact/", false, true],
       ["it", "rakuten", "技術・R&D", "https://corp.rakuten.co.jp/innovation/", false],
-
-      // ── アマゾンジャパン ─────────────────────────────────────────
       ["it", "amazon_jp", "TOPページ", "https://www.amazon.co.jp/", false],
       ["it", "amazon_jp", "企業情報", "https://www.aboutamazon.jp/", false, true],
       ["it", "amazon_jp", "サービス一覧", "https://aws.amazon.com/jp/", false],
@@ -2319,156 +2293,86 @@
       ["it", "amazon_jp", "IR情報", "https://ir.aboutamazon.com/", false],
       ["it", "amazon_jp", "お問い合わせ", "https://www.amazon.co.jp/gp/help/customer/display.html", false],
       ["it", "amazon_jp", "技術・R&D", "https://www.aboutamazon.jp/innovation/", false],
-
-      // ── 博報堂テクノロジーズ ─────────────────────────────────────
       ["it", "hkd_tech", "TOPページ", "https://hakuhodo-technologies.co.jp/", false],
       ["it", "hkd_tech", "企業情報", "https://hakuhodo-technologies.co.jp/about/", false, true],
       ["it", "hkd_tech", "ニュースリリース", "https://hakuhodo-technologies.co.jp/news/", false, true],
       ["it", "hkd_tech", "サービス一覧", "https://hakuhodo-technologies.co.jp/service/", false, true],
-      ["it", "hkd_tech", "料金プラン", null, null],
-      ["it", "hkd_tech", "サポート・FAQ", null, null],
-      ["it", "hkd_tech", "キャンペーン", null, null],
       ["it", "hkd_tech", "サステナビリティ", "https://hakuhodo-technologies.co.jp/sustainability/", false, true],
-      ["it", "hkd_tech", "IR情報", null, null],
       ["it", "hkd_tech", "採用情報", "https://hakuhodo-technologies.co.jp/careers/", false, true],
       ["it", "hkd_tech", "お問い合わせ", "https://hakuhodo-technologies.co.jp/contact/", false, true],
       ["it", "hkd_tech", "技術・R&D", "https://hakuhodo-technologies.co.jp/technology/", false, true],
-
-      // ── 電通デジタル ─────────────────────────────────────────────
       ["it", "dnt_dig", "TOPページ", "https://www.dentsudigital.co.jp/", false],
       ["it", "dnt_dig", "企業情報", "https://www.dentsudigital.co.jp/about/", false],
       ["it", "dnt_dig", "ニュースリリース", "https://www.dentsudigital.co.jp/news/", false],
       ["it", "dnt_dig", "サービス一覧", "https://www.dentsudigital.co.jp/service/", false, true],
-      ["it", "dnt_dig", "料金プラン", null, null],
-      ["it", "dnt_dig", "サポート・FAQ", null, null],
-      ["it", "dnt_dig", "キャンペーン", null, null],
       ["it", "dnt_dig", "サステナビリティ", "https://www.dentsudigital.co.jp/sustainability/", false, true],
-      ["it", "dnt_dig", "IR情報", null, null],
       ["it", "dnt_dig", "採用情報", "https://www.dentsudigital.co.jp/careers/", false],
       ["it", "dnt_dig", "お問い合わせ", "https://www.dentsudigital.co.jp/contact/", false],
       ["it", "dnt_dig", "技術・R&D", "https://www.dentsudigital.co.jp/technology/", false, true],
-
-      // ── サイバーエージェント ─────────────────────────────────────
       ["it", "cyberagent", "TOPページ", "https://www.cyberagent.co.jp/", false],
       ["it", "cyberagent", "企業情報", "https://www.cyberagent.co.jp/corporate/", false],
       ["it", "cyberagent", "ニュースリリース", "https://www.cyberagent.co.jp/news/", false],
       ["it", "cyberagent", "サービス一覧", "https://www.cyberagent.co.jp/business/", false, true],
-      ["it", "cyberagent", "料金プラン", null, null],
-      ["it", "cyberagent", "サポート・FAQ", null, null],
-      ["it", "cyberagent", "キャンペーン", null, null],
       ["it", "cyberagent", "サステナビリティ", "https://www.cyberagent.co.jp/sustainability/", false],
       ["it", "cyberagent", "IR情報", "https://www.cyberagent.co.jp/ir/", false],
       ["it", "cyberagent", "採用情報", "https://www.cyberagent.co.jp/careers/", false],
       ["it", "cyberagent", "お問い合わせ", "https://www.cyberagent.co.jp/contact/", false],
-
-      // ── セプテーニ・ホールディングス ─────────────────────────────
       ["it", "septeni", "サービス一覧", "https://www.septeni-holdings.co.jp/service/", false, true],
-      ["it", "septeni", "料金プラン", null, null],
-      ["it", "septeni", "サポート・FAQ", null, null],
-      ["it", "septeni", "キャンペーン", null, null],
       ["it", "septeni", "採用情報", "https://www.septeni-holdings.co.jp/careers/", false, true],
       ["it", "septeni", "技術・R&D", "https://www.septeni-holdings.co.jp/technology/", false, true],
-
-      // ── JPデジタル ───────────────────────────────────────────────
-      ["it", "jp_digital", "料金プラン", null, null],
-      ["it", "jp_digital", "サポート・FAQ", null, null],
-      ["it", "jp_digital", "キャンペーン", null, null],
-      ["it", "jp_digital", "サステナビリティ", null, null],
-      ["it", "jp_digital", "IR情報", null, null],
-
-      // ── 京セラコミュニケーションシステム ─────────────────────────
       ["it", "kyocera_cs", "企業情報", "https://www.kccs.co.jp/corporate/", false, true],
       ["it", "kyocera_cs", "サービス一覧", "https://www.kccs.co.jp/service/", false, true],
-      ["it", "kyocera_cs", "料金プラン", null, null],
       ["it", "kyocera_cs", "サポート・FAQ", "https://www.kccs.co.jp/support/", false, true],
-      ["it", "kyocera_cs", "キャンペーン", null, null],
       ["it", "kyocera_cs", "サステナビリティ", "https://www.kccs.co.jp/csr/", false, true],
-      ["it", "kyocera_cs", "IR情報", null, null],
       ["it", "kyocera_cs", "採用情報", "https://www.kccs.co.jp/recruit/", false],
       ["it", "kyocera_cs", "技術・R&D", "https://www.kccs.co.jp/technology/", false, true],
-
-      // ── 伊藤忠テクノソリューションズ (CTC) ──────────────────────
       ["it", "ctc", "TOPページ", "https://www.ctc-g.co.jp/", false],
       ["it", "ctc", "企業情報", "https://www.ctc-g.co.jp/company/", false],
       ["it", "ctc", "ニュースリリース", "https://www.ctc-g.co.jp/news/", false],
       ["it", "ctc", "サービス一覧", "https://www.ctc-g.co.jp/service/", false, true],
-      ["it", "ctc", "料金プラン", null, null],
       ["it", "ctc", "サポート・FAQ", "https://www.ctc-g.co.jp/support/", false, true],
-      ["it", "ctc", "キャンペーン", null, null],
       ["it", "ctc", "サステナビリティ", "https://www.ctc-g.co.jp/csr/", false, true],
       ["it", "ctc", "IR情報", "https://www.ctc-g.co.jp/ir/", false, true],
       ["it", "ctc", "採用情報", "https://www.ctc-g.co.jp/recruit/", false],
       ["it", "ctc", "お問い合わせ", "https://www.ctc-g.co.jp/contact/", false, true],
       ["it", "ctc", "技術・R&D", "https://www.ctc-g.co.jp/technology/", false, true],
-
-      // ── SCSK ─────────────────────────────────────────────────────
       ["it", "scsk", "企業情報", "https://www.scsk.jp/corp/company/", false, true],
       ["it", "scsk", "ニュースリリース", "https://www.scsk.jp/corp/news/", false, true],
       ["it", "scsk", "サービス一覧", "https://www.scsk.jp/service/", false, true],
-      ["it", "scsk", "料金プラン", null, null],
       ["it", "scsk", "サポート・FAQ", "https://www.scsk.jp/support/", false],
-      ["it", "scsk", "キャンペーン", null, null],
       ["it", "scsk", "サステナビリティ", "https://www.scsk.jp/corp/csr/", false],
       ["it", "scsk", "IR情報", "https://www.scsk.jp/corp/ir/", false, true],
       ["it", "scsk", "採用情報", "https://www.scsk.jp/corp/recruit/", false, true],
       ["it", "scsk", "お問い合わせ", "https://www.scsk.jp/corp/contact/", false, true],
       ["it", "scsk", "技術・R&D", "https://www.scsk.jp/technology/", false, true],
-
-      // ── Workthy ──────────────────────────────────────────────────
-      ["it", "workthy", "キャンペーン", null, null],
-      ["it", "workthy", "サステナビリティ", null, null],
-      ["it", "workthy", "IR情報", null, null],
-      ["it", "workthy", "技術・R&D", null, null],
-
-      // ── リクルートホールディングス ───────────────────────────────
       ["it", "recruit", "TOPページ", "https://www.recruit.co.jp/", false],
       ["it", "recruit", "企業情報", "https://recruit-holdings.com/ja/", false],
       ["it", "recruit", "ニュースリリース", "https://recruit-holdings.com/ja/news_data/", false, true],
       ["it", "recruit", "サービス一覧", "https://www.recruit.co.jp/about/service/", false, true],
-      ["it", "recruit", "料金プラン", null, null],
-      ["it", "recruit", "サポート・FAQ", null, null],
-      ["it", "recruit", "キャンペーン", null, null],
       ["it", "recruit", "サステナビリティ", "https://recruit-holdings.com/ja/sustainability/", false],
       ["it", "recruit", "IR情報", "https://recruit-holdings.com/ja/ir/", false],
       ["it", "recruit", "採用情報", "https://recruit-holdings.com/ja/careers/", false, true],
       ["it", "recruit", "お問い合わせ", "https://recruit-holdings.com/ja/contact/", false],
       ["it", "recruit", "技術・R&D", "https://recruit-holdings.com/ja/research/", false, true],
-
-      // ── パーソルキャリア ─────────────────────────────────────────
       ["it", "persol", "TOPページ", "https://www.persol-career.co.jp/", false],
       ["it", "persol", "ニュースリリース", "https://www.persol-career.co.jp/news/", false],
       ["it", "persol", "サービス一覧", "https://www.persol-career.co.jp/service/", false],
-      ["it", "persol", "料金プラン", null, null],
-      ["it", "persol", "サポート・FAQ", null, null],
-      ["it", "persol", "キャンペーン", null, null],
-      ["it", "persol", "IR情報", null, null],
       ["it", "persol", "採用情報", "https://www.persol-career.co.jp/recruit/", false],
       ["it", "persol", "お問い合わせ", "https://www.persol-career.co.jp/contact/", false],
-
-      // ── ビズリーチ ───────────────────────────────────────────────
       ["it", "bizreach", "TOPページ", "https://www.bizreach.co.jp/", false],
       ["it", "bizreach", "企業情報", "https://www.bizreach.co.jp/company/", false, true],
       ["it", "bizreach", "ニュースリリース", "https://www.bizreach.co.jp/news/", false, true],
       ["it", "bizreach", "サービス一覧", "https://www.bizreach.co.jp/service/", false],
       ["it", "bizreach", "料金プラン", "https://www.bizreach.jp/premium/", false],
       ["it", "bizreach", "サポート・FAQ", "https://www.bizreach.jp/faq/", false],
-      ["it", "bizreach", "キャンペーン", null, null],
       ["it", "bizreach", "サステナビリティ", "https://www.bizreach.co.jp/csr/", false, true],
-      ["it", "bizreach", "IR情報", null, null],
       ["it", "bizreach", "採用情報", "https://www.bizreach.co.jp/recruit/", false],
       ["it", "bizreach", "お問い合わせ", "https://www.bizreach.co.jp/contact/", false],
-
-      // ══════════════════════════════════════════════════════════════
-      //  電機・精密
-      // ══════════════════════════════════════════════════════════════
-
-      // ── 日立製作所 ───────────────────────────────────────────────
       ["electronics", "hitachi", "TOPページ", "https://www.hitachi.co.jp/", false],
       ["electronics", "hitachi", "企業情報", "https://www.hitachi.co.jp/about/", false],
       ["electronics", "hitachi", "ニュースリリース", "https://www.hitachi.co.jp/New/cnews/", false],
       ["electronics", "hitachi", "製品一覧", "https://www.hitachi.co.jp/products/", false],
       ["electronics", "hitachi", "製品詳細", "https://www.hitachi.co.jp/products/infrastructure/", false],
-      ["electronics", "hitachi", "EC・購入", null, null],
       ["electronics", "hitachi", "修理・サポート", "https://kadenfan.hitachi.co.jp/support/", false],
       ["electronics", "hitachi", "キャンペーン", "https://www.hitachi.co.jp/campaign/", false, true],
       ["electronics", "hitachi", "サステナビリティ", "https://www.hitachi.co.jp/sustainability/", false],
@@ -2476,18 +2380,13 @@
       ["electronics", "hitachi", "採用情報", "https://www.hitachi.co.jp/recruit/", false],
       ["electronics", "hitachi", "お問い合わせ", "https://www.hitachi.co.jp/contact/", false, true],
       ["electronics", "hitachi", "技術・R&D", "https://www.hitachi.co.jp/rd/", false],
-
-      // ── 日立グローバルライフソリューションズ ─────────────────────
       ["electronics", "hgls", "TOPページ", "https://kadenfan.hitachi.co.jp/", false],
       ["electronics", "hgls", "製品一覧", "https://kadenfan.hitachi.co.jp/products/", false],
       ["electronics", "hgls", "製品詳細", "https://kadenfan.hitachi.co.jp/aircon/", false, true],
       ["electronics", "hgls", "EC・購入", "https://kadenfan.hitachi.co.jp/shop/", false, true],
       ["electronics", "hgls", "修理・サポート", "https://kadenfan.hitachi.co.jp/support/", false],
       ["electronics", "hgls", "キャンペーン", "https://kadenfan.hitachi.co.jp/campaign/", false, true],
-      ["electronics", "hgls", "IR情報", null, null],
       ["electronics", "hgls", "お問い合わせ", "https://kadenfan.hitachi.co.jp/contact/", false, true],
-
-      // ── パナソニック ホールディングス ────────────────────────────
       ["electronics", "panasonic", "TOPページ", "https://www.panasonic.com/jp/", false],
       ["electronics", "panasonic", "ニュースリリース", "https://news.panasonic.com/jp/", false],
       ["electronics", "panasonic", "EC・購入", "https://ec-plus.panasonic.jp/", false],
@@ -2495,14 +2394,11 @@
       ["electronics", "panasonic", "採用情報", "https://holdings.panasonic/jp/corporate/careers.html", false],
       ["electronics", "panasonic", "お問い合わせ", "https://www.panasonic.com/jp/support/", false],
       ["electronics", "panasonic", "技術・R&D", "https://holdings.panasonic/jp/corporate/technology.html", false],
-
-      // ── 三菱電機 ─────────────────────────────────────────────────
       ["electronics", "mitsubishi_e", "TOPページ", "https://www.mitsubishielectric.co.jp/", false],
       ["electronics", "mitsubishi_e", "企業情報", "https://www.mitsubishielectric.co.jp/corporate/", false],
       ["electronics", "mitsubishi_e", "ニュースリリース", "https://www.mitsubishielectric.co.jp/news/", false],
       ["electronics", "mitsubishi_e", "製品一覧", "https://www.mitsubishielectric.co.jp/products/", false],
       ["electronics", "mitsubishi_e", "製品詳細", "https://www.mitsubishielectric.co.jp/products/air-conditioning/", false, true],
-      ["electronics", "mitsubishi_e", "EC・購入", null, null],
       ["electronics", "mitsubishi_e", "修理・サポート", "https://www.mitsubishielectric.co.jp/support/", false],
       ["electronics", "mitsubishi_e", "キャンペーン", "https://www.mitsubishielectric.co.jp/campaign/", false, true],
       ["electronics", "mitsubishi_e", "サステナビリティ", "https://www.mitsubishielectric.co.jp/corporate/environment/", false],
@@ -2510,14 +2406,11 @@
       ["electronics", "mitsubishi_e", "採用情報", "https://www.mitsubishielectric.co.jp/corporate/saiyo/", false, true],
       ["electronics", "mitsubishi_e", "お問い合わせ", "https://www.mitsubishielectric.co.jp/support/", false],
       ["electronics", "mitsubishi_e", "技術・R&D", "https://www.mitsubishielectric.co.jp/rd/", false, true],
-
-      // ── 東芝 ─────────────────────────────────────────────────────
       ["electronics", "toshiba", "TOPページ", "https://www.global.toshiba/jp/top.html", false],
       ["electronics", "toshiba", "企業情報", "https://www.global.toshiba/jp/company.html", false],
       ["electronics", "toshiba", "ニュースリリース", "https://www.global.toshiba/jp/news.html", false],
       ["electronics", "toshiba", "製品一覧", "https://www.global.toshiba/jp/products-solutions.html", false],
       ["electronics", "toshiba", "製品詳細", "https://www.global.toshiba/jp/products-solutions/infrastructure.html", false, true],
-      ["electronics", "toshiba", "EC・購入", null, null],
       ["electronics", "toshiba", "修理・サポート", "https://www.global.toshiba/jp/support.html", false, true],
       ["electronics", "toshiba", "キャンペーン", "https://www.global.toshiba/jp/campaign.html", false, true],
       ["electronics", "toshiba", "サステナビリティ", "https://www.global.toshiba/jp/sustainability.html", false],
@@ -2525,14 +2418,11 @@
       ["electronics", "toshiba", "採用情報", "https://www.global.toshiba/jp/recruit.html", false],
       ["electronics", "toshiba", "お問い合わせ", "https://www.global.toshiba/jp/contact.html", false],
       ["electronics", "toshiba", "技術・R&D", "https://www.global.toshiba/jp/technology.html", false],
-
-      // ── 富士通 ───────────────────────────────────────────────────
       ["electronics", "fujitsu", "TOPページ", "https://www.fujitsu.com/jp/", false],
       ["electronics", "fujitsu", "企業情報", "https://www.fujitsu.com/jp/about/", false],
       ["electronics", "fujitsu", "ニュースリリース", "https://pr.fujitsu.com/jp/news/", false, true],
       ["electronics", "fujitsu", "製品一覧", "https://www.fujitsu.com/jp/services/", false],
       ["electronics", "fujitsu", "製品詳細", "https://www.fujitsu.com/jp/services/infrastructure/", false],
-      ["electronics", "fujitsu", "EC・購入", null, null],
       ["electronics", "fujitsu", "修理・サポート", "https://eservice.fujitsu.com/", false],
       ["electronics", "fujitsu", "キャンペーン", "https://www.fujitsu.com/jp/campaign/", false],
       ["electronics", "fujitsu", "サステナビリティ", "https://www.fujitsu.com/jp/sustainability/", false],
@@ -2540,8 +2430,6 @@
       ["electronics", "fujitsu", "採用情報", "https://www.fujitsu.com/jp/about/resources/jobs/", false],
       ["electronics", "fujitsu", "お問い合わせ", "https://www.fujitsu.com/jp/contact/", false],
       ["electronics", "fujitsu", "技術・R&D", "https://www.fujitsu.com/jp/technologies/", false],
-
-      // ── NEC ──────────────────────────────────────────────────────
       ["electronics", "nec", "TOPページ", "https://jpn.nec.com/", false],
       ["electronics", "nec", "企業情報", "https://jpn.nec.com/profile/", false],
       ["electronics", "nec", "ニュースリリース", "https://jpn.nec.com/press/", false],
@@ -2554,14 +2442,11 @@
       ["electronics", "nec", "採用情報", "https://jpn.nec.com/recruit/", false],
       ["electronics", "nec", "お問い合わせ", "https://jpn.nec.com/contact/", false],
       ["electronics", "nec", "技術・R&D", "https://jpn.nec.com/rd/", false],
-
-      // ── 日本IBM ──────────────────────────────────────────────────
       ["electronics", "ibm_jp", "TOPページ", "https://www.ibm.com/jp-ja", false],
       ["electronics", "ibm_jp", "企業情報", "https://www.ibm.com/jp-ja/about", false],
       ["electronics", "ibm_jp", "ニュースリリース", "https://newsroom.ibm.com/japan", false, true],
       ["electronics", "ibm_jp", "製品一覧", "https://www.ibm.com/jp-ja/products", false],
       ["electronics", "ibm_jp", "製品詳細", "https://www.ibm.com/jp-ja/cloud", false],
-      ["electronics", "ibm_jp", "EC・購入", null, null],
       ["electronics", "ibm_jp", "修理・サポート", "https://www.ibm.com/jp-ja/support", false],
       ["electronics", "ibm_jp", "キャンペーン", "https://www.ibm.com/jp-ja/events", false, true],
       ["electronics", "ibm_jp", "サステナビリティ", "https://www.ibm.com/jp-ja/about/corporate-social-responsibility", false],
@@ -2569,8 +2454,6 @@
       ["electronics", "ibm_jp", "採用情報", "https://www.ibm.com/jp-ja/employment/", false],
       ["electronics", "ibm_jp", "お問い合わせ", "https://www.ibm.com/jp-ja/contact", false],
       ["electronics", "ibm_jp", "技術・R&D", "https://research.ibm.com/labs/tokyo/", false],
-
-      // ── Dell Technologies Japan ───────────────────────────────────
       ["electronics", "dell_jp", "TOPページ", "https://www.dell.com/ja-jp", false],
       ["electronics", "dell_jp", "企業情報", "https://www.dell.com/ja-jp/dt/corporate/about-us.htm", false],
       ["electronics", "dell_jp", "製品一覧", "https://www.dell.com/ja-jp/shop/", false],
@@ -2581,8 +2464,6 @@
       ["electronics", "dell_jp", "サステナビリティ", "https://www.dell.com/ja-jp/dt/corporate/social-impact.htm", false],
       ["electronics", "dell_jp", "採用情報", "https://jobs.dell.com/", false],
       ["electronics", "dell_jp", "技術・R&D", "https://www.dell.com/ja-jp/dt/what-we-do/emerging-technology.htm", false],
-
-      // ── 日本HP ───────────────────────────────────────────────────
       ["electronics", "hp_jp", "TOPページ", "https://www.hp.com/jp-ja/", false, true],
       ["electronics", "hp_jp", "企業情報", "https://www.hp.com/jp-ja/shop/cv/hp-story", false],
       ["electronics", "hp_jp", "ニュースリリース", "https://www.hp.com/jp-ja/shop/cv/press", false],
@@ -2596,8 +2477,6 @@
       ["electronics", "hp_jp", "採用情報", "https://jobs.hp.com/", false],
       ["electronics", "hp_jp", "お問い合わせ", "https://support.hp.com/jp-ja/contact", false],
       ["electronics", "hp_jp", "技術・R&D", "https://www.hp.com/jp-ja/shop/cv/hplabs", false],
-
-      // ── レノボ・ジャパン ─────────────────────────────────────────
       ["electronics", "lenovo_jp", "TOPページ", "https://www.lenovo.com/jp/ja/", false, true],
       ["electronics", "lenovo_jp", "企業情報", "https://www.lenovo.com/jp/ja/about/", false, true],
       ["electronics", "lenovo_jp", "ニュースリリース", "https://news.lenovo.com/pressroom/press-releases/japan/", false, true],
@@ -2609,8 +2488,6 @@
       ["electronics", "lenovo_jp", "IR情報", "https://investor.lenovo.com/", false],
       ["electronics", "lenovo_jp", "採用情報", "https://jobs.lenovo.com/", false],
       ["electronics", "lenovo_jp", "技術・R&D", "https://research.lenovo.com/", false],
-
-      // ── Apple Japan ──────────────────────────────────────────────
       ["electronics", "apple_jp", "TOPページ", "https://www.apple.com/jp/", false],
       ["electronics", "apple_jp", "企業情報", "https://www.apple.com/jp/about/", false],
       ["electronics", "apple_jp", "ニュースリリース", "https://www.apple.com/jp/newsroom/", false],
@@ -2624,8 +2501,6 @@
       ["electronics", "apple_jp", "採用情報", "https://www.apple.com/jp/jobs/jp/", false, true],
       ["electronics", "apple_jp", "お問い合わせ", "https://support.apple.com/ja-jp/contact", false],
       ["electronics", "apple_jp", "技術・R&D", "https://machinelearning.apple.com/", false],
-
-      // ── アネスト岩田 ─────────────────────────────────────────────
       ["electronics", "anest", "企業情報", "https://www.anest-iwata.co.jp/company/", false],
       ["electronics", "anest", "製品一覧", "https://www.anest-iwata.co.jp/products/", false],
       ["electronics", "anest", "製品詳細", "https://www.anest-iwata.co.jp/products/compressor/", false, true],
@@ -2636,26 +2511,17 @@
       ["electronics", "anest", "IR情報", "https://www.anest-iwata.co.jp/ir/", false],
       ["electronics", "anest", "採用情報", "https://www.anest-iwata.co.jp/recruit/", false],
       ["electronics", "anest", "技術・R&D", "https://www.anest-iwata.co.jp/technology/", false, true],
-
-      // ── SMC ──────────────────────────────────────────────────────
       ["electronics", "smc", "企業情報", "https://www.smcworld.com/ja-jp/corporate/", false, true],
       ["electronics", "smc", "ニュースリリース", "https://www.smcworld.com/ja-jp/news/", false, true],
       ["electronics", "smc", "製品一覧", "https://www.smcworld.com/ja-jp/products/", false, true],
       ["electronics", "smc", "製品詳細", "https://www.smcworld.com/ja-jp/products/actuators/", false, true],
       ["electronics", "smc", "EC・購入", "https://www.smcworld.com/ja-jp/shop/", false, true],
       ["electronics", "smc", "修理・サポート", "https://www.smcworld.com/ja-jp/support/", false, true],
-      ["electronics", "smc", "キャンペーン", null, null],
       ["electronics", "smc", "サステナビリティ", "https://www.smcworld.com/ja-jp/csr/", false, true],
       ["electronics", "smc", "IR情報", "https://www.smcworld.com/ja-jp/ir/", false, true],
       ["electronics", "smc", "採用情報", "https://www.smcworld.com/ja-jp/recruit/", false, true],
       ["electronics", "smc", "お問い合わせ", "https://www.smcworld.com/ja-jp/contact/", false, true],
       ["electronics", "smc", "技術・R&D", "https://www.smcworld.com/ja-jp/technology/", false, true],
-
-      // ── 栗田工業 ─────────────────────────────────────────────────
-      ["electronics", "kurita", "EC・購入", null, null],
-      ["electronics", "kurita", "キャンペーン", null, null],
-
-      // ── ダイキン工業 ─────────────────────────────────────────────
       ["electronics", "daikin", "TOPページ", "https://www.daikin.co.jp/", false],
       ["electronics", "daikin", "企業情報", "https://www.daikin.co.jp/corporate/", false],
       ["electronics", "daikin", "ニュースリリース", "https://www.daikin.co.jp/corporate/news/", false, true],
@@ -2668,234 +2534,175 @@
       ["electronics", "daikin", "採用情報", "https://www.daikin.co.jp/recruit/", false],
       ["electronics", "daikin", "お問い合わせ", "https://www.daikin.co.jp/support/", false, true],
       ["electronics", "daikin", "技術・R&D", "https://www.daikin.co.jp/technology/", false, true],
-
-      ["electronics", "sharp", "TOPページ",      "https://jp.sharp/",                                   false],
-      ["electronics", "sharp", "企業情報",        "https://corporate.jp.sharp/",                         false],
-      ["electronics", "sharp", "ニュースリリース","https://corporate.jp.sharp/news/",                     false],
-      ["electronics", "sharp", "製品一覧",        "https://jp.sharp/products/",                          false],
-      ["electronics", "sharp", "製品詳細",        null,                                                  null],
-      ["electronics", "sharp", "EC・購入",        "https://jp.sharp/products/shop/",                     false],
-      ["electronics", "sharp", "修理・サポート",  "https://jp.sharp/support/",                           false],
-      ["electronics", "sharp", "キャンペーン",    "https://jp.sharp/special/",                           false],
-      ["electronics", "sharp", "サステナビリティ","https://corporate.jp.sharp/csr/",                      false],
-      ["electronics", "sharp", "IR情報",          "https://corporate.jp.sharp/ir/",                      false],
-      ["electronics", "sharp", "採用情報",        "https://corporate.jp.sharp/recruit/",                 false],
-      ["electronics", "sharp", "お問い合わせ",    "https://jp.sharp/support/contact/",                   false],
-      ["electronics", "sharp", "技術・R&D",       "https://corporate.jp.sharp/rd/",                      false],
-
-      ["electronics", "ricoh", "TOPページ",       "https://www.ricoh.co.jp/",                            false],
-      ["electronics", "ricoh", "企業情報",        "https://www.ricoh.co.jp/about/",                      false],
-      ["electronics", "ricoh", "ニュースリリース","https://www.ricoh.co.jp/news/",                        false],
-      ["electronics", "ricoh", "製品一覧",        "https://www.ricoh.co.jp/products/",                   false],
-      ["electronics", "ricoh", "製品詳細",        null,                                                  null],
-      ["electronics", "ricoh", "EC・購入",        "https://www.ricoh.co.jp/products/shop/",              false],
-      ["electronics", "ricoh", "修理・サポート",  "https://www.ricoh.co.jp/support/",                    false],
-      ["electronics", "ricoh", "キャンペーン",    "https://www.ricoh.co.jp/campaign/",                   false],
-      ["electronics", "ricoh", "サステナビリティ","https://www.ricoh.co.jp/sustainability/",              false],
-      ["electronics", "ricoh", "IR情報",          "https://www.ricoh.co.jp/investors/",                  false],
-      ["electronics", "ricoh", "採用情報",        "https://www.ricoh.co.jp/recruit/",                    false],
-      ["electronics", "ricoh", "お問い合わせ",    "https://www.ricoh.co.jp/contact/",                    false],
-      ["electronics", "ricoh", "技術・R&D",       "https://www.ricoh.co.jp/technology/",                 false],
-
-      ["electronics", "canon", "TOPページ",       "https://global.canon/ja/",                            false],
-      ["electronics", "canon", "企業情報",        "https://global.canon/ja/corporate/",                  false],
-      ["electronics", "canon", "ニュースリリース","https://global.canon/ja/news/",                        false],
-      ["electronics", "canon", "製品一覧",        "https://global.canon/ja/products/",                   false],
-      ["electronics", "canon", "製品詳細",        null,                                                  null],
-      ["electronics", "canon", "EC・購入",        "https://shop.canon.jp/",                              false],
-      ["electronics", "canon", "修理・サポート",  "https://global.canon/ja/support/",                    false],
-      ["electronics", "canon", "キャンペーン",    "https://global.canon/ja/campaign/",                   false],
-      ["electronics", "canon", "サステナビリティ","https://global.canon/ja/sustainability/",              false],
-      ["electronics", "canon", "IR情報",          "https://global.canon/ja/ir/",                         false],
-      ["electronics", "canon", "採用情報",        "https://global.canon/ja/recruit/",                    false],
-      ["electronics", "canon", "お問い合わせ",    "https://global.canon/ja/contact/",                    false],
-      ["electronics", "canon", "技術・R&D",       "https://global.canon/ja/technology/",                 false],
-
-      ["electronics", "nikon", "TOPページ",       "https://www.nikon.co.jp/",                            false],
-      ["electronics", "nikon", "企業情報",        "https://www.nikon.co.jp/corporate/",                  false],
-      ["electronics", "nikon", "ニュースリリース","https://www.nikon.co.jp/news/",                        false],
-      ["electronics", "nikon", "製品一覧",        "https://www.nikon.co.jp/products/",                   false],
-      ["electronics", "nikon", "製品詳細",        null,                                                  null],
-      ["electronics", "nikon", "EC・購入",        "https://www.nikon-direct.jp/",                        false],
-      ["electronics", "nikon", "修理・サポート",  "https://www.nikon.co.jp/support/",                    false],
-      ["electronics", "nikon", "キャンペーン",    "https://www.nikon.co.jp/campaign/",                   false],
-      ["electronics", "nikon", "サステナビリティ","https://www.nikon.co.jp/corporate/csr/",               false],
-      ["electronics", "nikon", "IR情報",          "https://www.nikon.co.jp/ir/",                         false],
-      ["electronics", "nikon", "採用情報",        "https://www.nikon.co.jp/recruit/",                    false],
-      ["electronics", "nikon", "お問い合わせ",    "https://www.nikon.co.jp/contact/",                    false],
-      ["electronics", "nikon", "技術・R&D",       "https://www.nikon.co.jp/technology/",                 false],
-
-      ["electronics", "epson", "TOPページ",       "https://www.epson.jp/",                               false],
-      ["electronics", "epson", "企業情報",        "https://www.epson.jp/company/",                       false],
-      ["electronics", "epson", "ニュースリリース","https://www.epson.jp/news/",                           false],
-      ["electronics", "epson", "製品一覧",        "https://www.epson.jp/products/",                      false],
-      ["electronics", "epson", "製品詳細",        null,                                                  null],
-      ["electronics", "epson", "EC・購入",        "https://shop.epson.jp/",                              false],
-      ["electronics", "epson", "修理・サポート",  "https://www.epson.jp/support/",                       false],
-      ["electronics", "epson", "キャンペーン",    "https://www.epson.jp/campaign/",                      false],
-      ["electronics", "epson", "サステナビリティ","https://www.epson.jp/company/ja/sr/",                  false],
-      ["electronics", "epson", "IR情報",          "https://www.epson.jp/IR/",                            false],
-      ["electronics", "epson", "採用情報",        "https://www.epson.jp/recruit/",                       false],
-      ["electronics", "epson", "お問い合わせ",    "https://www.epson.jp/support/contact/",               false],
-      ["electronics", "epson", "技術・R&D",       "https://www.epson.jp/technology/",                    false],
-
-      ["electronics", "brother", "TOPページ",     "https://www.brother.co.jp/",                          false],
-      ["electronics", "brother", "企業情報",      "https://www.brother.co.jp/about/",                    false],
-      ["electronics", "brother", "ニュースリリース","https://www.brother.co.jp/news/",                    false],
-      ["electronics", "brother", "製品一覧",      "https://www.brother.co.jp/product/",                  false],
-      ["electronics", "brother", "製品詳細",      null,                                                  null],
-      ["electronics", "brother", "EC・購入",      "https://www.brother.co.jp/product/shop/",             false],
-      ["electronics", "brother", "修理・サポート","https://www.brother.co.jp/product/support/",           false],
-      ["electronics", "brother", "キャンペーン",  "https://www.brother.co.jp/campaign/",                 false],
-      ["electronics", "brother", "サステナビリティ","https://www.brother.co.jp/csr/",                     false],
-      ["electronics", "brother", "IR情報",        "https://www.brother.co.jp/ir/",                       false],
-      ["electronics", "brother", "採用情報",      "https://www.brother.co.jp/recruit/",                  false],
-      ["electronics", "brother", "お問い合わせ",  "https://www.brother.co.jp/contact/",                  false],
-      ["electronics", "brother", "技術・R&D",     "https://www.brother.co.jp/technology/",               false],
-
-      ["electronics", "kyocera", "TOPページ",     "https://www.kyocera.co.jp/",                          false],
-      ["electronics", "kyocera", "企業情報",      "https://www.kyocera.co.jp/company/",                  false],
-      ["electronics", "kyocera", "ニュースリリース","https://www.kyocera.co.jp/news/",                    false],
-      ["electronics", "kyocera", "製品一覧",      "https://www.kyocera.co.jp/products/",                 false],
-      ["electronics", "kyocera", "製品詳細",      null,                                                  null],
-      ["electronics", "kyocera", "EC・購入",      null,                                                  null],
-      ["electronics", "kyocera", "修理・サポート","https://www.kyocera.co.jp/support/",                   false],
-      ["electronics", "kyocera", "キャンペーン",  null,                                                  null],
-      ["electronics", "kyocera", "サステナビリティ","https://www.kyocera.co.jp/sustainability/",          false],
-      ["electronics", "kyocera", "IR情報",        "https://www.kyocera.co.jp/ir/",                       false],
-      ["electronics", "kyocera", "採用情報",      "https://www.kyocera.co.jp/recruit/",                  false],
-      ["electronics", "kyocera", "お問い合わせ",  "https://www.kyocera.co.jp/contact/",                  false],
-      ["electronics", "kyocera", "技術・R&D",     "https://www.kyocera.co.jp/technology/",               false],
-
-      ["electronics", "omron", "TOPページ",       "https://www.omron.com/jp/ja/",                        false],
-      ["electronics", "omron", "企業情報",        "https://www.omron.com/jp/ja/about/",                  false],
-      ["electronics", "omron", "ニュースリリース","https://www.omron.com/jp/ja/news/",                    false],
-      ["electronics", "omron", "製品一覧",        "https://www.omron.com/jp/ja/products/",               false],
-      ["electronics", "omron", "製品詳細",        null,                                                  null],
-      ["electronics", "omron", "EC・購入",        null,                                                  null],
-      ["electronics", "omron", "修理・サポート",  "https://www.omron.com/jp/ja/support/",                false],
-      ["electronics", "omron", "キャンペーン",    null,                                                  null],
-      ["electronics", "omron", "サステナビリティ","https://www.omron.com/jp/ja/sustainability/",          false],
-      ["electronics", "omron", "IR情報",          "https://www.omron.com/jp/ja/ir/",                     false],
-      ["electronics", "omron", "採用情報",        "https://www.omron.com/jp/ja/careers/",                false],
-      ["electronics", "omron", "お問い合わせ",    "https://www.omron.com/jp/ja/contact/",                false],
-      ["electronics", "omron", "技術・R&D",       "https://www.omron.com/jp/ja/technology/",             false],
-
-      ["electronics", "yaskawa", "TOPページ",     "https://www.yaskawa.co.jp/",                          false],
-      ["electronics", "yaskawa", "企業情報",      "https://www.yaskawa.co.jp/company/",                  false],
-      ["electronics", "yaskawa", "ニュースリリース","https://www.yaskawa.co.jp/news/",                    false],
-      ["electronics", "yaskawa", "製品一覧",      "https://www.yaskawa.co.jp/products/",                 false],
-      ["electronics", "yaskawa", "製品詳細",      null,                                                  null],
-      ["electronics", "yaskawa", "EC・購入",      null,                                                  null],
-      ["electronics", "yaskawa", "修理・サポート","https://www.yaskawa.co.jp/support/",                   false],
-      ["electronics", "yaskawa", "キャンペーン",  null,                                                  null],
-      ["electronics", "yaskawa", "サステナビリティ","https://www.yaskawa.co.jp/csr/",                     false],
-      ["electronics", "yaskawa", "IR情報",        "https://www.yaskawa.co.jp/ir/",                       false],
-      ["electronics", "yaskawa", "採用情報",      "https://www.yaskawa.co.jp/recruit/",                  false],
-      ["electronics", "yaskawa", "お問い合わせ",  "https://www.yaskawa.co.jp/contact/",                  false],
-      ["electronics", "yaskawa", "技術・R&D",     "https://www.yaskawa.co.jp/technology/",               false],
-
-      ["electronics", "yokogawa", "TOPページ",    "https://www.yokogawa.com/jp/",                        false],
-      ["electronics", "yokogawa", "企業情報",     "https://www.yokogawa.com/jp/about/",                  false],
-      ["electronics", "yokogawa", "ニュースリリース","https://www.yokogawa.com/jp/news/",                 false],
-      ["electronics", "yokogawa", "製品一覧",     "https://www.yokogawa.com/jp/products/",               false],
-      ["electronics", "yokogawa", "製品詳細",     null,                                                  null],
-      ["electronics", "yokogawa", "EC・購入",     null,                                                  null],
-      ["electronics", "yokogawa", "修理・サポート","https://www.yokogawa.com/jp/support/",                false],
-      ["electronics", "yokogawa", "キャンペーン", null,                                                  null],
-      ["electronics", "yokogawa", "サステナビリティ","https://www.yokogawa.com/jp/sustainability/",       false],
-      ["electronics", "yokogawa", "IR情報",       "https://www.yokogawa.com/jp/ir/",                     false],
-      ["electronics", "yokogawa", "採用情報",     "https://www.yokogawa.com/jp/careers/",                false],
-      ["electronics", "yokogawa", "お問い合わせ", "https://www.yokogawa.com/jp/contact/",                false],
-      ["electronics", "yokogawa", "技術・R&D",    "https://www.yokogawa.com/jp/technology/",             false],
-
-      ["electronics", "renesas", "TOPページ",     "https://www.renesas.com/ja/",                         false],
-      ["electronics", "renesas", "企業情報",      "https://www.renesas.com/ja/about/",                   false],
-      ["electronics", "renesas", "ニュースリリース","https://www.renesas.com/ja/news/",                   false],
-      ["electronics", "renesas", "製品一覧",      "https://www.renesas.com/ja/products/",                false],
-      ["electronics", "renesas", "製品詳細",      null,                                                  null],
-      ["electronics", "renesas", "EC・購入",      null,                                                  null],
-      ["electronics", "renesas", "修理・サポート","https://www.renesas.com/ja/support/",                  false],
-      ["electronics", "renesas", "キャンペーン",  null,                                                  null],
-      ["electronics", "renesas", "サステナビリティ","https://www.renesas.com/ja/sustainability/",         false],
-      ["electronics", "renesas", "IR情報",        "https://www.renesas.com/ja/about/ir/",                false],
-      ["electronics", "renesas", "採用情報",      "https://www.renesas.com/ja/about/careers/",           false],
-      ["electronics", "renesas", "お問い合わせ",  "https://www.renesas.com/ja/support/contact/",         false],
-      ["electronics", "renesas", "技術・R&D",     "https://www.renesas.com/ja/products/microcontrollers/",false],
-
-      ["electronics", "rohm", "TOPページ",        "https://www.rohm.co.jp/",                             false],
-      ["electronics", "rohm", "企業情報",         "https://www.rohm.co.jp/company/",                     false],
-      ["electronics", "rohm", "ニュースリリース",  "https://www.rohm.co.jp/news/",                        false],
-      ["electronics", "rohm", "製品一覧",         "https://www.rohm.co.jp/products/",                    false],
-      ["electronics", "rohm", "製品詳細",         null,                                                  null],
-      ["electronics", "rohm", "EC・購入",         null,                                                  null],
-      ["electronics", "rohm", "修理・サポート",   "https://www.rohm.co.jp/support/",                     false],
-      ["electronics", "rohm", "キャンペーン",     null,                                                  null],
-      ["electronics", "rohm", "サステナビリティ",  "https://www.rohm.co.jp/csr/",                         false],
-      ["electronics", "rohm", "IR情報",           "https://www.rohm.co.jp/ir/",                          false],
-      ["electronics", "rohm", "採用情報",         "https://www.rohm.co.jp/recruit/",                     false],
-      ["electronics", "rohm", "お問い合わせ",     "https://www.rohm.co.jp/contact/",                     false],
-      ["electronics", "rohm", "技術・R&D",        "https://www.rohm.co.jp/technology/",                  false],
-
-      // ══════════════════════════════════════════════════════════════
-      //  医薬品・ヘルスケア
-      // ══════════════════════════════════════════════════════════════
-
-      // ── アリナミン製薬 ───────────────────────────────────────────
+      ["electronics", "sharp", "TOPページ", "https://jp.sharp/", false],
+      ["electronics", "sharp", "企業情報", "https://corporate.jp.sharp/", false],
+      ["electronics", "sharp", "ニュースリリース", "https://corporate.jp.sharp/news/", false],
+      ["electronics", "sharp", "製品一覧", "https://jp.sharp/products/", false],
+      ["electronics", "sharp", "EC・購入", "https://jp.sharp/products/shop/", false],
+      ["electronics", "sharp", "修理・サポート", "https://jp.sharp/support/", false],
+      ["electronics", "sharp", "キャンペーン", "https://jp.sharp/special/", false],
+      ["electronics", "sharp", "サステナビリティ", "https://corporate.jp.sharp/csr/", false],
+      ["electronics", "sharp", "IR情報", "https://corporate.jp.sharp/ir/", false],
+      ["electronics", "sharp", "採用情報", "https://corporate.jp.sharp/recruit/", false],
+      ["electronics", "sharp", "お問い合わせ", "https://jp.sharp/support/contact/", false],
+      ["electronics", "sharp", "技術・R&D", "https://corporate.jp.sharp/rd/", false],
+      ["electronics", "ricoh", "TOPページ", "https://www.ricoh.co.jp/", false],
+      ["electronics", "ricoh", "企業情報", "https://www.ricoh.co.jp/about/", false],
+      ["electronics", "ricoh", "ニュースリリース", "https://www.ricoh.co.jp/news/", false],
+      ["electronics", "ricoh", "製品一覧", "https://www.ricoh.co.jp/products/", false],
+      ["electronics", "ricoh", "EC・購入", "https://www.ricoh.co.jp/products/shop/", false],
+      ["electronics", "ricoh", "修理・サポート", "https://www.ricoh.co.jp/support/", false],
+      ["electronics", "ricoh", "キャンペーン", "https://www.ricoh.co.jp/campaign/", false],
+      ["electronics", "ricoh", "サステナビリティ", "https://www.ricoh.co.jp/sustainability/", false],
+      ["electronics", "ricoh", "IR情報", "https://www.ricoh.co.jp/investors/", false],
+      ["electronics", "ricoh", "採用情報", "https://www.ricoh.co.jp/recruit/", false],
+      ["electronics", "ricoh", "お問い合わせ", "https://www.ricoh.co.jp/contact/", false],
+      ["electronics", "ricoh", "技術・R&D", "https://www.ricoh.co.jp/technology/", false],
+      ["electronics", "canon", "TOPページ", "https://global.canon/ja/", false],
+      ["electronics", "canon", "企業情報", "https://global.canon/ja/corporate/", false],
+      ["electronics", "canon", "ニュースリリース", "https://global.canon/ja/news/", false],
+      ["electronics", "canon", "製品一覧", "https://global.canon/ja/products/", false],
+      ["electronics", "canon", "EC・購入", "https://shop.canon.jp/", false],
+      ["electronics", "canon", "修理・サポート", "https://global.canon/ja/support/", false],
+      ["electronics", "canon", "キャンペーン", "https://global.canon/ja/campaign/", false],
+      ["electronics", "canon", "サステナビリティ", "https://global.canon/ja/sustainability/", false],
+      ["electronics", "canon", "IR情報", "https://global.canon/ja/ir/", false],
+      ["electronics", "canon", "採用情報", "https://global.canon/ja/recruit/", false],
+      ["electronics", "canon", "お問い合わせ", "https://global.canon/ja/contact/", false],
+      ["electronics", "canon", "技術・R&D", "https://global.canon/ja/technology/", false],
+      ["electronics", "nikon", "TOPページ", "https://www.nikon.co.jp/", false],
+      ["electronics", "nikon", "企業情報", "https://www.nikon.co.jp/corporate/", false],
+      ["electronics", "nikon", "ニュースリリース", "https://www.nikon.co.jp/news/", false],
+      ["electronics", "nikon", "製品一覧", "https://www.nikon.co.jp/products/", false],
+      ["electronics", "nikon", "EC・購入", "https://www.nikon-direct.jp/", false],
+      ["electronics", "nikon", "修理・サポート", "https://www.nikon.co.jp/support/", false],
+      ["electronics", "nikon", "キャンペーン", "https://www.nikon.co.jp/campaign/", false],
+      ["electronics", "nikon", "サステナビリティ", "https://www.nikon.co.jp/corporate/csr/", false],
+      ["electronics", "nikon", "IR情報", "https://www.nikon.co.jp/ir/", false],
+      ["electronics", "nikon", "採用情報", "https://www.nikon.co.jp/recruit/", false],
+      ["electronics", "nikon", "お問い合わせ", "https://www.nikon.co.jp/contact/", false],
+      ["electronics", "nikon", "技術・R&D", "https://www.nikon.co.jp/technology/", false],
+      ["electronics", "epson", "TOPページ", "https://www.epson.jp/", false],
+      ["electronics", "epson", "企業情報", "https://www.epson.jp/company/", false],
+      ["electronics", "epson", "ニュースリリース", "https://www.epson.jp/news/", false],
+      ["electronics", "epson", "製品一覧", "https://www.epson.jp/products/", false],
+      ["electronics", "epson", "EC・購入", "https://shop.epson.jp/", false],
+      ["electronics", "epson", "修理・サポート", "https://www.epson.jp/support/", false],
+      ["electronics", "epson", "キャンペーン", "https://www.epson.jp/campaign/", false],
+      ["electronics", "epson", "サステナビリティ", "https://www.epson.jp/company/ja/sr/", false],
+      ["electronics", "epson", "IR情報", "https://www.epson.jp/IR/", false],
+      ["electronics", "epson", "採用情報", "https://www.epson.jp/recruit/", false],
+      ["electronics", "epson", "お問い合わせ", "https://www.epson.jp/support/contact/", false],
+      ["electronics", "epson", "技術・R&D", "https://www.epson.jp/technology/", false],
+      ["electronics", "brother", "TOPページ", "https://www.brother.co.jp/", false],
+      ["electronics", "brother", "企業情報", "https://www.brother.co.jp/about/", false],
+      ["electronics", "brother", "ニュースリリース", "https://www.brother.co.jp/news/", false],
+      ["electronics", "brother", "製品一覧", "https://www.brother.co.jp/product/", false],
+      ["electronics", "brother", "EC・購入", "https://www.brother.co.jp/product/shop/", false],
+      ["electronics", "brother", "修理・サポート", "https://www.brother.co.jp/product/support/", false],
+      ["electronics", "brother", "キャンペーン", "https://www.brother.co.jp/campaign/", false],
+      ["electronics", "brother", "サステナビリティ", "https://www.brother.co.jp/csr/", false],
+      ["electronics", "brother", "IR情報", "https://www.brother.co.jp/ir/", false],
+      ["electronics", "brother", "採用情報", "https://www.brother.co.jp/recruit/", false],
+      ["electronics", "brother", "お問い合わせ", "https://www.brother.co.jp/contact/", false],
+      ["electronics", "brother", "技術・R&D", "https://www.brother.co.jp/technology/", false],
+      ["electronics", "kyocera", "TOPページ", "https://www.kyocera.co.jp/", false],
+      ["electronics", "kyocera", "企業情報", "https://www.kyocera.co.jp/company/", false],
+      ["electronics", "kyocera", "ニュースリリース", "https://www.kyocera.co.jp/news/", false],
+      ["electronics", "kyocera", "製品一覧", "https://www.kyocera.co.jp/products/", false],
+      ["electronics", "kyocera", "修理・サポート", "https://www.kyocera.co.jp/support/", false],
+      ["electronics", "kyocera", "サステナビリティ", "https://www.kyocera.co.jp/sustainability/", false],
+      ["electronics", "kyocera", "IR情報", "https://www.kyocera.co.jp/ir/", false],
+      ["electronics", "kyocera", "採用情報", "https://www.kyocera.co.jp/recruit/", false],
+      ["electronics", "kyocera", "お問い合わせ", "https://www.kyocera.co.jp/contact/", false],
+      ["electronics", "kyocera", "技術・R&D", "https://www.kyocera.co.jp/technology/", false],
+      ["electronics", "omron", "TOPページ", "https://www.omron.com/jp/ja/", false],
+      ["electronics", "omron", "企業情報", "https://www.omron.com/jp/ja/about/", false],
+      ["electronics", "omron", "ニュースリリース", "https://www.omron.com/jp/ja/news/", false],
+      ["electronics", "omron", "製品一覧", "https://www.omron.com/jp/ja/products/", false],
+      ["electronics", "omron", "修理・サポート", "https://www.omron.com/jp/ja/support/", false],
+      ["electronics", "omron", "サステナビリティ", "https://www.omron.com/jp/ja/sustainability/", false],
+      ["electronics", "omron", "IR情報", "https://www.omron.com/jp/ja/ir/", false],
+      ["electronics", "omron", "採用情報", "https://www.omron.com/jp/ja/careers/", false],
+      ["electronics", "omron", "お問い合わせ", "https://www.omron.com/jp/ja/contact/", false],
+      ["electronics", "omron", "技術・R&D", "https://www.omron.com/jp/ja/technology/", false],
+      ["electronics", "yaskawa", "TOPページ", "https://www.yaskawa.co.jp/", false],
+      ["electronics", "yaskawa", "企業情報", "https://www.yaskawa.co.jp/company/", false],
+      ["electronics", "yaskawa", "ニュースリリース", "https://www.yaskawa.co.jp/news/", false],
+      ["electronics", "yaskawa", "製品一覧", "https://www.yaskawa.co.jp/products/", false],
+      ["electronics", "yaskawa", "修理・サポート", "https://www.yaskawa.co.jp/support/", false],
+      ["electronics", "yaskawa", "サステナビリティ", "https://www.yaskawa.co.jp/csr/", false],
+      ["electronics", "yaskawa", "IR情報", "https://www.yaskawa.co.jp/ir/", false],
+      ["electronics", "yaskawa", "採用情報", "https://www.yaskawa.co.jp/recruit/", false],
+      ["electronics", "yaskawa", "お問い合わせ", "https://www.yaskawa.co.jp/contact/", false],
+      ["electronics", "yaskawa", "技術・R&D", "https://www.yaskawa.co.jp/technology/", false],
+      ["electronics", "yokogawa", "TOPページ", "https://www.yokogawa.com/jp/", false],
+      ["electronics", "yokogawa", "企業情報", "https://www.yokogawa.com/jp/about/", false],
+      ["electronics", "yokogawa", "ニュースリリース", "https://www.yokogawa.com/jp/news/", false],
+      ["electronics", "yokogawa", "製品一覧", "https://www.yokogawa.com/jp/products/", false],
+      ["electronics", "yokogawa", "修理・サポート", "https://www.yokogawa.com/jp/support/", false],
+      ["electronics", "yokogawa", "サステナビリティ", "https://www.yokogawa.com/jp/sustainability/", false],
+      ["electronics", "yokogawa", "IR情報", "https://www.yokogawa.com/jp/ir/", false],
+      ["electronics", "yokogawa", "採用情報", "https://www.yokogawa.com/jp/careers/", false],
+      ["electronics", "yokogawa", "お問い合わせ", "https://www.yokogawa.com/jp/contact/", false],
+      ["electronics", "yokogawa", "技術・R&D", "https://www.yokogawa.com/jp/technology/", false],
+      ["electronics", "renesas", "TOPページ", "https://www.renesas.com/ja/", false],
+      ["electronics", "renesas", "企業情報", "https://www.renesas.com/ja/about/", false],
+      ["electronics", "renesas", "ニュースリリース", "https://www.renesas.com/ja/news/", false],
+      ["electronics", "renesas", "製品一覧", "https://www.renesas.com/ja/products/", false],
+      ["electronics", "renesas", "修理・サポート", "https://www.renesas.com/ja/support/", false],
+      ["electronics", "renesas", "サステナビリティ", "https://www.renesas.com/ja/sustainability/", false],
+      ["electronics", "renesas", "IR情報", "https://www.renesas.com/ja/about/ir/", false],
+      ["electronics", "renesas", "採用情報", "https://www.renesas.com/ja/about/careers/", false],
+      ["electronics", "renesas", "お問い合わせ", "https://www.renesas.com/ja/support/contact/", false],
+      ["electronics", "renesas", "技術・R&D", "https://www.renesas.com/ja/products/microcontrollers/", false],
+      ["electronics", "rohm", "TOPページ", "https://www.rohm.co.jp/", false],
+      ["electronics", "rohm", "企業情報", "https://www.rohm.co.jp/company/", false],
+      ["electronics", "rohm", "ニュースリリース", "https://www.rohm.co.jp/news/", false],
+      ["electronics", "rohm", "製品一覧", "https://www.rohm.co.jp/products/", false],
+      ["electronics", "rohm", "修理・サポート", "https://www.rohm.co.jp/support/", false],
+      ["electronics", "rohm", "サステナビリティ", "https://www.rohm.co.jp/csr/", false],
+      ["electronics", "rohm", "IR情報", "https://www.rohm.co.jp/ir/", false],
+      ["electronics", "rohm", "採用情報", "https://www.rohm.co.jp/recruit/", false],
+      ["electronics", "rohm", "お問い合わせ", "https://www.rohm.co.jp/contact/", false],
+      ["electronics", "rohm", "技術・R&D", "https://www.rohm.co.jp/technology/", false],
       ["pharma", "alinamin", "TOPページ", "https://alinamin-pharma.co.jp/", false],
       ["pharma", "alinamin", "企業情報", "https://alinamin-pharma.co.jp/company/", false],
       ["pharma", "alinamin", "ニュースリリース", "https://alinamin-pharma.co.jp/news/", false],
       ["pharma", "alinamin", "製品一覧", "https://alinamin-pharma.co.jp/products/", false],
-      ["pharma", "alinamin", "パイプライン", null, null],
       ["pharma", "alinamin", "患者向け情報", "https://alinamin-pharma.co.jp/health/", false, true],
-      ["pharma", "alinamin", "医療従事者向け", null, null],
       ["pharma", "alinamin", "サステナビリティ", "https://alinamin-pharma.co.jp/csr/", false],
-      ["pharma", "alinamin", "IR情報", null, null],
       ["pharma", "alinamin", "採用情報", "https://alinamin-pharma.co.jp/recruit/", false, true],
       ["pharma", "alinamin", "お問い合わせ", "https://alinamin-pharma.co.jp/contact/", false],
       ["pharma", "alinamin", "技術・R&D", "https://alinamin-pharma.co.jp/rd/", false, true],
-
-      // ── 大正製薬 ─────────────────────────────────────────────────
       ["pharma", "taisho", "TOPページ", "https://www.taisho.co.jp/", false],
       ["pharma", "taisho", "企業情報", "https://www.taisho.co.jp/company/", false],
       ["pharma", "taisho", "ニュースリリース", "https://www.taisho.co.jp/company/news/", false],
       ["pharma", "taisho", "製品一覧", "https://www.taisho.co.jp/products/", false],
-      ["pharma", "taisho", "パイプライン", null, null],
       ["pharma", "taisho", "患者向け情報", "https://www.taisho.co.jp/health/", false, true],
-      ["pharma", "taisho", "医療従事者向け", null, null],
       ["pharma", "taisho", "サステナビリティ", "https://www.taisho.co.jp/csr/", false, true],
       ["pharma", "taisho", "IR情報", "https://www.taisho.co.jp/ir/", false, true],
       ["pharma", "taisho", "採用情報", "https://www.taisho.co.jp/recruit/", false],
       ["pharma", "taisho", "お問い合わせ", "https://www.taisho.co.jp/contact/", false, true],
       ["pharma", "taisho", "技術・R&D", "https://www.taisho.co.jp/rd/", false, true],
-
-      // ── ロート製薬 ───────────────────────────────────────────────
       ["pharma", "rohto", "TOPページ", "https://www.rohto.co.jp/", false],
       ["pharma", "rohto", "ニュースリリース", "https://www.rohto.co.jp/news/", false],
       ["pharma", "rohto", "製品一覧", "https://www.rohto.co.jp/products/", false, true],
-      ["pharma", "rohto", "パイプライン", null, null],
       ["pharma", "rohto", "患者向け情報", "https://www.rohto.co.jp/health/", false, true],
-      ["pharma", "rohto", "医療従事者向け", null, null],
       ["pharma", "rohto", "サステナビリティ", "https://www.rohto.co.jp/csr/", false],
       ["pharma", "rohto", "IR情報", "https://www.rohto.co.jp/ir/", false],
       ["pharma", "rohto", "お問い合わせ", "https://www.rohto.co.jp/contact/", false, true],
       ["pharma", "rohto", "技術・R&D", "https://www.rohto.co.jp/rd/", false, true],
-
-      // ── 小林製薬 ─────────────────────────────────────────────────
       ["pharma", "kobayashi", "TOPページ", "https://www.kobayashi.co.jp/", false],
       ["pharma", "kobayashi", "企業情報", "https://www.kobayashi.co.jp/corporate/", false],
       ["pharma", "kobayashi", "ニュースリリース", "https://www.kobayashi.co.jp/corporate/news/", false],
       ["pharma", "kobayashi", "製品一覧", "https://www.kobayashi.co.jp/products/", false, true],
-      ["pharma", "kobayashi", "パイプライン", null, null],
       ["pharma", "kobayashi", "患者向け情報", "https://www.kobayashi.co.jp/health/", false, true],
-      ["pharma", "kobayashi", "医療従事者向け", null, null],
       ["pharma", "kobayashi", "サステナビリティ", "https://www.kobayashi.co.jp/csr/", false, true],
       ["pharma", "kobayashi", "IR情報", "https://www.kobayashi.co.jp/ir/", false],
       ["pharma", "kobayashi", "採用情報", "https://www.kobayashi.co.jp/recruit/", false],
       ["pharma", "kobayashi", "お問い合わせ", "https://www.kobayashi.co.jp/contact/", false, true],
       ["pharma", "kobayashi", "技術・R&D", "https://www.kobayashi.co.jp/rd/", false, true],
-
-      // ── 住友ファーマ ─────────────────────────────────────────────
       ["pharma", "sumitomo_ph", "TOPページ", "https://www.sumitomo-pharma.co.jp/", false, true],
       ["pharma", "sumitomo_ph", "企業情報", "https://www.sumitomo-pharma.co.jp/about/", false, true],
       ["pharma", "sumitomo_ph", "ニュースリリース", "https://www.sumitomo-pharma.co.jp/news/", false, true],
@@ -2908,8 +2715,6 @@
       ["pharma", "sumitomo_ph", "採用情報", "https://www.sumitomo-pharma.co.jp/recruit/", false, true],
       ["pharma", "sumitomo_ph", "お問い合わせ", "https://www.sumitomo-pharma.co.jp/contact/", false, true],
       ["pharma", "sumitomo_ph", "技術・R&D", "https://www.sumitomo-pharma.co.jp/rd/", false],
-
-      // ── 武田薬品工業 ─────────────────────────────────────────────
       ["pharma", "takeda", "TOPページ", "https://www.takeda.com/ja-jp/", false, true],
       ["pharma", "takeda", "企業情報", "https://www.takeda.com/ja-jp/about-takeda/", false, true],
       ["pharma", "takeda", "ニュースリリース", "https://www.takeda.com/ja-jp/newsroom/", false, true],
@@ -2922,8 +2727,6 @@
       ["pharma", "takeda", "採用情報", "https://www.takeda.com/ja-jp/careers/", false, true],
       ["pharma", "takeda", "お問い合わせ", "https://www.takeda.com/ja-jp/contact/", false, true],
       ["pharma", "takeda", "技術・R&D", "https://www.takeda.com/ja-jp/research/", false, true],
-
-      // ── アステラス製薬 ───────────────────────────────────────────
       ["pharma", "astellas", "ニュースリリース", "https://www.astellas.com/jp/news/", false, true],
       ["pharma", "astellas", "製品一覧", "https://www.astellas.com/jp/products/", false, true],
       ["pharma", "astellas", "パイプライン", "https://www.astellas.com/jp/pipeline/", false, true],
@@ -2932,8 +2735,6 @@
       ["pharma", "astellas", "サステナビリティ", "https://www.astellas.com/jp/responsibility/", false, true],
       ["pharma", "astellas", "お問い合わせ", "https://www.astellas.com/jp/contact/", false, true],
       ["pharma", "astellas", "技術・R&D", "https://www.astellas.com/jp/research/", false, true],
-
-      // ── 第一三共 ─────────────────────────────────────────────────
       ["pharma", "daiichi", "TOPページ", "https://www.daiichisankyo.co.jp/", false],
       ["pharma", "daiichi", "企業情報", "https://www.daiichisankyo.co.jp/about/", false, true],
       ["pharma", "daiichi", "ニュースリリース", "https://www.daiichisankyo.co.jp/media/", false],
@@ -2945,8 +2746,6 @@
       ["pharma", "daiichi", "IR情報", "https://www.daiichisankyo.co.jp/ir/", false, true],
       ["pharma", "daiichi", "お問い合わせ", "https://www.daiichisankyo.co.jp/contact/", false],
       ["pharma", "daiichi", "技術・R&D", "https://www.daiichisankyo.co.jp/rd/", false],
-
-      // ── 中外製薬 ─────────────────────────────────────────────────
       ["pharma", "chugai", "TOPページ", "https://www.chugai-pharm.co.jp/", false],
       ["pharma", "chugai", "企業情報", "https://www.chugai-pharm.co.jp/about/", false, true],
       ["pharma", "chugai", "ニュースリリース", "https://www.chugai-pharm.co.jp/news/", false],
@@ -2959,8 +2758,6 @@
       ["pharma", "chugai", "採用情報", "https://www.chugai-pharm.co.jp/recruit/", false],
       ["pharma", "chugai", "お問い合わせ", "https://www.chugai-pharm.co.jp/contact/", false, true],
       ["pharma", "chugai", "技術・R&D", "https://www.chugai-pharm.co.jp/rd/", false, true],
-
-      // ── エーザイ ─────────────────────────────────────────────────
       ["pharma", "eisai", "TOPページ", "https://www.eisai.co.jp/", false],
       ["pharma", "eisai", "企業情報", "https://www.eisai.co.jp/company/", false],
       ["pharma", "eisai", "ニュースリリース", "https://www.eisai.co.jp/news/", false],
@@ -2973,8 +2770,6 @@
       ["pharma", "eisai", "採用情報", "https://www.eisai.co.jp/recruit/", false, true],
       ["pharma", "eisai", "お問い合わせ", "https://www.eisai.co.jp/contact/", false, true],
       ["pharma", "eisai", "技術・R&D", "https://www.eisai.co.jp/rd/", false, true],
-
-      // ── ツムラ ───────────────────────────────────────────────────
       ["pharma", "tsumura", "TOPページ", "https://www.tsumura.co.jp/", false],
       ["pharma", "tsumura", "企業情報", "https://www.tsumura.co.jp/company/", false, true],
       ["pharma", "tsumura", "ニュースリリース", "https://www.tsumura.co.jp/news/", false],
@@ -2987,26 +2782,16 @@
       ["pharma", "tsumura", "採用情報", "https://www.tsumura.co.jp/recruit/", false],
       ["pharma", "tsumura", "お問い合わせ", "https://www.tsumura.co.jp/contact/", false, true],
       ["pharma", "tsumura", "技術・R&D", "https://www.tsumura.co.jp/rd/", false, true],
-
-      // ── クラシエ薬品 ─────────────────────────────────────────────
       ["pharma", "kracie", "TOPページ", "https://www.kracie.co.jp/", false],
       ["pharma", "kracie", "企業情報", "https://www.kracie.co.jp/company/", false],
       ["pharma", "kracie", "ニュースリリース", "https://www.kracie.co.jp/news/", false],
       ["pharma", "kracie", "製品一覧", "https://www.kracie.co.jp/products/", false],
-      ["pharma", "kracie", "パイプライン", null, null],
       ["pharma", "kracie", "患者向け情報", "https://www.kracie.co.jp/health/", false, true],
       ["pharma", "kracie", "医療従事者向け", "https://www.kracie.co.jp/medical/", false, true],
       ["pharma", "kracie", "サステナビリティ", "https://www.kracie.co.jp/csr/", false, true],
-      ["pharma", "kracie", "IR情報", null, null],
       ["pharma", "kracie", "採用情報", "https://www.kracie.co.jp/recruit/", false],
       ["pharma", "kracie", "お問い合わせ", "https://www.kracie.co.jp/contact/", false, true],
       ["pharma", "kracie", "技術・R&D", "https://www.kracie.co.jp/rd/", false],
-
-      // ══════════════════════════════════════════════════════════════
-      //  広告・コンサル・専門サービス
-      // ══════════════════════════════════════════════════════════════
-
-      // ── 博報堂 ───────────────────────────────────────────────────
       ["adcons", "hakuhodo", "TOPページ", "https://www.hakuhodo.co.jp/", false],
       ["adcons", "hakuhodo", "企業情報", "https://www.hakuhodody-holdings.co.jp/", false],
       ["adcons", "hakuhodo", "ニュースリリース", "https://www.hakuhodo.co.jp/news/", false],
@@ -3018,8 +2803,6 @@
       ["adcons", "hakuhodo", "採用情報", "https://www.hakuhodo.co.jp/recruit/", false],
       ["adcons", "hakuhodo", "お問い合わせ", "https://www.hakuhodo.co.jp/contact/", false, true],
       ["adcons", "hakuhodo", "技術・R&D", "https://www.hakuhodo.co.jp/technology/", false, true],
-
-      // ── 電通 ─────────────────────────────────────────────────────
       ["adcons", "dentsu", "TOPページ", "https://www.dentsu.co.jp/", false],
       ["adcons", "dentsu", "企業情報", "https://www.dentsu.com/jp/ja/", false],
       ["adcons", "dentsu", "ニュースリリース", "https://www.dentsu.com/jp/ja/news/", false],
@@ -3030,8 +2813,6 @@
       ["adcons", "dentsu", "IR情報", "https://www.dentsu.com/jp/ja/investor-relations/", false],
       ["adcons", "dentsu", "お問い合わせ", "https://www.dentsu.co.jp/contact/", false, true],
       ["adcons", "dentsu", "技術・R&D", "https://www.dentsu.co.jp/technology/", false, true],
-
-      // ── ADKホールディングス ──────────────────────────────────────
       ["adcons", "adk", "TOPページ", "https://www.adk.jp/", false],
       ["adcons", "adk", "企業情報", "https://www.adk.jp/about/", false],
       ["adcons", "adk", "ニュースリリース", "https://www.adk.jp/news/", false],
@@ -3042,8 +2823,6 @@
       ["adcons", "adk", "採用情報", "https://www.adk.jp/recruit/", false],
       ["adcons", "adk", "お問い合わせ", "https://www.adk.jp/contact/", false, true],
       ["adcons", "adk", "技術・R&D", "https://www.adk.jp/technology/", false, true],
-
-      // ── 東急エージェンシー ──────────────────────────────────────
       ["adcons", "tokyu_ag", "TOPページ", "https://www.tokyu-agc.co.jp/", false],
       ["adcons", "tokyu_ag", "企業情報", "https://www.tokyu-agc.co.jp/about/", false, true],
       ["adcons", "tokyu_ag", "ニュースリリース", "https://www.tokyu-agc.co.jp/news/", false],
@@ -3051,12 +2830,9 @@
       ["adcons", "tokyu_ag", "実績・事例", "https://www.tokyu-agc.co.jp/works/", false, true],
       ["adcons", "tokyu_ag", "ソリューション", "https://www.tokyu-agc.co.jp/solution/", false, true],
       ["adcons", "tokyu_ag", "サステナビリティ", "https://www.tokyu-agc.co.jp/csr/", false, true],
-      ["adcons", "tokyu_ag", "IR情報", null, null],
       ["adcons", "tokyu_ag", "採用情報", "https://www.tokyu-agc.co.jp/recruit/", false],
       ["adcons", "tokyu_ag", "お問い合わせ", "https://www.tokyu-agc.co.jp/contact/", false],
       ["adcons", "tokyu_ag", "技術・R&D", "https://www.tokyu-agc.co.jp/technology/", false, true],
-
-      // ── PwC Japan ────────────────────────────────────────────────
       ["adcons", "pwc_jp", "TOPページ", "https://www.pwc.com/jp/ja/", false],
       ["adcons", "pwc_jp", "企業情報", "https://www.pwc.com/jp/ja/about-us/", false, true],
       ["adcons", "pwc_jp", "ニュースリリース", "https://www.pwc.com/jp/ja/press-room/", false, true],
@@ -3064,12 +2840,9 @@
       ["adcons", "pwc_jp", "実績・事例", "https://www.pwc.com/jp/ja/case-studies/", false, true],
       ["adcons", "pwc_jp", "ソリューション", "https://www.pwc.com/jp/ja/industries/", false, true],
       ["adcons", "pwc_jp", "サステナビリティ", "https://www.pwc.com/jp/ja/sustainability/", false, true],
-      ["adcons", "pwc_jp", "IR情報", null, null],
       ["adcons", "pwc_jp", "採用情報", "https://www.pwc.com/jp/ja/careers/", false, true],
       ["adcons", "pwc_jp", "お問い合わせ", "https://www.pwc.com/jp/ja/contact-us/", false, true],
       ["adcons", "pwc_jp", "技術・R&D", "https://www.pwc.com/jp/ja/knowledge/", false, true],
-
-      // ── 有限責任あずさ監査法人 ──────────────────────────────────
       ["adcons", "azusa", "TOPページ", "https://kpmg.com/jp/ja/home.html", false, true],
       ["adcons", "azusa", "企業情報", "https://kpmg.com/jp/ja/home/about.html", false, true],
       ["adcons", "azusa", "ニュースリリース", "https://kpmg.com/jp/ja/home/insights.html", false, true],
@@ -3077,12 +2850,9 @@
       ["adcons", "azusa", "実績・事例", "https://kpmg.com/jp/ja/home/insights/case-studies.html", false, true],
       ["adcons", "azusa", "ソリューション", "https://kpmg.com/jp/ja/home/industries.html", false, true],
       ["adcons", "azusa", "サステナビリティ", "https://kpmg.com/jp/ja/home/insights/sustainability.html", false, true],
-      ["adcons", "azusa", "IR情報", null, null],
       ["adcons", "azusa", "採用情報", "https://kpmg.com/jp/ja/home/careers.html", false, true],
       ["adcons", "azusa", "お問い合わせ", "https://kpmg.com/jp/ja/home/contact.html", false, true],
       ["adcons", "azusa", "技術・R&D", "https://kpmg.com/jp/ja/home/insights/innovation.html", false, true],
-
-      // ── 有限責任監査法人トーマツ ────────────────────────────────
       ["adcons", "deloitte_jp", "TOPページ", "https://www2.deloitte.com/jp/ja.html", false, true],
       ["adcons", "deloitte_jp", "企業情報", "https://www2.deloitte.com/jp/ja/pages/about-deloitte/articles/about-deloitte.html", false, true],
       ["adcons", "deloitte_jp", "ニュースリリース", "https://www2.deloitte.com/jp/ja/pages/about-deloitte/articles/news.html", false, true],
@@ -3090,12 +2860,9 @@
       ["adcons", "deloitte_jp", "実績・事例", "https://www2.deloitte.com/jp/ja/pages/strategy/topics/case-study.html", false, true],
       ["adcons", "deloitte_jp", "ソリューション", "https://www2.deloitte.com/jp/ja/pages/about-deloitte/articles/industries.html", false, true],
       ["adcons", "deloitte_jp", "サステナビリティ", "https://www2.deloitte.com/jp/ja/pages/about-deloitte/articles/sustainability.html", false, true],
-      ["adcons", "deloitte_jp", "IR情報", null, null],
       ["adcons", "deloitte_jp", "採用情報", "https://www2.deloitte.com/jp/ja/pages/careers/articles/careers.html", false, true],
       ["adcons", "deloitte_jp", "お問い合わせ", "https://www2.deloitte.com/jp/ja/pages/about-deloitte/articles/contact-us.html", false, true],
       ["adcons", "deloitte_jp", "技術・R&D", "https://www2.deloitte.com/jp/ja/pages/technology/articles/technology.html", false, true],
-
-      // ── EY新日本有限責任監査法人 ────────────────────────────────
       ["adcons", "ey_jp", "TOPページ", "https://www.ey.com/ja_jp", false],
       ["adcons", "ey_jp", "企業情報", "https://www.ey.com/ja_jp/about-us", false],
       ["adcons", "ey_jp", "ニュースリリース", "https://www.ey.com/ja_jp/newsroom", false],
@@ -3103,12 +2870,9 @@
       ["adcons", "ey_jp", "実績・事例", "https://www.ey.com/ja_jp/case-studies", false],
       ["adcons", "ey_jp", "ソリューション", "https://www.ey.com/ja_jp/industries", false],
       ["adcons", "ey_jp", "サステナビリティ", "https://www.ey.com/ja_jp/sustainability", false],
-      ["adcons", "ey_jp", "IR情報", null, null],
       ["adcons", "ey_jp", "採用情報", "https://www.ey.com/ja_jp/careers", false],
       ["adcons", "ey_jp", "お問い合わせ", "https://www.ey.com/ja_jp/contact-us", false, true],
       ["adcons", "ey_jp", "技術・R&D", "https://www.ey.com/ja_jp/innovation", false],
-
-      // ── 三菱UFJリサーチ&コンサルティング ────────────────────────
       ["adcons", "murc", "TOPページ", "https://www.murc.jp/", false],
       ["adcons", "murc", "企業情報", "https://www.murc.jp/about/", false],
       ["adcons", "murc", "ニュースリリース", "https://www.murc.jp/news/", false, true],
@@ -3116,12 +2880,9 @@
       ["adcons", "murc", "実績・事例", "https://www.murc.jp/case/", false, true],
       ["adcons", "murc", "ソリューション", "https://www.murc.jp/solution/", false],
       ["adcons", "murc", "サステナビリティ", "https://www.murc.jp/sustainability/", false, true],
-      ["adcons", "murc", "IR情報", null, null],
       ["adcons", "murc", "採用情報", "https://www.murc.jp/career/", false],
       ["adcons", "murc", "お問い合わせ", "https://www.murc.jp/contact/", false, true],
       ["adcons", "murc", "技術・R&D", "https://www.murc.jp/technology/", false, true],
-
-      // ── 野村総合研究所 (NRI) ─────────────────────────────────────
       ["adcons", "nri", "TOPページ", "https://www.nri.com/jp/", false],
       ["adcons", "nri", "企業情報", "https://www.nri.com/jp/about/", false],
       ["adcons", "nri", "ニュースリリース", "https://www.nri.com/jp/news/", false],
@@ -3133,8 +2894,6 @@
       ["adcons", "nri", "採用情報", "https://www.nri.com/jp/career/", false],
       ["adcons", "nri", "お問い合わせ", "https://www.nri.com/jp/contact/", false],
       ["adcons", "nri", "技術・R&D", "https://www.nri.com/jp/technology/", false],
-
-      // ── 日本総合研究所 ───────────────────────────────────────────
       ["adcons", "jri", "TOPページ", "https://www.jri.co.jp/", false],
       ["adcons", "jri", "企業情報", "https://www.jri.co.jp/about/", false],
       ["adcons", "jri", "ニュースリリース", "https://www.jri.co.jp/news/", false, true],
@@ -3142,12 +2901,9 @@
       ["adcons", "jri", "実績・事例", "https://www.jri.co.jp/case/", false, true],
       ["adcons", "jri", "ソリューション", "https://www.jri.co.jp/solution/", false, true],
       ["adcons", "jri", "サステナビリティ", "https://www.jri.co.jp/sustainability/", false, true],
-      ["adcons", "jri", "IR情報", null, null],
       ["adcons", "jri", "採用情報", "https://www.jri.co.jp/career/", false, true],
       ["adcons", "jri", "お問い合わせ", "https://www.jri.co.jp/contact/", false],
       ["adcons", "jri", "技術・R&D", "https://www.jri.co.jp/technology/", false, true],
-
-      // ── みずほリサーチ&テクノロジーズ ───────────────────────────
       ["adcons", "mhrt", "TOPページ", "https://www.mizuho-rt.co.jp/", false],
       ["adcons", "mhrt", "企業情報", "https://www.mizuho-rt.co.jp/about/", false],
       ["adcons", "mhrt", "ニュースリリース", "https://www.mizuho-rt.co.jp/news/", false],
@@ -3155,20 +2911,14 @@
       ["adcons", "mhrt", "実績・事例", "https://www.mizuho-rt.co.jp/case/", false],
       ["adcons", "mhrt", "ソリューション", "https://www.mizuho-rt.co.jp/solution/", false],
       ["adcons", "mhrt", "サステナビリティ", "https://www.mizuho-rt.co.jp/sustainability/", false],
-      ["adcons", "mhrt", "IR情報", null, null],
       ["adcons", "mhrt", "採用情報", "https://www.mizuho-rt.co.jp/career/", false],
       ["adcons", "mhrt", "お問い合わせ", "https://www.mizuho-rt.co.jp/contact/", false],
       ["adcons", "mhrt", "技術・R&D", "https://www.mizuho-rt.co.jp/technology/", false],
-
-      // ── ボストン コンサルティング グループ ──────────────────────
       ["adcons", "bcg_jp", "TOPページ", "https://www.bcg.com/ja-jp", false],
       ["adcons", "bcg_jp", "サービス一覧", "https://www.bcg.com/ja-jp/capabilities", false],
       ["adcons", "bcg_jp", "実績・事例", "https://www.bcg.com/ja-jp/publications", false],
       ["adcons", "bcg_jp", "ソリューション", "https://www.bcg.com/ja-jp/industries", false],
-      ["adcons", "bcg_jp", "IR情報", null, null],
       ["adcons", "bcg_jp", "採用情報", "https://careers.bcg.com/japan", false],
-
-      // ── アクセンチュア ───────────────────────────────────────────
       ["adcons", "accenture", "TOPページ", "https://www.accenture.com/jp-ja/", false],
       ["adcons", "accenture", "企業情報", "https://www.accenture.com/jp-ja/about/", false],
       ["adcons", "accenture", "ニュースリリース", "https://newsroom.accenture.com/news/japan/", false, true],
@@ -3180,20 +2930,14 @@
       ["adcons", "accenture", "採用情報", "https://www.accenture.com/jp-ja/careers/", false],
       ["adcons", "accenture", "お問い合わせ", "https://www.accenture.com/jp-ja/contact/", false],
       ["adcons", "accenture", "技術・R&D", "https://www.accenture.com/jp-ja/insights/technology/", false],
-
-      // ── アンダーソン・毛利・友常法律事務所 ──────────────────────
       ["adcons", "amt_law", "TOPページ", "https://www.amt-law.com/", false],
       ["adcons", "amt_law", "企業情報", "https://www.amt-law.com/about/", false, true],
       ["adcons", "amt_law", "サービス一覧", "https://www.amt-law.com/practices/", false],
       ["adcons", "amt_law", "実績・事例", "https://www.amt-law.com/cases/", false, true],
       ["adcons", "amt_law", "ソリューション", "https://www.amt-law.com/industries/", false, true],
       ["adcons", "amt_law", "サステナビリティ", "https://www.amt-law.com/sustainability/", false, true],
-      ["adcons", "amt_law", "IR情報", null, null],
       ["adcons", "amt_law", "採用情報", "https://www.amt-law.com/careers/", false, true],
       ["adcons", "amt_law", "お問い合わせ", "https://www.amt-law.com/contact/", false, true],
-      ["adcons", "amt_law", "技術・R&D", null, null],
-
-      // ── 西村あさひ法律事務所 ─────────────────────────────────────
       ["adcons", "nishimura", "TOPページ", "https://www.nishimura.com/ja/", false],
       ["adcons", "nishimura", "企業情報", "https://www.nishimura.com/ja/about/", false],
       ["adcons", "nishimura", "ニュースリリース", "https://www.nishimura.com/ja/news/", false],
@@ -3201,12 +2945,8 @@
       ["adcons", "nishimura", "実績・事例", "https://www.nishimura.com/ja/cases/", false],
       ["adcons", "nishimura", "ソリューション", "https://www.nishimura.com/ja/industries/", false],
       ["adcons", "nishimura", "サステナビリティ", "https://www.nishimura.com/ja/sustainability/", false],
-      ["adcons", "nishimura", "IR情報", null, null],
       ["adcons", "nishimura", "採用情報", "https://www.nishimura.com/ja/careers/", false],
       ["adcons", "nishimura", "お問い合わせ", "https://www.nishimura.com/ja/contact/", false],
-      ["adcons", "nishimura", "技術・R&D", null, null],
-
-      // ── 森・濱田松本法律事務所 ──────────────────────────────────
       ["adcons", "mori_h", "TOPページ", "https://www.mhmjapan.com/", false],
       ["adcons", "mori_h", "企業情報", "https://www.mhmjapan.com/about/", false],
       ["adcons", "mori_h", "ニュースリリース", "https://www.mhmjapan.com/news/", false],
@@ -3214,12 +2954,8 @@
       ["adcons", "mori_h", "実績・事例", "https://www.mhmjapan.com/cases/", false, true],
       ["adcons", "mori_h", "ソリューション", "https://www.mhmjapan.com/industries/", false, true],
       ["adcons", "mori_h", "サステナビリティ", "https://www.mhmjapan.com/sustainability/", false],
-      ["adcons", "mori_h", "IR情報", null, null],
       ["adcons", "mori_h", "採用情報", "https://www.mhmjapan.com/careers/", false, true],
       ["adcons", "mori_h", "お問い合わせ", "https://www.mhmjapan.com/contact/", false],
-      ["adcons", "mori_h", "技術・R&D", null, null],
-
-      // ── TMI総合法律事務所 ────────────────────────────────────────
       ["adcons", "tmi_law", "TOPページ", "https://www.tmi.gr.jp/", false],
       ["adcons", "tmi_law", "企業情報", "https://www.tmi.gr.jp/about/", false],
       ["adcons", "tmi_law", "ニュースリリース", "https://www.tmi.gr.jp/news/", false, true],
@@ -3227,54 +2963,30 @@
       ["adcons", "tmi_law", "実績・事例", "https://www.tmi.gr.jp/cases/", false, true],
       ["adcons", "tmi_law", "ソリューション", "https://www.tmi.gr.jp/industries/", false, true],
       ["adcons", "tmi_law", "サステナビリティ", "https://www.tmi.gr.jp/sustainability/", false, true],
-      ["adcons", "tmi_law", "IR情報", null, null],
       ["adcons", "tmi_law", "採用情報", "https://www.tmi.gr.jp/careers/", false, true],
       ["adcons", "tmi_law", "お問い合わせ", "https://www.tmi.gr.jp/contact/", false],
-      ["adcons", "tmi_law", "技術・R&D", null, null],
-
-      // ── エンタメ・メディア ──────────────────────────────────────────
       ["media", "mechacomic", "TOPページ", "https://amutus.co.jp/", false],
       ["media", "mechacomic", "企業情報", "https://amutus.co.jp/company/", false],
       ["media", "mechacomic", "ニュースリリース", "https://amutus.co.jp/news/", false],
       ["media", "mechacomic", "番組・コンテンツ", "https://mechacomic.jp/", false],
-      ["media", "mechacomic", "動画配信", null, null],
       ["media", "mechacomic", "キャンペーン", "https://mechacomic.jp/campaigns", false, true],
-      ["media", "mechacomic", "サステナビリティ", null, null],
-      ["media", "mechacomic", "IR情報", null, null],
       ["media", "mechacomic", "採用情報", "https://amutus.co.jp/recruit/", false],
       ["media", "mechacomic", "お問い合わせ", "https://amutus.co.jp/contact/", false],
-
-      ["media", "comic_s", "動画配信", null, null],
-      ["media", "comic_s", "サステナビリティ", null, null],
-      ["media", "comic_s", "IR情報", null, null],
-
       ["media", "line_manga", "TOPページ", "https://manga.line.me/", false],
       ["media", "line_manga", "企業情報", "https://linecorp.com/ja/", false],
       ["media", "line_manga", "ニュースリリース", "https://linecorp.com/ja/pr/news/ja/", false],
       ["media", "line_manga", "番組・コンテンツ", "https://manga.line.me/", false],
-      ["media", "line_manga", "動画配信", null, null],
       ["media", "line_manga", "タイトル一覧", "https://manga.line.me/book/list", false, true],
       ["media", "line_manga", "キャンペーン", "https://manga.line.me/special/", false, true],
-      ["media", "line_manga", "サステナビリティ", null, null],
-      ["media", "line_manga", "IR情報", null, null],
       ["media", "line_manga", "お問い合わせ", "https://manga.line.me/help/", false, true],
-
       ["media", "piccoma", "TOPページ", "https://piccoma.com/web/", false],
       ["media", "piccoma", "番組・コンテンツ", "https://piccoma.com/web/", false],
-      ["media", "piccoma", "動画配信", null, null],
       ["media", "piccoma", "タイトル一覧", "https://piccoma.com/web/genre", false, true],
       ["media", "piccoma", "キャンペーン", "https://piccoma.com/web/campaign", false, true],
-      ["media", "piccoma", "サステナビリティ", null, null],
-      ["media", "piccoma", "IR情報", null, null],
       ["media", "piccoma", "お問い合わせ", "https://piccoma.com/web/support", false, true],
-
       ["media", "manga_k", "企業情報", "https://www.beaglee.com/company/", false],
       ["media", "manga_k", "ニュースリリース", "https://www.beaglee.com/news/", false],
-      ["media", "manga_k", "動画配信", null, null],
-      ["media", "manga_k", "サステナビリティ", null, null],
-      ["media", "manga_k", "IR情報", null, null],
       ["media", "manga_k", "採用情報", "https://www.beaglee.com/recruit/", false],
-
       ["media", "pokemon", "TOPページ", "https://www.pokemon.co.jp/", false],
       ["media", "pokemon", "企業情報", "https://www.pokemon.co.jp/corporate/", false],
       ["media", "pokemon", "ニュースリリース", "https://www.pokemon.co.jp/corporate/news/", false],
@@ -3282,104 +2994,77 @@
       ["media", "pokemon", "タイトル一覧", "https://www.pokemon.co.jp/game/", false],
       ["media", "pokemon", "キャンペーン", "https://www.pokemon.co.jp/campaign/", false, true],
       ["media", "pokemon", "サステナビリティ", "https://www.pokemon.co.jp/corporate/sustainability/", false],
-      ["media", "pokemon", "IR情報", null, null],
       ["media", "pokemon", "採用情報", "https://www.pokemon.co.jp/corporate/recruit/", false],
       ["media", "pokemon", "お問い合わせ", "https://www.pokemon.co.jp/support/", false],
-
       ["media", "sanrio", "TOPページ", "https://www.sanrio.co.jp/", false],
       ["media", "sanrio", "企業情報", "https://www.sanrio.co.jp/corporate/", false],
       ["media", "sanrio", "ニュースリリース", "https://www.sanrio.co.jp/news/", false],
       ["media", "sanrio", "番組・コンテンツ", "https://www.sanrio.co.jp/characters/", false],
-      ["media", "sanrio", "動画配信", null, null],
       ["media", "sanrio", "タイトル一覧", "https://www.sanrio.co.jp/products/", false, true],
       ["media", "sanrio", "キャンペーン", "https://www.sanrio.co.jp/campaign/", false, true],
       ["media", "sanrio", "サステナビリティ", "https://www.sanrio.co.jp/corporate/csr/", false],
       ["media", "sanrio", "IR情報", "https://www.sanrio.co.jp/corporate/ir/", false],
       ["media", "sanrio", "採用情報", "https://www.sanrio.co.jp/corporate/recruit/", false],
       ["media", "sanrio", "お問い合わせ", "https://www.sanrio.co.jp/support/", false, true],
-
       ["media", "disney_jp", "ニュースリリース", "https://www.disney.co.jp/news.html", false],
       ["media", "disney_jp", "動画配信", "https://www.disneyplus.com/ja-jp", false, true],
-      ["media", "disney_jp", "サステナビリティ", null, null],
-      ["media", "disney_jp", "IR情報", null, null],
       ["media", "disney_jp", "採用情報", "https://jobs.disneycareers.com/japan", false, true],
-
       ["media", "furyu", "TOPページ", "https://www.furyu.jp/", false],
       ["media", "furyu", "企業情報", "https://www.furyu.jp/company/", false],
       ["media", "furyu", "ニュースリリース", "https://www.furyu.jp/news/", false],
       ["media", "furyu", "番組・コンテンツ", "https://www.furyu.jp/entertainment/", false, true],
-      ["media", "furyu", "動画配信", null, null],
       ["media", "furyu", "タイトル一覧", "https://www.furyu.jp/games/", false, true],
       ["media", "furyu", "キャンペーン", "https://www.furyu.jp/campaign/", false, true],
       ["media", "furyu", "サステナビリティ", "https://www.furyu.jp/sustainability/", false],
       ["media", "furyu", "IR情報", "https://www.furyu.jp/ir/", false],
       ["media", "furyu", "採用情報", "https://www.furyu.jp/recruit/", false],
       ["media", "furyu", "お問い合わせ", "https://www.furyu.jp/contact/", false],
-
       ["media", "segasammy", "TOPページ", "https://www.segasammy.co.jp/", false],
       ["media", "segasammy", "企業情報", "https://www.segasammy.co.jp/ja/company/", false, true],
       ["media", "segasammy", "ニュースリリース", "https://www.segasammy.co.jp/ja/pr/news/", false, true],
       ["media", "segasammy", "番組・コンテンツ", "https://www.sega.co.jp/", false],
-      ["media", "segasammy", "動画配信", null, null],
       ["media", "segasammy", "タイトル一覧", "https://www.sega.co.jp/game/", false, true],
       ["media", "segasammy", "キャンペーン", "https://www.sega.co.jp/campaign/", false, true],
       ["media", "segasammy", "サステナビリティ", "https://www.segasammy.co.jp/ja/csr/", false, true],
       ["media", "segasammy", "IR情報", "https://www.segasammy.co.jp/ja/ir/", false],
       ["media", "segasammy", "採用情報", "https://www.segasammy.co.jp/ja/recruit/", false],
       ["media", "segasammy", "お問い合わせ", "https://www.segasammy.co.jp/ja/contact/", false, true],
-
       ["media", "bandai_namco", "TOPページ", "https://www.bandainamco.co.jp/", false],
       ["media", "bandai_namco", "企業情報", "https://www.bandainamco.co.jp/corporate/", false],
       ["media", "bandai_namco", "ニュースリリース", "https://www.bandainamco.co.jp/news/", false],
       ["media", "bandai_namco", "番組・コンテンツ", "https://www.bandainamco.co.jp/game/", false],
-      ["media", "bandai_namco", "動画配信", null, null],
       ["media", "bandai_namco", "タイトル一覧", "https://www.bandainamco.co.jp/game/title/", false],
       ["media", "bandai_namco", "キャンペーン", "https://www.bandainamco.co.jp/campaign/", false],
       ["media", "bandai_namco", "サステナビリティ", "https://www.bandainamco.co.jp/csr/", false],
       ["media", "bandai_namco", "IR情報", "https://www.bandainamco.co.jp/ir/", false],
       ["media", "bandai_namco", "採用情報", "https://www.bandainamco.co.jp/recruit/", false],
       ["media", "bandai_namco", "お問い合わせ", "https://www.bandainamco.co.jp/contact/", false],
-
       ["media", "square_enix", "TOPページ", "https://www.square-enix.com/jpn/", false],
       ["media", "square_enix", "企業情報", "https://www.square-enix.com/jpn/company/", false],
       ["media", "square_enix", "ニュースリリース", "https://www.square-enix.com/jpn/news/", false],
       ["media", "square_enix", "サステナビリティ", "https://www.square-enix.com/jpn/csr/", false],
       ["media", "square_enix", "IR情報", "https://www.square-enix.com/jpn/ir/", false],
-
       ["media", "jra", "TOPページ", "https://www.jra.go.jp/", false],
       ["media", "jra", "企業情報", "https://www.jra.go.jp/info/", false],
       ["media", "jra", "ニュースリリース", "https://www.jra.go.jp/news/", false],
       ["media", "jra", "番組・コンテンツ", "https://www.jra.go.jp/race/", false],
       ["media", "jra", "動画配信", "https://jra-van.jp/", false],
-      ["media", "jra", "タイトル一覧", null, null],
       ["media", "jra", "キャンペーン", "https://www.jra.go.jp/campaign/", false],
       ["media", "jra", "サステナビリティ", "https://www.jra.go.jp/info/social/", false],
-      ["media", "jra", "IR情報", null, null],
       ["media", "jra", "採用情報", "https://www.jra.go.jp/recruit/", false],
       ["media", "jra", "お問い合わせ", "https://www.jra.go.jp/contact/", false],
-
       ["media", "nar", "TOPページ", "https://www.keiba.go.jp/", false],
       ["media", "nar", "企業情報", "https://www.keiba.go.jp/nar/", false, true],
       ["media", "nar", "ニュースリリース", "https://www.keiba.go.jp/news/", false, true],
       ["media", "nar", "番組・コンテンツ", "https://www.keiba.go.jp/race/", false, true],
-      ["media", "nar", "動画配信", null, null],
-      ["media", "nar", "タイトル一覧", null, null],
-      ["media", "nar", "キャンペーン", null, null],
-      ["media", "nar", "サステナビリティ", null, null],
-      ["media", "nar", "IR情報", null, null],
       ["media", "nar", "採用情報", "https://www.keiba.go.jp/recruit/", false],
       ["media", "nar", "お問い合わせ", "https://www.keiba.go.jp/contact/", false, true],
-
       ["media", "keirin_jp", "TOPページ", "https://keirin.jp/", false],
       ["media", "keirin_jp", "企業情報", "https://www.jka.or.jp/", false],
       ["media", "keirin_jp", "ニュースリリース", "https://www.jka.or.jp/news/", false],
-      ["media", "keirin_jp", "タイトル一覧", null, null],
       ["media", "keirin_jp", "サステナビリティ", "https://www.jka.or.jp/social/", false],
-      ["media", "keirin_jp", "IR情報", null, null],
       ["media", "keirin_jp", "採用情報", "https://www.jka.or.jp/recruit/", false],
       ["media", "keirin_jp", "お問い合わせ", "https://www.jka.or.jp/contact/", false, true],
-
-      // ── インフラ・交通・不動産・建設 ────────────────────────────────
       ["infra", "tepco", "TOPページ", "https://www.tepco.co.jp/", false],
       ["infra", "tepco", "企業情報", "https://www.tepco.co.jp/about/", false],
       ["infra", "tepco", "ニュースリリース", "https://www.tepco.co.jp/press/", false],
@@ -3392,7 +3077,6 @@
       ["infra", "tepco", "採用情報", "https://www.tepco.co.jp/recruit/", false],
       ["infra", "tepco", "お問い合わせ", "https://www.tepco.co.jp/contact/", false, true],
       ["infra", "tepco", "技術・R&D", "https://www.tepco.co.jp/technology/", false],
-
       ["infra", "chuden", "TOPページ", "https://www.chuden.co.jp/", false],
       ["infra", "chuden", "企業情報", "https://www.chuden.co.jp/corporate/", false],
       ["infra", "chuden", "ニュースリリース", "https://www.chuden.co.jp/news/", false, true],
@@ -3405,8 +3089,6 @@
       ["infra", "chuden", "採用情報", "https://www.chuden.co.jp/recruit/", false],
       ["infra", "chuden", "お問い合わせ", "https://www.chuden.co.jp/contact/", false, true],
       ["infra", "chuden", "技術・R&D", "https://www.chuden.co.jp/rd/", false, true],
-
-
       ["infra", "tokyo_gas", "TOPページ", "https://www.tokyo-gas.co.jp/", false],
       ["infra", "tokyo_gas", "企業情報", "https://www.tokyo-gas.co.jp/corporate/", false],
       ["infra", "tokyo_gas", "ニュースリリース", "https://www.tokyo-gas.co.jp/news/", false],
@@ -3418,105 +3100,75 @@
       ["infra", "tokyo_gas", "採用情報", "https://www.tokyo-gas.co.jp/recruit/", false],
       ["infra", "tokyo_gas", "お問い合わせ", "https://home.tokyo-gas.co.jp/contact/", false, true],
       ["infra", "tokyo_gas", "技術・R&D", "https://www.tokyo-gas.co.jp/tech/", false, true],
-
       ["infra", "jr_tokai", "TOPページ", "https://jr-central.co.jp/", false],
       ["infra", "jr_tokai", "企業情報", "https://jr-central.co.jp/company/", false, true],
       ["infra", "jr_tokai", "ニュースリリース", "https://jr-central.co.jp/news/", false],
       ["infra", "jr_tokai", "物件・サービス検索", "https://jr-central.co.jp/services/", false, true],
       ["infra", "jr_tokai", "料金・プラン", "https://jr-central.co.jp/services/price/", false, true],
-      ["infra", "jr_tokai", "工事・施工依頼", null, null],
       ["infra", "jr_tokai", "キャンペーン", "https://jr-central.co.jp/services/campaign/", false, true],
       ["infra", "jr_tokai", "サステナビリティ", "https://jr-central.co.jp/csr/", false, true],
       ["infra", "jr_tokai", "IR情報", "https://jr-central.co.jp/ir/", false, true],
       ["infra", "jr_tokai", "採用情報", "https://jr-central.co.jp/company/recruit/", false, true],
       ["infra", "jr_tokai", "お問い合わせ", "https://jr-central.co.jp/contact/", false, true],
       ["infra", "jr_tokai", "技術・R&D", "https://jr-central.co.jp/company/rd/", false, true],
-
       ["infra", "jr_east", "TOPページ", "https://www.jreast.co.jp/", false],
       ["infra", "jr_east", "企業情報", "https://www.jreast.co.jp/company/", false],
       ["infra", "jr_east", "ニュースリリース", "https://www.jreast.co.jp/press/", false],
-      ["infra", "jr_east", "工事・施工依頼", null, null],
       ["infra", "jr_east", "IR情報", "https://www.jreast.co.jp/investor/", false],
       ["infra", "jr_east", "採用情報", "https://www.jreast.co.jp/recruit/", false],
       ["infra", "jr_east", "技術・R&D", "https://www.jreast.co.jp/development/", false],
-
       ["infra", "jr_west", "TOPページ", "https://www.westjr.co.jp/", false],
       ["infra", "jr_west", "企業情報", "https://www.westjr.co.jp/company/", false],
       ["infra", "jr_west", "ニュースリリース", "https://www.westjr.co.jp/press/", false],
       ["infra", "jr_west", "物件・サービス検索", "https://www.westjr.co.jp/train/", false, true],
       ["infra", "jr_west", "料金・プラン", "https://www.westjr.co.jp/train/fare/", false, true],
-      ["infra", "jr_west", "工事・施工依頼", null, null],
       ["infra", "jr_west", "キャンペーン", "https://www.westjr.co.jp/campaign/", false, true],
       ["infra", "jr_west", "サステナビリティ", "https://www.westjr.co.jp/csr/", false, true],
       ["infra", "jr_west", "IR情報", "https://www.westjr.co.jp/company/ir/", false],
       ["infra", "jr_west", "採用情報", "https://www.westjr.co.jp/recruit/", false, true],
       ["infra", "jr_west", "お問い合わせ", "https://www.westjr.co.jp/contact/", false, true],
       ["infra", "jr_west", "技術・R&D", "https://www.westjr.co.jp/company/rd/", false, true],
-
       ["infra", "tokyu_fd", "TOPページ", "https://www.tokyu-land.co.jp/", false],
       ["infra", "tokyu_fd", "企業情報", "https://www.tokyu-land.co.jp/company/", false],
       ["infra", "tokyu_fd", "ニュースリリース", "https://www.tokyu-land.co.jp/news/", false],
       ["infra", "tokyu_fd", "物件・サービス検索", "https://www.tokyu-land.co.jp/real-estate/", false, true],
-      ["infra", "tokyu_fd", "料金・プラン", null, null],
-      ["infra", "tokyu_fd", "工事・施工依頼", null, null],
-      ["infra", "tokyu_fd", "キャンペーン", null, null],
       ["infra", "tokyu_fd", "サステナビリティ", "https://www.tokyu-land.co.jp/csr/", false],
       ["infra", "tokyu_fd", "IR情報", "https://www.tokyu-land.co.jp/ir/", false],
       ["infra", "tokyu_fd", "採用情報", "https://www.tokyu-land.co.jp/recruit/", false],
       ["infra", "tokyu_fd", "お問い合わせ", "https://www.tokyu-land.co.jp/contact/", false],
-      ["infra", "tokyu_fd", "技術・R&D", null, null],
-
       ["infra", "mitsubishi_est", "TOPページ", "https://www.mec.co.jp/", false],
       ["infra", "mitsubishi_est", "企業情報", "https://www.mec.co.jp/j/company/", false, true],
       ["infra", "mitsubishi_est", "ニュースリリース", "https://www.mec.co.jp/j/news/", false, true],
       ["infra", "mitsubishi_est", "物件・サービス検索", "https://www.mec.co.jp/j/real_estate/", false, true],
-      ["infra", "mitsubishi_est", "料金・プラン", null, null],
-      ["infra", "mitsubishi_est", "工事・施工依頼", null, null],
-      ["infra", "mitsubishi_est", "キャンペーン", null, null],
       ["infra", "mitsubishi_est", "サステナビリティ", "https://www.mec.co.jp/j/csr/", false, true],
       ["infra", "mitsubishi_est", "IR情報", "https://www.mec.co.jp/j/ir/", false, true],
       ["infra", "mitsubishi_est", "採用情報", "https://www.mec.co.jp/j/recruit/", false, true],
       ["infra", "mitsubishi_est", "お問い合わせ", "https://www.mec.co.jp/j/contact/", false, true],
       ["infra", "mitsubishi_est", "技術・R&D", "https://www.mec.co.jp/j/research/", false, true],
-
       ["infra", "mitsui_fd", "TOPページ", "https://www.mitsuifudosan.co.jp/", false],
       ["infra", "mitsui_fd", "企業情報", "https://www.mitsuifudosan.co.jp/corporate/", false],
       ["infra", "mitsui_fd", "物件・サービス検索", "https://www.mitsuifudosan.co.jp/estate/", false, true],
-      ["infra", "mitsui_fd", "料金・プラン", null, null],
-      ["infra", "mitsui_fd", "工事・施工依頼", null, null],
-      ["infra", "mitsui_fd", "キャンペーン", null, null],
       ["infra", "mitsui_fd", "サステナビリティ", "https://www.mitsuifudosan.co.jp/corporate/esg/", false, true],
       ["infra", "mitsui_fd", "IR情報", "https://www.mitsuifudosan.co.jp/corporate/ir/", false],
       ["infra", "mitsui_fd", "採用情報", "https://www.mitsuifudosan.co.jp/corporate/recruit/", false],
       ["infra", "mitsui_fd", "お問い合わせ", "https://www.mitsuifudosan.co.jp/corporate/contact/", false, true],
       ["infra", "mitsui_fd", "技術・R&D", "https://www.mitsuifudosan.co.jp/corporate/technology/", false, true],
-
       ["infra", "sumitomo_fd", "TOPページ", "https://www.sumitomo-rd.co.jp/", false],
       ["infra", "sumitomo_fd", "企業情報", "https://www.sumitomo-rd.co.jp/company/", false],
       ["infra", "sumitomo_fd", "ニュースリリース", "https://www.sumitomo-rd.co.jp/news/", false],
       ["infra", "sumitomo_fd", "物件・サービス検索", "https://www.sumitomo-rd.co.jp/realestate/", false, true],
-      ["infra", "sumitomo_fd", "料金・プラン", null, null],
-      ["infra", "sumitomo_fd", "工事・施工依頼", null, null],
-      ["infra", "sumitomo_fd", "キャンペーン", null, null],
       ["infra", "sumitomo_fd", "サステナビリティ", "https://www.sumitomo-rd.co.jp/csr/", false, true],
       ["infra", "sumitomo_fd", "IR情報", "https://www.sumitomo-rd.co.jp/ir/", false],
       ["infra", "sumitomo_fd", "採用情報", "https://www.sumitomo-rd.co.jp/recruit/", false],
       ["infra", "sumitomo_fd", "お問い合わせ", "https://www.sumitomo-rd.co.jp/contact/", false],
-      ["infra", "sumitomo_fd", "技術・R&D", null, null],
-
       ["infra", "nomura_fd", "TOPページ", "https://www.nomura-re.co.jp/", false],
       ["infra", "nomura_fd", "企業情報", "https://www.nomura-re.co.jp/company/", false, true],
       ["infra", "nomura_fd", "ニュースリリース", "https://www.nomura-re.co.jp/news/", false],
       ["infra", "nomura_fd", "物件・サービス検索", "https://www.nomura-re.co.jp/mansion/", false, true],
-      ["infra", "nomura_fd", "料金・プラン", null, null],
-      ["infra", "nomura_fd", "工事・施工依頼", null, null],
-      ["infra", "nomura_fd", "キャンペーン", null, null],
       ["infra", "nomura_fd", "サステナビリティ", "https://www.nomura-re.co.jp/csr/", false, true],
       ["infra", "nomura_fd", "IR情報", "https://www.nomura-re.co.jp/ir/", false, true],
       ["infra", "nomura_fd", "採用情報", "https://www.nomura-re.co.jp/recruit/", false, true],
       ["infra", "nomura_fd", "お問い合わせ", "https://www.nomura-re.co.jp/contact/", false],
-      ["infra", "nomura_fd", "技術・R&D", null, null],
-
       ["infra", "mitsui_home", "TOPページ", "https://www.mitsuihome.co.jp/", false],
       ["infra", "mitsui_home", "企業情報", "https://www.mitsuihome.co.jp/company/", false],
       ["infra", "mitsui_home", "ニュースリリース", "https://www.mitsuihome.co.jp/news/", false, true],
@@ -3525,15 +3177,12 @@
       ["infra", "mitsui_home", "工事・施工依頼", "https://www.mitsuihome.co.jp/contact/request/", false, true],
       ["infra", "mitsui_home", "キャンペーン", "https://www.mitsuihome.co.jp/campaign/", false, true],
       ["infra", "mitsui_home", "サステナビリティ", "https://www.mitsuihome.co.jp/sustainability/", false, true],
-      ["infra", "mitsui_home", "IR情報", null, null],
       ["infra", "mitsui_home", "採用情報", "https://www.mitsuihome.co.jp/recruit/", false, true],
       ["infra", "mitsui_home", "お問い合わせ", "https://www.mitsuihome.co.jp/contact/", false, true],
       ["infra", "mitsui_home", "技術・R&D", "https://www.mitsuihome.co.jp/technology/", false, true],
-
       ["infra", "sekisui", "TOPページ", "https://www.sekisuihouse.com/", false],
       ["infra", "sekisui", "ニュースリリース", "https://www.sekisuihouse.com/news/", false, true],
       ["infra", "sekisui", "物件・サービス検索", "https://www.sekisuihouse.com/residential/", false, true],
-      ["infra", "sekisui", "料金・プラン", null, null],
       ["infra", "sekisui", "工事・施工依頼", "https://www.sekisuihouse.com/contact/", false, true],
       ["infra", "sekisui", "キャンペーン", "https://www.sekisuihouse.com/campaign/", false],
       ["infra", "sekisui", "サステナビリティ", "https://www.sekisuihouse.com/csr/", false, true],
@@ -3541,37 +3190,27 @@
       ["infra", "sekisui", "採用情報", "https://www.sekisuihouse.com/recruit/", false, true],
       ["infra", "sekisui", "お問い合わせ", "https://www.sekisuihouse.com/contact/", false, true],
       ["infra", "sekisui", "技術・R&D", "https://www.sekisuihouse.com/technology/", false],
-
       ["infra", "daiwa_house", "TOPページ", "https://www.daiwahouse.co.jp/", false],
       ["infra", "daiwa_house", "企業情報", "https://www.daiwahouse.co.jp/about/", false],
       ["infra", "daiwa_house", "物件・サービス検索", "https://www.daiwahouse.co.jp/mansion/", false],
-      ["infra", "daiwa_house", "料金・プラン", null, null],
       ["infra", "daiwa_house", "キャンペーン", "https://www.daiwahouse.co.jp/campaign/", false],
       ["infra", "daiwa_house", "サステナビリティ", "https://www.daiwahouse.co.jp/sustainable/", false],
       ["infra", "daiwa_house", "IR情報", "https://www.daiwahouse.co.jp/ir/", false],
       ["infra", "daiwa_house", "採用情報", "https://www.daiwahouse.co.jp/recruit/", false],
-
-      ["infra", "sumitomo_r", "料金・プラン", null, null],
-
       ["infra", "hebel", "TOPページ", "https://www.asahi-kasei.co.jp/ahm/", false, true],
       ["infra", "hebel", "企業情報", "https://www.asahi-kasei.co.jp/ahm/company/", false, true],
       ["infra", "hebel", "ニュースリリース", "https://www.asahi-kasei.co.jp/ahm/news/", false, true],
       ["infra", "hebel", "物件・サービス検索", "https://www.asahi-kasei.co.jp/ahm/house/", false, true],
-      ["infra", "hebel", "料金・プラン", null, null],
       ["infra", "hebel", "工事・施工依頼", "https://www.asahi-kasei.co.jp/ahm/contact/", false, true],
       ["infra", "hebel", "キャンペーン", "https://www.asahi-kasei.co.jp/ahm/campaign/", false, true],
       ["infra", "hebel", "サステナビリティ", "https://www.asahi-kasei.co.jp/ahm/csr/", false, true],
-      ["infra", "hebel", "IR情報", null, null],
       ["infra", "hebel", "採用情報", "https://www.asahi-kasei.co.jp/ahm/recruit/", false, true],
       ["infra", "hebel", "お問い合わせ", "https://www.asahi-kasei.co.jp/ahm/contact/", false, true],
       ["infra", "hebel", "技術・R&D", "https://www.asahi-kasei.co.jp/ahm/technology/", false, true],
-
-      // ── 官公庁・自治体・政治 ────────────────────────────────────────
       ["gov", "tokyo_metro", "手続き・申請", "https://www.metro.tokyo.lg.jp/tosei/tetuzuki/", false, true],
       ["gov", "tokyo_metro", "政策・施策", "https://www.metro.tokyo.lg.jp/tosei/tokushu/", false, true],
       ["gov", "tokyo_metro", "統計・データ", "https://www.metro.tokyo.lg.jp/tosei/toukei/", false, true],
       ["gov", "tokyo_metro", "お問い合わせ", "https://www.metro.tokyo.lg.jp/tosei/hodohappyo/contact/", false, true],
-
       ["gov", "kanagawa", "TOPページ", "https://www.pref.kanagawa.jp/", false],
       ["gov", "kanagawa", "お知らせ", "https://www.pref.kanagawa.jp/osirase/", false],
       ["gov", "kanagawa", "ニュースリリース", "https://www.pref.kanagawa.jp/press/", false, true],
@@ -3581,7 +3220,6 @@
       ["gov", "kanagawa", "広報・広聴", "https://www.pref.kanagawa.jp/koho/", false, true],
       ["gov", "kanagawa", "採用情報", "https://www.pref.kanagawa.jp/jinji/", false, true],
       ["gov", "kanagawa", "お問い合わせ", "https://www.pref.kanagawa.jp/contact/", false, true],
-
       ["gov", "osaka_pref", "TOPページ", "https://www.pref.osaka.lg.jp/", false],
       ["gov", "osaka_pref", "お知らせ", "https://www.pref.osaka.lg.jp/news/", false, true],
       ["gov", "osaka_pref", "ニュースリリース", "https://www.pref.osaka.lg.jp/press/", false, true],
@@ -3591,7 +3229,6 @@
       ["gov", "osaka_pref", "広報・広聴", "https://www.pref.osaka.lg.jp/koho/", false],
       ["gov", "osaka_pref", "採用情報", "https://www.pref.osaka.lg.jp/jinji/", false],
       ["gov", "osaka_pref", "お問い合わせ", "https://www.pref.osaka.lg.jp/contact/", false, true],
-
       ["gov", "shibuya_w", "お知らせ", "https://www.city.shibuya.tokyo.jp/news/", false, true],
       ["gov", "shibuya_w", "ニュースリリース", "https://www.city.shibuya.tokyo.jp/kusei/kohobunka/", false, true],
       ["gov", "shibuya_w", "手続き・申請", "https://www.city.shibuya.tokyo.jp/service/", false, true],
@@ -3599,7 +3236,6 @@
       ["gov", "shibuya_w", "広報・広聴", "https://www.city.shibuya.tokyo.jp/kusei/kohobunka/", false, true],
       ["gov", "shibuya_w", "採用情報", "https://www.city.shibuya.tokyo.jp/kusei/saiyo/", false, true],
       ["gov", "shibuya_w", "お問い合わせ", "https://www.city.shibuya.tokyo.jp/contact/", false, true],
-
       ["gov", "shinjuku_w", "TOPページ", "https://www.city.shinjuku.lg.jp/", false],
       ["gov", "shinjuku_w", "お知らせ", "https://www.city.shinjuku.lg.jp/news/", false, true],
       ["gov", "shinjuku_w", "ニュースリリース", "https://www.city.shinjuku.lg.jp/press/", false, true],
@@ -3609,7 +3245,6 @@
       ["gov", "shinjuku_w", "広報・広聴", "https://www.city.shinjuku.lg.jp/koho/", false, true],
       ["gov", "shinjuku_w", "採用情報", "https://www.city.shinjuku.lg.jp/saiyo/", false, true],
       ["gov", "shinjuku_w", "お問い合わせ", "https://www.city.shinjuku.lg.jp/contact/", false, true],
-
       ["gov", "yokohama", "TOPページ", "https://www.city.yokohama.lg.jp/", false],
       ["gov", "yokohama", "お知らせ", "https://www.city.yokohama.lg.jp/city-info/", false],
       ["gov", "yokohama", "ニュースリリース", "https://www.city.yokohama.lg.jp/city-info/koho/press/", false, true],
@@ -3619,7 +3254,6 @@
       ["gov", "yokohama", "広報・広聴", "https://www.city.yokohama.lg.jp/city-info/koho/", false, true],
       ["gov", "yokohama", "採用情報", "https://www.city.yokohama.lg.jp/city-info/saiyo/", false, true],
       ["gov", "yokohama", "お問い合わせ", "https://www.city.yokohama.lg.jp/city-info/contact/", false, true],
-
       ["gov", "meti", "TOPページ", "https://www.meti.go.jp/", false],
       ["gov", "meti", "お知らせ", "https://www.meti.go.jp/press/", false],
       ["gov", "meti", "ニュースリリース", "https://www.meti.go.jp/press/", false],
@@ -3627,20 +3261,16 @@
       ["gov", "meti", "政策・施策", "https://www.meti.go.jp/policy/", false],
       ["gov", "meti", "統計・データ", "https://www.meti.go.jp/statistics/", false],
       ["gov", "meti", "広報・広聴", "https://www.meti.go.jp/intro/", false],
-
       ["gov", "mof", "TOPページ", "https://www.mof.go.jp/", false],
       ["gov", "mof", "お知らせ", "https://www.mof.go.jp/about_mof/", false],
       ["gov", "mof", "ニュースリリース", "https://www.mof.go.jp/about_mof/", false],
-      ["gov", "mof", "手続き・申請", null, null],
       ["gov", "mof", "政策・施策", "https://www.mof.go.jp/policy/", false],
       ["gov", "mof", "統計・データ", "https://www.mof.go.jp/statistics/", false],
       ["gov", "mof", "広報・広聴", "https://www.mof.go.jp/public_relations/", false],
       ["gov", "mof", "採用情報", "https://www.mof.go.jp/about_mof/recruit/", false],
       ["gov", "mof", "お問い合わせ", "https://www.mof.go.jp/contact/", false, true],
-
       ["gov", "soumu", "広報・広聴", "https://www.soumu.go.jp/menu_news/kouhou/", false, true],
       ["gov", "soumu", "お問い合わせ", "https://www.soumu.go.jp/menu_sinsei/inquiry/", false, true],
-
       ["gov", "mhlw", "TOPページ", "https://www.mhlw.go.jp/", false],
       ["gov", "mhlw", "お知らせ", "https://www.mhlw.go.jp/stf/newpage/", false, true],
       ["gov", "mhlw", "ニュースリリース", "https://www.mhlw.go.jp/stf/houdou/", false],
@@ -3649,72 +3279,45 @@
       ["gov", "mhlw", "広報・広聴", "https://www.mhlw.go.jp/stf/about/", false, true],
       ["gov", "mhlw", "採用情報", "https://www.mhlw.go.jp/kouseiroudoushou/recruit/", false, true],
       ["gov", "mhlw", "お問い合わせ", "https://www.mhlw.go.jp/form/", false, true],
-
       ["gov", "cdp_jp", "TOPページ", "https://cdp-japan.jp/", false],
       ["gov", "cdp_jp", "お知らせ", "https://cdp-japan.jp/news/", false],
       ["gov", "cdp_jp", "ニュースリリース", "https://cdp-japan.jp/news/", false],
-      ["gov", "cdp_jp", "手続き・申請", null, null],
       ["gov", "cdp_jp", "政策・施策", "https://cdp-japan.jp/policy/", false, true],
-      ["gov", "cdp_jp", "統計・データ", null, null],
       ["gov", "cdp_jp", "広報・広聴", "https://cdp-japan.jp/koho/", false, true],
-      ["gov", "cdp_jp", "採用情報", null, null],
       ["gov", "cdp_jp", "お問い合わせ", "https://cdp-japan.jp/contact/", false, true],
-
       ["gov", "ldp", "TOPページ", "https://www.jimin.jp/", false],
       ["gov", "ldp", "お知らせ", "https://www.jimin.jp/news/", false],
       ["gov", "ldp", "ニュースリリース", "https://www.jimin.jp/news/", false],
-      ["gov", "ldp", "手続き・申請", null, null],
       ["gov", "ldp", "政策・施策", "https://www.jimin.jp/policy/", false],
-      ["gov", "ldp", "統計・データ", null, null],
       ["gov", "ldp", "広報・広聴", "https://www.jimin.jp/news/press/", false, true],
       ["gov", "ldp", "採用情報", "https://www.jimin.jp/recruit/", false, true],
       ["gov", "ldp", "お問い合わせ", "https://www.jimin.jp/contact/", false, true],
-
       ["gov", "komei", "TOPページ", "https://www.komei.or.jp/", false],
       ["gov", "komei", "お知らせ", "https://www.komei.or.jp/news/", false],
       ["gov", "komei", "ニュースリリース", "https://www.komei.or.jp/news/", false],
-      ["gov", "komei", "手続き・申請", null, null],
       ["gov", "komei", "政策・施策", "https://www.komei.or.jp/policy/", false],
-      ["gov", "komei", "統計・データ", null, null],
       ["gov", "komei", "広報・広聴", "https://www.komei.or.jp/koho/", false, true],
-      ["gov", "komei", "採用情報", null, null],
       ["gov", "komei", "お問い合わせ", "https://www.komei.or.jp/contact/", false, true],
-
       ["gov", "ishin", "TOPページ", "https://o-ishin.jp/", false],
       ["gov", "ishin", "お知らせ", "https://o-ishin.jp/news/", false],
       ["gov", "ishin", "ニュースリリース", "https://o-ishin.jp/news/", false],
-      ["gov", "ishin", "手続き・申請", null, null],
       ["gov", "ishin", "政策・施策", "https://o-ishin.jp/policy/", false],
-      ["gov", "ishin", "統計・データ", null, null],
       ["gov", "ishin", "広報・広聴", "https://o-ishin.jp/news/", false],
-      ["gov", "ishin", "採用情報", null, null],
       ["gov", "ishin", "お問い合わせ", "https://o-ishin.jp/contact/", false],
-
       ["gov", "dpfp", "TOPページ", "https://new-kokumin.jp/", false],
       ["gov", "dpfp", "お知らせ", "https://new-kokumin.jp/news/", false],
       ["gov", "dpfp", "ニュースリリース", "https://new-kokumin.jp/news/", false],
-      ["gov", "dpfp", "手続き・申請", null, null],
       ["gov", "dpfp", "政策・施策", "https://new-kokumin.jp/policy/", false, true],
-      ["gov", "dpfp", "統計・データ", null, null],
       ["gov", "dpfp", "広報・広聴", "https://new-kokumin.jp/news/", false],
-      ["gov", "dpfp", "採用情報", null, null],
       ["gov", "dpfp", "お問い合わせ", "https://new-kokumin.jp/contact/", false],
-
-      ["gov", "chukai", "手続き・申請", null, null],
       ["gov", "chukai", "広報・広聴", "https://www.jcci.or.jp/pr/", false, true],
-      ["gov", "chukai", "採用情報", null, null],
-
       ["gov", "rengo", "TOPページ", "https://www.jtuc-rengo.or.jp/", false],
       ["gov", "rengo", "お知らせ", "https://www.jtuc-rengo.or.jp/news/", false],
       ["gov", "rengo", "ニュースリリース", "https://www.jtuc-rengo.or.jp/news/", false],
-      ["gov", "rengo", "手続き・申請", null, null],
       ["gov", "rengo", "政策・施策", "https://www.jtuc-rengo.or.jp/activity/", false],
       ["gov", "rengo", "統計・データ", "https://www.jtuc-rengo.or.jp/research/", false, true],
       ["gov", "rengo", "広報・広聴", "https://www.jtuc-rengo.or.jp/pr/", false, true],
-      ["gov", "rengo", "採用情報", null, null],
       ["gov", "rengo", "お問い合わせ", "https://www.jtuc-rengo.or.jp/contact/", false, true],
-
-      // ── 商社・卸売・流通 ────────────────────────────────────────────
       ["trading", "nagase", "TOPページ", "https://www.nagase.co.jp/", false],
       ["trading", "nagase", "企業情報", "https://www.nagase.co.jp/company/", false],
       ["trading", "nagase", "ニュースリリース", "https://www.nagase.co.jp/news/", false, true],
@@ -3725,7 +3328,6 @@
       ["trading", "nagase", "採用情報", "https://www.nagase.co.jp/recruit/", false],
       ["trading", "nagase", "お問い合わせ", "https://www.nagase.co.jp/contact/", false],
       ["trading", "nagase", "技術・R&D", "https://www.nagase.co.jp/technology/", false, true],
-
       ["trading", "inabata", "TOPページ", "https://www.inabata.co.jp/", false],
       ["trading", "inabata", "企業情報", "https://www.inabata.co.jp/company/", false],
       ["trading", "inabata", "ニュースリリース", "https://www.inabata.co.jp/news/", false],
@@ -3735,8 +3337,6 @@
       ["trading", "inabata", "IR情報", "https://www.inabata.co.jp/ir/", false, true],
       ["trading", "inabata", "採用情報", "https://www.inabata.co.jp/recruit/", false],
       ["trading", "inabata", "お問い合わせ", "https://www.inabata.co.jp/contact/", false],
-      ["trading", "inabata", "技術・R&D", null, null],
-
       ["trading", "hanwa", "TOPページ", "https://www.hanwa.co.jp/", false],
       ["trading", "hanwa", "企業情報", "https://www.hanwa.co.jp/company/", false],
       ["trading", "hanwa", "ニュースリリース", "https://www.hanwa.co.jp/news/", false],
@@ -3746,8 +3346,6 @@
       ["trading", "hanwa", "IR情報", "https://www.hanwa.co.jp/ir/", false],
       ["trading", "hanwa", "採用情報", "https://www.hanwa.co.jp/recruit/", false],
       ["trading", "hanwa", "お問い合わせ", "https://www.hanwa.co.jp/contact/", false],
-      ["trading", "hanwa", "技術・R&D", null, null],
-
       ["trading", "paltac", "TOPページ", "https://www.paltac.co.jp/", false],
       ["trading", "paltac", "企業情報", "https://www.paltac.co.jp/company/", false, true],
       ["trading", "paltac", "ニュースリリース", "https://www.paltac.co.jp/news/", false],
@@ -3757,8 +3355,6 @@
       ["trading", "paltac", "IR情報", "https://www.paltac.co.jp/ir/", false],
       ["trading", "paltac", "採用情報", "https://www.paltac.co.jp/recruit/", false],
       ["trading", "paltac", "お問い合わせ", "https://www.paltac.co.jp/contact/", false],
-      ["trading", "paltac", "技術・R&D", null, null],
-
       ["trading", "arata", "TOPページ", "https://www.arata.co.jp/", false],
       ["trading", "arata", "企業情報", "https://www.arata.co.jp/company/", false],
       ["trading", "arata", "ニュースリリース", "https://www.arata.co.jp/news/", false, true],
@@ -3768,10 +3364,6 @@
       ["trading", "arata", "IR情報", "https://www.arata.co.jp/ir/", false, true],
       ["trading", "arata", "採用情報", "https://www.arata.co.jp/recruit/", false],
       ["trading", "arata", "お問い合わせ", "https://www.arata.co.jp/contact/", false],
-      ["trading", "arata", "技術・R&D", null, null],
-
-      ["trading", "ohki", "技術・R&D", null, null],
-
       ["trading", "mitsubishi_co", "TOPページ", "https://www.mitsubishicorp.com/jp/ja/", false],
       ["trading", "mitsubishi_co", "企業情報", "https://www.mitsubishicorp.com/jp/ja/about/", false],
       ["trading", "mitsubishi_co", "ニュースリリース", "https://www.mitsubishicorp.com/jp/ja/pr/", false],
@@ -3781,8 +3373,6 @@
       ["trading", "mitsubishi_co", "IR情報", "https://www.mitsubishicorp.com/jp/ja/ir/", false],
       ["trading", "mitsubishi_co", "採用情報", "https://www.mitsubishicorp.com/jp/ja/careers/", false, true],
       ["trading", "mitsubishi_co", "お問い合わせ", "https://www.mitsubishicorp.com/jp/ja/contact/", false],
-      ["trading", "mitsubishi_co", "技術・R&D", null, null],
-
       ["trading", "mitsui_co", "TOPページ", "https://www.mitsui.com/jp/ja/", false],
       ["trading", "mitsui_co", "企業情報", "https://www.mitsui.com/jp/ja/company/", false],
       ["trading", "mitsui_co", "ニュースリリース", "https://www.mitsui.com/jp/ja/release/", false],
@@ -3793,7 +3383,6 @@
       ["trading", "mitsui_co", "採用情報", "https://www.mitsui.com/jp/ja/career/", false, true],
       ["trading", "mitsui_co", "お問い合わせ", "https://www.mitsui.com/jp/ja/inquiry/", false, true],
       ["trading", "mitsui_co", "技術・R&D", "https://www.mitsui.com/jp/ja/innovation/", false],
-
       ["trading", "itochu", "TOPページ", "https://www.itochu.co.jp/ja/", false],
       ["trading", "itochu", "企業情報", "https://www.itochu.co.jp/ja/about/", false],
       ["trading", "itochu", "事業領域", "https://www.itochu.co.jp/ja/business/", false],
@@ -3802,8 +3391,6 @@
       ["trading", "itochu", "IR情報", "https://www.itochu.co.jp/ja/ir/", false],
       ["trading", "itochu", "採用情報", "https://www.itochu.co.jp/ja/careers/", false, true],
       ["trading", "itochu", "お問い合わせ", "https://www.itochu.co.jp/ja/contact/", false, true],
-      ["trading", "itochu", "技術・R&D", null, null],
-
       ["trading", "marubeni", "TOPページ", "https://www.marubeni.com/jp/", false],
       ["trading", "marubeni", "企業情報", "https://www.marubeni.com/jp/about/", false, true],
       ["trading", "marubeni", "ニュースリリース", "https://www.marubeni.com/jp/news/", false],
@@ -3813,8 +3400,6 @@
       ["trading", "marubeni", "IR情報", "https://www.marubeni.com/jp/ir/", false],
       ["trading", "marubeni", "採用情報", "https://www.marubeni.com/jp/careers/", false, true],
       ["trading", "marubeni", "お問い合わせ", "https://www.marubeni.com/jp/contact/", false, true],
-      ["trading", "marubeni", "技術・R&D", null, null],
-
       ["trading", "sumitomo_co", "TOPページ", "https://www.sumitomocorp.com/ja/jp/", false],
       ["trading", "sumitomo_co", "企業情報", "https://www.sumitomocorp.com/ja/jp/about/", false],
       ["trading", "sumitomo_co", "ニュースリリース", "https://www.sumitomocorp.com/ja/jp/news/", false],
@@ -3824,54 +3409,37 @@
       ["trading", "sumitomo_co", "IR情報", "https://www.sumitomocorp.com/ja/jp/ir/", false],
       ["trading", "sumitomo_co", "採用情報", "https://www.sumitomocorp.com/ja/jp/careers/", false, true],
       ["trading", "sumitomo_co", "お問い合わせ", "https://www.sumitomocorp.com/ja/jp/contact/", false, true],
-      ["trading", "sumitomo_co", "技術・R&D", null, null],
-
-      // ── 小売・金融・その他 ──────────────────────────────────────────
       ["retail", "seven_i", "TOPページ", "https://www.7andi.com/", false],
       ["retail", "seven_i", "企業情報", "https://www.7andi.com/company/", false],
       ["retail", "seven_i", "ニュースリリース", "https://www.7andi.com/news/", false],
-      ["retail", "seven_i", "口座開設・申込", null, null],
-      ["retail", "seven_i", "ローン・保険", null, null],
       ["retail", "seven_i", "ポイント・特典", "https://www.7andi.com/point/", false, true],
       ["retail", "seven_i", "サステナビリティ", "https://www.7andi.com/csr/", false],
       ["retail", "seven_i", "IR情報", "https://www.7andi.com/ir/", false],
       ["retail", "seven_i", "採用情報", "https://www.7andi.com/recruit/", false],
       ["retail", "seven_i", "お問い合わせ", "https://www.7andi.com/contact/", false],
-
       ["retail", "aeon", "TOPページ", "https://www.aeon.info/", false],
       ["retail", "aeon", "企業情報", "https://www.aeon.info/corporate/", false, true],
       ["retail", "aeon", "ニュースリリース", "https://www.aeon.info/news/", false],
       ["retail", "aeon", "EC・購入", "https://www.aeonretail.jp/", false],
       ["retail", "aeon", "店舗検索", "https://www.aeon.info/store/", false, true],
-      ["retail", "aeon", "口座開設・申込", null, null],
-      ["retail", "aeon", "ローン・保険", null, null],
       ["retail", "aeon", "ポイント・特典", "https://www.aeon.info/service/waon/", false, true],
       ["retail", "aeon", "サステナビリティ", "https://www.aeon.info/sustainability/", false],
       ["retail", "aeon", "IR情報", "https://www.aeon.info/ir/", false],
       ["retail", "aeon", "採用情報", "https://www.aeon.info/recruit/", false],
       ["retail", "aeon", "お問い合わせ", "https://www.aeon.info/contact/", false],
-
       ["retail", "fast_ret", "TOPページ", "https://www.fastretailing.com/jp/", false],
       ["retail", "fast_ret", "企業情報", "https://www.fastretailing.com/jp/about/", false],
       ["retail", "fast_ret", "ニュースリリース", "https://www.fastretailing.com/jp/ir/news/", false],
       ["retail", "fast_ret", "EC・購入", "https://www.uniqlo.com/jp/ja/", false, true],
       ["retail", "fast_ret", "店舗検索", "https://www.uniqlo.com/jp/ja/store-locator/", false, true],
-      ["retail", "fast_ret", "口座開設・申込", null, null],
-      ["retail", "fast_ret", "ローン・保険", null, null],
-      ["retail", "fast_ret", "ポイント・特典", null, null],
       ["retail", "fast_ret", "サステナビリティ", "https://www.fastretailing.com/jp/sustainability/", false],
       ["retail", "fast_ret", "IR情報", "https://www.fastretailing.com/jp/ir/", false],
       ["retail", "fast_ret", "採用情報", "https://www.fastretailing.com/jp/employ/", false, true],
       ["retail", "fast_ret", "お問い合わせ", "https://www.fastretailing.com/jp/contact/", false, true],
-
       ["retail", "nitori", "EC・購入", "https://www.nitori-net.jp/ec/", false],
-      ["retail", "nitori", "口座開設・申込", null, null],
-      ["retail", "nitori", "ローン・保険", null, null],
-
       ["retail", "mufg", "TOPページ", "https://www.bk.mufg.jp/", false],
       ["retail", "mufg", "企業情報", "https://www.mufg.jp/", false],
       ["retail", "mufg", "ニュースリリース", "https://www.mufg.jp/ir/press/", false, true],
-      ["retail", "mufg", "EC・購入", null, null],
       ["retail", "mufg", "店舗検索", "https://www.bk.mufg.jp/tenpo/", false, true],
       ["retail", "mufg", "ローン・保険", "https://www.bk.mufg.jp/kariru/", false],
       ["retail", "mufg", "ポイント・特典", "https://www.bk.mufg.jp/point/", false, true],
@@ -3879,11 +3447,9 @@
       ["retail", "mufg", "IR情報", "https://www.mufg.jp/ir/", false],
       ["retail", "mufg", "採用情報", "https://www.mufg.jp/career/", false, true],
       ["retail", "mufg", "お問い合わせ", "https://www.bk.mufg.jp/contact/", false, true],
-
       ["retail", "smbc", "TOPページ", "https://www.smbc.co.jp/", false],
       ["retail", "smbc", "企業情報", "https://www.smbc.co.jp/aboutus/", false],
       ["retail", "smbc", "ニュースリリース", "https://www.smbc.co.jp/news/", false],
-      ["retail", "smbc", "EC・購入", null, null],
       ["retail", "smbc", "店舗検索", "https://www.smbc.co.jp/tenpo/", false, true],
       ["retail", "smbc", "口座開設・申込", "https://www.smbc.co.jp/kojin/kouza/", false, true],
       ["retail", "smbc", "ローン・保険", "https://www.smbc.co.jp/kojin/kariru/", false, true],
@@ -3892,14 +3458,11 @@
       ["retail", "smbc", "IR情報", "https://www.smbc.co.jp/investor/", false, true],
       ["retail", "smbc", "採用情報", "https://www.smbc.co.jp/career/", false, true],
       ["retail", "smbc", "お問い合わせ", "https://www.smbc.co.jp/contact/", false],
-
       ["retail", "mizuho", "TOPページ", "https://www.mizuhobank.co.jp/", false],
       ["retail", "mizuho", "企業情報", "https://www.mizuho-fg.co.jp/", false],
       ["retail", "mizuho", "ニュースリリース", "https://www.mizuho-fg.co.jp/investors/financial/", false],
-      ["retail", "mizuho", "EC・購入", null, null],
       ["retail", "mizuho", "サステナビリティ", "https://www.mizuho-fg.co.jp/csr/", false],
       ["retail", "mizuho", "IR情報", "https://www.mizuho-fg.co.jp/investors/", false],
-
       ["retail", "jp_post", "TOPページ", "https://www.japanpost.jp/", false],
       ["retail", "jp_post", "企業情報", "https://www.japanpost.jp/corporate/", false],
       ["retail", "jp_post", "ニュースリリース", "https://www.japanpost.jp/pressrelease/", false],
@@ -3907,122 +3470,86 @@
       ["retail", "jp_post", "店舗検索", "https://www.post.japanpost.jp/shiten/", false, true],
       ["retail", "jp_post", "口座開設・申込", "https://www.jp-bank.japanpost.jp/", false],
       ["retail", "jp_post", "ローン・保険", "https://www.jp-life.japanpost.jp/", false],
-      ["retail", "jp_post", "ポイント・特典", null, null],
       ["retail", "jp_post", "サステナビリティ", "https://www.japanpost.jp/csr/", false],
       ["retail", "jp_post", "IR情報", "https://www.japanpost.jp/ir/", false],
       ["retail", "jp_post", "採用情報", "https://www.japanpost.jp/recruit/", false, true],
       ["retail", "jp_post", "お問い合わせ", "https://www.japanpost.jp/contact/", false, true],
-
       ["retail", "yamato", "TOPページ", "https://www.kuronekoyamato.co.jp/", false],
       ["retail", "yamato", "企業情報", "https://www.yamato-hd.co.jp/", false],
       ["retail", "yamato", "ニュースリリース", "https://www.yamato-hd.co.jp/news/", false],
-      ["retail", "yamato", "EC・購入", null, null],
       ["retail", "yamato", "店舗検索", "https://www.kuronekoyamato.co.jp/ytc/map/", false, true],
-      ["retail", "yamato", "口座開設・申込", null, null],
-      ["retail", "yamato", "ローン・保険", null, null],
       ["retail", "yamato", "ポイント・特典", "https://www.kuronekoyamato.co.jp/ytc/point/", false, true],
       ["retail", "yamato", "サステナビリティ", "https://www.yamato-hd.co.jp/sustainability/", false, true],
       ["retail", "yamato", "IR情報", "https://www.yamato-hd.co.jp/investors/", false],
       ["retail", "yamato", "採用情報", "https://www.yamato-hd.co.jp/recruit/", false],
       ["retail", "yamato", "お問い合わせ", "https://www.kuronekoyamato.co.jp/ytc/customer/", false],
-
       ["retail", "sagawa", "TOPページ", "https://www.sagawa-exp.co.jp/", false],
       ["retail", "sagawa", "企業情報", "https://www.sagawa-exp.co.jp/company/", false],
       ["retail", "sagawa", "ニュースリリース", "https://www.sagawa-exp.co.jp/news/", false, true],
-      ["retail", "sagawa", "EC・購入", null, null],
       ["retail", "sagawa", "店舗検索", "https://www.sagawa-exp.co.jp/stepgate/", false, true],
-      ["retail", "sagawa", "口座開設・申込", null, null],
-      ["retail", "sagawa", "ローン・保険", null, null],
-      ["retail", "sagawa", "ポイント・特典", null, null],
       ["retail", "sagawa", "サステナビリティ", "https://www.sagawa-exp.co.jp/sustainability/", false],
-      ["retail", "sagawa", "IR情報", null, null],
       ["retail", "sagawa", "採用情報", "https://www.sagawa-exp.co.jp/recruit/", false],
       ["retail", "sagawa", "お問い合わせ", "https://www.sagawa-exp.co.jp/contact/", false],
-
-      ["retail", "jal", "口座開設・申込", null, null],
-      ["retail", "jal", "ローン・保険", null, null],
-
       ["retail", "ana", "TOPページ", "https://www.ana.co.jp/ja/jp/", false],
       ["retail", "ana", "企業情報", "https://www.ana.co.jp/group/", false],
       ["retail", "ana", "ニュースリリース", "https://www.ana.co.jp/group/pr/", false],
       ["retail", "ana", "店舗検索", "https://www.ana.co.jp/ja/jp/guide/airport/", false, true],
-      ["retail", "ana", "口座開設・申込", null, null],
-      ["retail", "ana", "ローン・保険", null, null],
       ["retail", "ana", "ポイント・特典", "https://www.ana.co.jp/ja/jp/amc/", false],
       ["retail", "ana", "サステナビリティ", "https://www.ana.co.jp/group/csr/", false],
       ["retail", "ana", "IR情報", "https://www.ana.co.jp/group/ir/", false, true],
       ["retail", "ana", "採用情報", "https://www.ana.co.jp/group/recruit/", false],
-
       ["retail", "nippon_life", "TOPページ", "https://www.nissay.co.jp/", false],
       ["retail", "nippon_life", "企業情報", "https://www.nissay.co.jp/company/", false, true],
       ["retail", "nippon_life", "ニュースリリース", "https://www.nissay.co.jp/news/", false],
-      ["retail", "nippon_life", "EC・購入", null, null],
       ["retail", "nippon_life", "店舗検索", "https://www.nissay.co.jp/tenpo/", false, true],
       ["retail", "nippon_life", "口座開設・申込", "https://www.nissay.co.jp/hoken/", false, true],
       ["retail", "nippon_life", "ローン・保険", "https://www.nissay.co.jp/hoken/", false, true],
-      ["retail", "nippon_life", "ポイント・特典", null, null],
       ["retail", "nippon_life", "サステナビリティ", "https://www.nissay.co.jp/csr/", false, true],
       ["retail", "nippon_life", "IR情報", "https://www.nissay.co.jp/ir/", false, true],
       ["retail", "nippon_life", "採用情報", "https://www.nissay.co.jp/recruit/", false, true],
       ["retail", "nippon_life", "お問い合わせ", "https://www.nissay.co.jp/contact/", false],
-
-      // ── 電子部品・電池 ────────────────────────────────────────────
-      ["electronics", "maxell", "TOPページ",      "https://www.maxell.co.jp/",                           false],
-      ["electronics", "maxell", "企業情報",        "https://www.maxell.co.jp/company/",                   false],
-      ["electronics", "maxell", "ニュースリリース","https://www.maxell.co.jp/news/",                       false],
-      ["electronics", "maxell", "製品一覧",        "https://www.maxell.co.jp/products/",                  false],
-      ["electronics", "maxell", "製品詳細",        "https://www.maxell.co.jp/products/battery/",          false],
-      ["electronics", "maxell", "EC・購入",        "https://shop.maxell.co.jp/",                          false],
-      ["electronics", "maxell", "修理・サポート",  "https://www.maxell.co.jp/support/",                   false],
-      ["electronics", "maxell", "キャンペーン",    null,                                                  null],
-      ["electronics", "maxell", "サステナビリティ","https://www.maxell.co.jp/csr/",                        false],
-      ["electronics", "maxell", "IR情報",          "https://www.maxell.co.jp/ir/",                        false],
-      ["electronics", "maxell", "採用情報",        "https://www.maxell.co.jp/recruit/",                   false],
-      ["electronics", "maxell", "お問い合わせ",    "https://www.maxell.co.jp/contact/",                   false],
-      ["electronics", "maxell", "技術・R&D",       "https://www.maxell.co.jp/technology/",                false],
-
-      ["electronics", "tdk", "TOPページ",          "https://www.tdk.com/ja/",                             false],
-      ["electronics", "tdk", "企業情報",           "https://www.tdk.com/ja/company/",                     false],
-      ["electronics", "tdk", "ニュースリリース",    "https://www.tdk.com/ja/news/",                        false],
-      ["electronics", "tdk", "製品一覧",           "https://www.tdk.com/ja/products/",                    false],
-      ["electronics", "tdk", "製品詳細",           null,                                                  null],
-      ["electronics", "tdk", "EC・購入",           null,                                                  null],
-      ["electronics", "tdk", "修理・サポート",     "https://www.tdk.com/ja/support/",                     false],
-      ["electronics", "tdk", "キャンペーン",       null,                                                  null],
-      ["electronics", "tdk", "サステナビリティ",   "https://www.tdk.com/ja/csr/",                         false],
-      ["electronics", "tdk", "IR情報",             "https://www.tdk.com/ja/ir/",                          false],
-      ["electronics", "tdk", "採用情報",           "https://www.tdk.com/ja/careers/",                     false],
-      ["electronics", "tdk", "お問い合わせ",       "https://www.tdk.com/ja/contact/",                     false],
-      ["electronics", "tdk", "技術・R&D",          "https://www.tdk.com/ja/technology/",                  false],
-
-      ["electronics", "fdk", "TOPページ",          "https://www.fdk.co.jp/",                              false],
-      ["electronics", "fdk", "企業情報",           "https://www.fdk.co.jp/company/",                      false],
-      ["electronics", "fdk", "ニュースリリース",    "https://www.fdk.co.jp/news/",                         false],
-      ["electronics", "fdk", "製品一覧",           "https://www.fdk.co.jp/products/",                     false],
-      ["electronics", "fdk", "製品詳細",           "https://www.fdk.co.jp/products/battery/",             false],
-      ["electronics", "fdk", "EC・購入",           null,                                                  null],
-      ["electronics", "fdk", "修理・サポート",     null,                                                  null],
-      ["electronics", "fdk", "キャンペーン",       null,                                                  null],
-      ["electronics", "fdk", "サステナビリティ",   "https://www.fdk.co.jp/csr/",                          false],
-      ["electronics", "fdk", "IR情報",             "https://www.fdk.co.jp/ir/",                           false],
-      ["electronics", "fdk", "採用情報",           "https://www.fdk.co.jp/recruit/",                      false],
-      ["electronics", "fdk", "お問い合わせ",       "https://www.fdk.co.jp/contact/",                      false],
-      ["electronics", "fdk", "技術・R&D",          "https://www.fdk.co.jp/rd/",                           false],
-
-      ["electronics", "gs_yuasa", "TOPページ",     "https://www.gs-yuasa.com/jp/",                        false],
-      ["electronics", "gs_yuasa", "企業情報",      "https://www.gs-yuasa.com/jp/company/",                false],
-      ["electronics", "gs_yuasa", "ニュースリリース","https://www.gs-yuasa.com/jp/news/",                  false],
-      ["electronics", "gs_yuasa", "製品一覧",      "https://www.gs-yuasa.com/jp/products/",               false],
-      ["electronics", "gs_yuasa", "製品詳細",      null,                                                  null],
-      ["electronics", "gs_yuasa", "EC・購入",      null,                                                  null],
-      ["electronics", "gs_yuasa", "修理・サポート","https://www.gs-yuasa.com/jp/support/",                false],
-      ["electronics", "gs_yuasa", "キャンペーン",  null,                                                  null],
-      ["electronics", "gs_yuasa", "サステナビリティ","https://www.gs-yuasa.com/jp/csr/",                  false],
-      ["electronics", "gs_yuasa", "IR情報",        "https://www.gs-yuasa.com/jp/ir/",                     false],
-      ["electronics", "gs_yuasa", "採用情報",      "https://www.gs-yuasa.com/jp/recruit/",                false],
-      ["electronics", "gs_yuasa", "お問い合わせ",  "https://www.gs-yuasa.com/jp/contact/",                false],
-      ["electronics", "gs_yuasa", "技術・R&D",     "https://www.gs-yuasa.com/jp/technology/",             false],
-      // ── 追加企業 RAW ──
+      ["electronics", "maxell", "TOPページ", "https://www.maxell.co.jp/", false],
+      ["electronics", "maxell", "企業情報", "https://www.maxell.co.jp/company/", false],
+      ["electronics", "maxell", "ニュースリリース", "https://www.maxell.co.jp/news/", false],
+      ["electronics", "maxell", "製品一覧", "https://www.maxell.co.jp/products/", false],
+      ["electronics", "maxell", "製品詳細", "https://www.maxell.co.jp/products/battery/", false],
+      ["electronics", "maxell", "EC・購入", "https://shop.maxell.co.jp/", false],
+      ["electronics", "maxell", "修理・サポート", "https://www.maxell.co.jp/support/", false],
+      ["electronics", "maxell", "サステナビリティ", "https://www.maxell.co.jp/csr/", false],
+      ["electronics", "maxell", "IR情報", "https://www.maxell.co.jp/ir/", false],
+      ["electronics", "maxell", "採用情報", "https://www.maxell.co.jp/recruit/", false],
+      ["electronics", "maxell", "お問い合わせ", "https://www.maxell.co.jp/contact/", false],
+      ["electronics", "maxell", "技術・R&D", "https://www.maxell.co.jp/technology/", false],
+      ["electronics", "tdk", "TOPページ", "https://www.tdk.com/ja/", false],
+      ["electronics", "tdk", "企業情報", "https://www.tdk.com/ja/company/", false],
+      ["electronics", "tdk", "ニュースリリース", "https://www.tdk.com/ja/news/", false],
+      ["electronics", "tdk", "製品一覧", "https://www.tdk.com/ja/products/", false],
+      ["electronics", "tdk", "修理・サポート", "https://www.tdk.com/ja/support/", false],
+      ["electronics", "tdk", "サステナビリティ", "https://www.tdk.com/ja/csr/", false],
+      ["electronics", "tdk", "IR情報", "https://www.tdk.com/ja/ir/", false],
+      ["electronics", "tdk", "採用情報", "https://www.tdk.com/ja/careers/", false],
+      ["electronics", "tdk", "お問い合わせ", "https://www.tdk.com/ja/contact/", false],
+      ["electronics", "tdk", "技術・R&D", "https://www.tdk.com/ja/technology/", false],
+      ["electronics", "fdk", "TOPページ", "https://www.fdk.co.jp/", false],
+      ["electronics", "fdk", "企業情報", "https://www.fdk.co.jp/company/", false],
+      ["electronics", "fdk", "ニュースリリース", "https://www.fdk.co.jp/news/", false],
+      ["electronics", "fdk", "製品一覧", "https://www.fdk.co.jp/products/", false],
+      ["electronics", "fdk", "製品詳細", "https://www.fdk.co.jp/products/battery/", false],
+      ["electronics", "fdk", "サステナビリティ", "https://www.fdk.co.jp/csr/", false],
+      ["electronics", "fdk", "IR情報", "https://www.fdk.co.jp/ir/", false],
+      ["electronics", "fdk", "採用情報", "https://www.fdk.co.jp/recruit/", false],
+      ["electronics", "fdk", "お問い合わせ", "https://www.fdk.co.jp/contact/", false],
+      ["electronics", "fdk", "技術・R&D", "https://www.fdk.co.jp/rd/", false],
+      ["electronics", "gs_yuasa", "TOPページ", "https://www.gs-yuasa.com/jp/", false],
+      ["electronics", "gs_yuasa", "企業情報", "https://www.gs-yuasa.com/jp/company/", false],
+      ["electronics", "gs_yuasa", "ニュースリリース", "https://www.gs-yuasa.com/jp/news/", false],
+      ["electronics", "gs_yuasa", "製品一覧", "https://www.gs-yuasa.com/jp/products/", false],
+      ["electronics", "gs_yuasa", "修理・サポート", "https://www.gs-yuasa.com/jp/support/", false],
+      ["electronics", "gs_yuasa", "サステナビリティ", "https://www.gs-yuasa.com/jp/csr/", false],
+      ["electronics", "gs_yuasa", "IR情報", "https://www.gs-yuasa.com/jp/ir/", false],
+      ["electronics", "gs_yuasa", "採用情報", "https://www.gs-yuasa.com/jp/recruit/", false],
+      ["electronics", "gs_yuasa", "お問い合わせ", "https://www.gs-yuasa.com/jp/contact/", false],
+      ["electronics", "gs_yuasa", "技術・R&D", "https://www.gs-yuasa.com/jp/technology/", false],
       ["trading", "toyota_tsusho", "TOPページ", "https://www.toyota-tsusho.com/", null],
       ["trading", "toyota_tsusho", "企業情報", "https://www.toyota-tsusho.com/company/", null],
       ["trading", "toyota_tsusho", "採用情報", "https://www.toyota-tsusho.com/recruit/", null],
@@ -5991,7 +5518,7 @@
       otherservice: 'retail', hotel: 'retail',
     };
 
-    const allData = RAW.map(([iid, cid, pt, url, verified]) => {
+    const allData = RAW.map(([iid, cid, pt, url]) => {
       const parentId = INDUSTRY_MAP[iid] ?? iid;
       return {
         industryId: parentId,
@@ -6000,7 +5527,6 @@
         company:    COMPANIES[cid],
         pageType:   pt,
         url,
-        verified
       };
     });
 
@@ -6066,7 +5592,7 @@
       return allData.filter(d => {
         if (state.industry !== 'all' && d.industryId !== state.industry) return false;
         if (state.pageType !== 'all' && d.pageType   !== state.pageType) return false;
-        if (q && !`${d.industry} ${d.company} ${d.pageType} ${d.url ?? ''}`.toLowerCase().includes(q)) return false;
+        if (q && !`${d.industry} ${d.company} ${d.pageType} ${d.url}`.toLowerCase().includes(q)) return false;
         return true;
       });
     }
@@ -6074,20 +5600,18 @@
     function applyFilters() {
       const filtered = getFiltered();
       updateStats(filtered);
-      currentView === 'list' ? renderList(filtered) : renderMatrix(filtered);
+      if (currentView === 'list') renderList(filtered);
+      else renderGallery(filtered);
     }
 
     /* ============================================================
        STATS
     ============================================================ */
     function updateStats(filtered) {
-      const cos     = new Set(filtered.map(d => d.companyId)).size;
-      const inds    = new Set(filtered.map(d => d.industryId)).size;
-      const withUrl = filtered.filter(d => d.url).length;
-      const na      = filtered.filter(d => !d.url).length;
+      const cos  = new Set(filtered.map(d => d.companyId)).size;
+      const inds = new Set(filtered.map(d => d.industryId)).size;
       document.getElementById('statsBar').innerHTML =
-        `<strong>${withUrl}</strong> URL / <strong>${cos}</strong>社 / <strong>${inds}</strong>業界` +
-        (na > 0 ? ` <span style="color:var(--subtext)">（N/A: ${na}件含む）</span>` : '');
+        `<strong>${filtered.length}</strong> URL / <strong>${cos}</strong>社 / <strong>${inds}</strong>業界`;
     }
 
     /* ============================================================
@@ -6118,9 +5642,7 @@
       noRes.classList.add('hidden');
 
       tbody.innerHTML = sorted.map(d => {
-        const urlCell = d.url === null
-          ? `<span class="url-na">—</span>`
-          : `<a class="url-link" href="${d.url}" target="_blank" rel="noopener noreferrer">${d.url}</a>`;
+        const urlCell = `<a class="url-link" href="${d.url}" target="_blank" rel="noopener noreferrer">${d.url}</a>`;
         return `<tr>
       <td class="td-industry">${d.industry}</td>
       <td class="td-company">${d.company}</td>
@@ -6131,42 +5653,89 @@
     }
 
     /* ============================================================
-       MATRIX VIEW
+       GALLERY VIEW  (dummy screenshots via placehold.jp)
     ============================================================ */
-    function renderMatrix(data) {
-      const wrap = document.getElementById('matrixWrap');
-      const noRes = document.getElementById('noResultsMatrix');
-      const companyIds = [...new Set(data.map(d => d.companyId))];
-      const pageTypes  = [...new Set(data.map(d => d.pageType))];
+    /* deterministic muted color per company, for placeholder variety */
+    const DUMMY_PALETTE = [
+      '1d3557', '2a4d69', '3d5a80', '4a4e69', '2f3e46',
+      '5c4d7d', '6d597a', '355070', '3c6e71', '40514e',
+      '6b705c', '774936', '5a4a42', '30475e', '4b3f72',
+    ];
+    function colorFor(id) {
+      let h = 0;
+      for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+      return DUMMY_PALETTE[h % DUMMY_PALETTE.length];
+    }
+    /* placehold.jp: /{fontsize}/{bg}/{fg}/{w}x{h}.png?text=... */
+    function dummyImg(d, w, h) {
+      const bg = colorFor(d.companyId);
+      const text = encodeURIComponent(`${d.company}\n${d.pageType}`);
+      const fs = Math.round(w / 12);
+      return `https://placehold.jp/${fs}/${bg}/ffffff/${w}x${h}.png?text=${text}`;
+    }
 
-      if (!companyIds.length) {
-        wrap.innerHTML = '';
+    function renderGallery(data) {
+      const grid = document.getElementById('galleryGrid');
+      const noRes = document.getElementById('noResultsGallery');
+
+      if (!data.length) {
+        grid.innerHTML = '';
         noRes.classList.remove('hidden');
         return;
       }
       noRes.classList.add('hidden');
 
-      const lk = {};
-      data.forEach(d => { (lk[d.companyId] ??= {})[d.pageType] = d; });
+      grid.innerHTML = data.map((d, i) => {
+        const thumb = dummyImg(d, 400, 620);
+        const urlCell = `<a class="gcard-url" href="${d.url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" title="${d.url}">${d.url}</a>`;
+        return `<div class="gcard" onclick="openLightbox(${i})">
+          <div class="gcard-thumb">
+            <img loading="lazy" src="${thumb}" alt="${d.company} ${d.pageType}">
+            <span class="gcard-expand">全体を見る ⤢</span>
+          </div>
+          <div class="gcard-body">
+            <div class="gcard-company" title="${d.company}">${d.company}</div>
+            <div class="gcard-sub">
+              <span class="gcard-industry">${d.industry}</span>
+              <span class="page-badge">${d.pageType}</span>
+            </div>
+            ${urlCell}
+          </div>
+        </div>`;
+      }).join('');
 
-      function cell(entry) {
-        if (!entry || entry.url === null)
-          return `<td class="matrix-na">${entry ? '—' : ''}</td>`;
-        return `<td class="matrix-cell"><a href="${entry.url}" target="_blank" rel="noopener noreferrer" title="${entry.url}">→</a></td>`;
-      }
-
-      wrap.innerHTML = `<table class="matrix-table">
-        <thead><tr>
-          <th class="col-company">企業名</th>
-          ${pageTypes.map(pt => `<th title="${pt}">${pt}</th>`).join('')}
-        </tr></thead>
-        <tbody>
-          ${companyIds.map(cid =>
-            `<tr><th>${COMPANIES[cid]}</th>${pageTypes.map(pt => cell(lk[cid]?.[pt])).join('')}</tr>`
-          ).join('')}
-        </tbody>
-      </table>`;
+      galleryData = data;
     }
+
+    /* ============================================================
+       LIGHTBOX  (full-page dummy image)
+    ============================================================ */
+    let galleryData = [];
+
+    function openLightbox(i) {
+      const d = galleryData[i];
+      if (!d) return;
+      document.getElementById('lbCompany').textContent = d.company;
+      document.getElementById('lbMeta').textContent = `${d.industry} ・ ${d.pageType} ・ ${d.url}`;
+      document.getElementById('lbLink').href = d.url;
+      /* tall "full page" dummy */
+      const full = dummyImg(d, 640, 2200);
+      document.getElementById('lightboxBody').innerHTML =
+        `<img src="${full}" alt="${d.company} ${d.pageType} 全体イメージ">`;
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('lightbox').classList.add('hidden');
+      document.getElementById('lightboxBody').innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
 
     /* ============================================================
        VIEW TOGGLE
@@ -6176,7 +5745,7 @@
       document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('viewList').classList.toggle('hidden', view !== 'list');
-      document.getElementById('viewMatrix').classList.toggle('hidden', view !== 'matrix');
+      document.getElementById('viewGallery').classList.toggle('hidden', view !== 'gallery');
       applyFilters();
     }
 
