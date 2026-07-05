@@ -1,3 +1,7 @@
 node_modules/
 .DS_Store
 *.log
+
+# 元スクリーンショットのzip（合計2.3GB）はリポジトリに含めない。
+# 反映済みの軽量WebPは assets/screens/ にコミットする。
+*.zip

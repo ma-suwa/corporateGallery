@@ -451,6 +451,20 @@
       opacity: 1;
     }
 
+    .shot-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(52, 199, 89, 0.92);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 3px 8px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+    }
+
     .gcard-body {
       padding: 12px 14px 14px;
       display: flex;
@@ -604,6 +618,14 @@
       margin: 0 auto;
     }
 
+    .lightbox-note {
+      max-width: 640px;
+      margin: 14px auto 0;
+      font-size: 12px;
+      color: var(--subtext);
+      line-height: 1.6;
+    }
+
     @media (max-width: 640px) {
       .lightbox {
         padding: 0;
@@ -663,7 +685,7 @@
       <div class="stats" id="statsBar">読み込み中…</div>
       <div class="toolbar-right">
         <div class="view-toggle">
-          <button class="view-btn active" id="btnList" onclick="setView('list',this)">
+          <button class="view-btn" id="btnList" onclick="setView('list',this)">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
               <rect y="0" width="14" height="2" rx="1" />
               <rect y="5" width="14" height="2" rx="1" />
@@ -671,7 +693,7 @@
             </svg>
             リスト
           </button>
-          <button class="view-btn" id="btnGallery" onclick="setView('gallery',this)">
+          <button class="view-btn active" id="btnGallery" onclick="setView('gallery',this)">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor">
               <rect x="0" y="0" width="6" height="9" rx="1" />
               <rect x="8" y="0" width="6" height="4" rx="1" />
@@ -685,7 +707,7 @@
     </div>
 
     <!-- List View -->
-    <div id="viewList">
+    <div id="viewList" class="hidden">
       <div class="table-wrap">
         <table class="list-table">
           <thead>
@@ -706,9 +728,9 @@
     </div>
 
     <!-- Gallery View -->
-    <div id="viewGallery" class="hidden">
+    <div id="viewGallery">
       <div class="gallery-note">
-        ※ 画像は検証用のダミー（placehold.jp）です。実際のスクリーンショットではありません。
+        「実写」バッジ付きは実サイトのキャプチャ画像（軽量化した縮小版）です。バッジのない項目はプレースホルダーを表示しています。
       </div>
       <div class="gallery-grid" id="galleryGrid"></div>
       <div id="noResultsGallery" class="no-results hidden">
@@ -5534,7 +5556,7 @@
        STATE
     ============================================================ */
     let state = { industry: 'all', pageType: 'TOPページ' };
-    let currentView = 'list';
+    let currentView = 'gallery';
     let sortKey = null, sortAsc = true;
 
     /* ============================================================
@@ -5674,6 +5696,16 @@
       return `https://placehold.jp/${fs}/${bg}/ffffff/${w}x${h}.png?text=${text}`;
     }
 
+    /* ── 実スクリーンショット (assets/screens/*.webp) ──
+       ファイル名は URL を [^0-9A-Za-z._-] → "_" で正規化したもの。
+       幅440pxの縮小WebP1枚をカード(上部クロップ)とライトボックス(全体)で兼用。 */
+    const SCREEN_KEYS = new Set(["https___about.google_intl_ja_jp_","https___alinamin-pharma.co.jp_","https___amutus.co.jp_","https___cdp-japan.jp_","https___corp.rakuten.co.jp_","https___hakuhodo-technologies.co.jp_","https___homes.panasonic.com_","https___jaf.or.jp_","https___jp.pg.com_","https___jp.sharp_","https___jpn.nec.com_","https___jr-central.co.jp_","https___kadenfan.hitachi.co.jp_","https___manga.line.me_","https___new-kokumin.jp_","https___o-ishin.jp_","https___piccoma.com_web_","https___toyota.jp_","https___www.0101maruigroup.co.jp_","https___www.24028.jp_","https___www.7andi.com_","https___www.82bank.co.jp_","https___www.abc-mart.net_","https___www.acom.co.jp_","https___www.adk.jp_","https___www.advantest.com_ja_","https___www.aeon.info_","https___www.aflac.co.jp_","https___www.aiful.co.jp_","https___www.aioinissaydowa.co.jp_","https___www.aisin.com_jp_","https___www.aist.go.jp_","https___www.ajinomoto.co.jp_","https___www.akita-bank.co.jp_","https___www.alfresa.com_","https___www.alsok.co.jp_","https___www.amazon.co.jp_","https___www.ana.co.jp_ja_jp_","https___www.andoh.co.jp_","https___www.aoki-hd.co.jp_","https___www.aozorabank.co.jp_","https___www.arata.co.jp_","https___www.asahi-life.co.jp_","https___www.asahibeer.co.jp_","https___www.asahigroup-holdings.com_","https___www.ashikagabank.co.jp_","https___www.askul.co.jp_","https___www.audi.co.jp_","https___www.autobacs.co.jp_","https___www.awabank.co.jp_","https___www.axa.co.jp_","https___www.bandainamco.co.jp_","https___www.belc.jp_","https___www.bizreach.co.jp_","https___www.bk.mufg.jp_","https___www.bmw.co.jp_","https___www.bookoffonline.co.jp_","https___www.boy.co.jp_","https___www.bridgestone.co.jp_","https___www.c-nexco.co.jp_","https___www.cainz.co.jp_","https___www.calbee.co.jp_","https___www.chibabank.co.jp_","https___www.chuden.co.jp_","https___www.chugin.co.jp_","https___www.citizen.co.jp_","https___www.city.shinjuku.lg.jp_","https___www.city.yokohama.lg.jp_","https___www.coca-cola.com_jp_ja","https___www.cosmo-oil.co.jp_","https___www.ctc-g.co.jp_","https___www.cyberagent.co.jp_","https___www.d-kintetsu.co.jp_","https___www.daido-life.co.jp_","https___www.daihatsu.co.jp_","https___www.daikyo.co.jp_","https___www.daimaru.co.jp_","https___www.daiwa-grp.jp_","https___www.daiwahouse.co.jp_","https___www.dcm-hldgs.co.jp_","https___www.denso.com_jp_ja_","https___www.dentsu.co.jp_","https___www.dentsudigital.co.jp_","https___www.dhbk.co.jp_","https___www.dir.co.jp_","https___www.donki.com_","https___www.doshisha.co.jp_","https___www.doutor.co.jp_","https___www.duskin.co.jp_","https___www.e-nexco.co.jp_","https___www.earth.jp_","https___www.edion.co.jp_","https___www.eneos.co.jp_","https___www.energia.co.jp_","https___www.epson.jp_","https___www.esteelauder.co.jp_","https___www.exeo.co.jp_","https___www.ey.com_ja_jp","https___www.facebook.com_","https___www.family.co.jp_","https___www.fastretailing.com_jp_","https___www.fujifilm.com_fb_","https___www.fujishoji.co.jp_","https___www.fujita-kanko.co.jp_","https___www.fujita.co.jp_","https___www.fujitsu.com_jp_","https___www.fukuokabank.co.jp_","https___www.glico.com_jp_","https___www.gogin.co.jp_","https___www.gunmabank.co.jp_","https___www.hakuhodo.co.jp_","https___www.hakuto.co.jp_","https___www.hankyu-hanshin-dept.co.jp_","https___www.hankyu-hanshin.co.jp_","https___www.hanshin-exp.co.jp_","https___www.hanwa.co.jp_","https___www.haseko.co.jp_","https___www.heiwado.jp_","https___www.hepco.co.jp_","https___www.higobank.co.jp_","https___www.hino.co.jp_","https___www.hitachi-hightech.com_jp_","https___www.hitachi.co.jp_","https___www.hokkaidobank.co.jp_","https___www.hokugin.co.jp_","https___www.honda.co.jp_","https___www.horiba.com_jpn_","https___www.hulic.co.jp_","https___www.hyakugo.co.jp_","https___www.ichijo.co.jp_","https___www.idemitsu.com_jp_","https___www.iino.co.jp_","https___www.imazo.co.jp_","https___www.imhds.co.jp_","https___www.imperialhotel.co.jp_","https___www.inaba-denko.com_","https___www.inabata.co.jp_","https___www.inageya.co.jp_","https___www.inpex.co.jp_","https___www.isuzu.co.jp_","https___www.itcenex.com_","https___www.itochu.co.jp_ja_","https___www.itoen.co.jp_","https___www.itoyokado.co.jp_","https___www.iwatani.co.jp_","https___www.iwatebank.co.jp_","https___www.iyobank.co.jp_","https___www.jaccs.co.jp_","https___www.japanpost.jp_","https___www.jaxa.jp_","https___www.jbic.go.jp_","https___www.jcb.co.jp_","https___www.jeol.co.jp_","https___www.jera.co.jp_","https___www.jetro.go.jp_","https___www.jfe-eng.co.jp_","https___www.jfe-shoji.co.jp_","https___www.jgc.com_jp_","https___www.jica.go.jp_","https___www.jimin.jp_","https___www.jmuc.co.jp_","https___www.joyobank.co.jp_","https___www.jp-bank.japanpost.jp_","https___www.jp-life.japanpost.jp_","https___www.jpower.co.jp_","https___www.jpx.co.jp_","https___www.jr-shikoku.co.jp_","https___www.jrfreight.co.jp_","https___www.jrhokkaido.co.jp_","https___www.jri.co.jp_","https___www.jrkyushu.co.jp_","https___www.jtekt.co.jp_","https___www.jti.co.jp_","https___www.jtuc-rengo.or.jp_","https___www.juroku.co.jp_","https___www.kadokawa.co.jp_","https___www.kagin.co.jp_","https___www.kagome.co.jp_","https___www.kajima.co.jp_","https___www.kandenko.co.jp_","https___www.kanematsu.co.jp_","https___www.kao.com_jp_","https___www.katogroup.co.jp_","https___www.kawasaki-motors.com_ja_","https___www.kdh.or.jp_","https___www.keikyu.co.jp_","https___www.keio.co.jp_","https___www.keisei.co.jp_","https___www.kentaku.co.jp_","https___www.kewpie.co.jp_","https___www.kikkoman.co.jp_","https___www.kinden.co.jp_","https___www.kintetsu.co.jp_","https___www.kirin.co.jp_","https___www.kiyobank.co.jp_","https___www.kline.co.jp_","https___www.kobayashi.co.jp_","https___www.kobebussan.co.jp_","https___www.kokubu.co.jp_","https___www.komei.or.jp_","https___www.konami.com_ja_","https___www.konoike.co.jp_","https___www.kose.co.jp_","https___www.kowa.co.jp_","https___www.kuronekoyamato.co.jp_","https___www.kwe.co.jp_","https___www.kyb.co.jp_","https___www.kyocera.co.jp_","https___www.kyoeikasai.co.jp_","https___www.kyotobank.co.jp_","https___www.lawson.co.jp_","https___www.lifecorp.jp_","https___www.lion.co.jp_","https___www.logisteed.com_","https___www.lotte.co.jp_","https___www.lycorp.co.jp_ja_","https___www.macnica.co.jp_","https___www.maeda.co.jp_","https___www.marubeni.com_jp_","https___www.maruchan.co.jp_","https___www.maruha-nichiro.co.jp_","https___www.marumo.co.jp_","https___www.matsui.co.jp_","https___www.matsukiyococokara.com_","https___www.matsuya.com_","https___www.mazda.co.jp_","https___www.mcdonalds.co.jp_","https___www.mec.co.jp_","https___www.meg-snow.com_","https___www.meigin.com_","https___www.meiji.co.jp_","https___www.meitetsu.co.jp_","https___www.mercedes-benz.co.jp_","https___www.meti.go.jp_","https___www.mfr.co.jp_","https___www.mhlw.go.jp_","https___www.michinokubank.co.jp_","https___www.milbon.co.jp_","https___www.ministop.co.jp_","https___www.mirait-one.com_","https___www.misawa.co.jp_","https___www.misumi.co.jp_","https___www.mitsubishi-hc-capital.com_","https___www.mitsubishi-logistics.co.jp_","https___www.mitsubishi-motors.co.jp_","https___www.mitsubishi-shokuhin.com_","https___www.mitsubishicorp.com_jp_ja_","https___www.mitsubishielectric.co.jp_","https___www.mitsui.com_jp_ja_","https___www.mitsuifudosan.co.jp_","https___www.mitsuihome.co.jp_","https___www.mizkan.co.jp_","https___www.mizuho-ls.co.jp_","https___www.mizuho-sc.com_","https___www.mizuhobank.co.jp_","https___www.mochida.co.jp_","https___www.mof.go.jp_","https___www.mol.co.jp_","https___www.mori-trust.co.jp_","https___www.mori.co.jp_","https___www.morinaga.co.jp_","https___www.morinagamilk.co.jp_","https___www.morita119.com_","https___www.mos.co.jp_","https___www.mri.co.jp_","https___www.murc.jp_","https___www.musashi.co.jp_","https___www.myojofoods.co.jp_","https___www.nagase.co.jp_","https___www.nankai.co.jp_","https___www.nantobank.co.jp_","https___www.nec-solutioninnovators.co.jp_","https___www.netbk.co.jp_","https___www.netone.co.jp_","https___www.newotani.co.jp_","https___www.nhkspg.co.jp_","https___www.nichirei.co.jp_","https___www.nihonkohden.co.jp_","https___www.nikon.co.jp_","https___www.nippon-access.co.jp_","https___www.nippon-shinyaku.co.jp_","https___www.nipponham.co.jp_","https___www.nishimatsu.co.jp_","https___www.nissan.co.jp_","https___www.nissay.co.jp_","https___www.nisshinbo.co.jp_","https___www.nisshinfire.co.jp_","https___www.nissin.com_jp_","https___www.nissui.co.jp_","https___www.nittsu.co.jp_","https___www.nnr.co.jp_","https___www.nojima.co.jp_","https___www.nok.co.jp_","https___www.nomura-re.co.jp_","https___www.nomura.co.jp_","https___www.nri.com_jp_","https___www.ntt-f.co.jp_","https___www.nttud.co.jp_","https___www.ntv.co.jp_","https___www.nyk.com_","https___www.obayashi.co.jp_","https___www.odakyu-dept.co.jp_","https___www.odakyu.jp_","https___www.okasan.co.jp_","https___www.okaya.co.jp_","https___www.okiden.co.jp_","https___www.okinawa-bank.co.jp_","https___www.okumura.co.jp_","https___www.orico.co.jp_","https___www.orixlife.co.jp_","https___www.osakagas.co.jp_","https___www.osakametro.co.jp_","https___www.paltac.co.jp_","https___www.persol-career.co.jp_","https___www.philipmorrisinternational.com_ja-jp","https___www.pokemon.co.jp_","https___www.pola.co.jp_","https___www.pref.kanagawa.jp_","https___www.pref.osaka.lg.jp_","https___www.primaham.co.jp_","https___www.princehotels.co.jp_","https___www.proterial.com_","https___www.pwc.com_jp_ja_","https___www.recruit.co.jp_","https___www.resona-gr.co.jp_","https___www.ricoh.co.jp_","https___www.rikuden.co.jp_","https___www.rockfield.co.jp_","https___www.rohto.co.jp_","https___www.ryugin.co.jp_","https___www.sagabank.co.jp_","https___www.sagawa-exp.co.jp_","https___www.saibugas.co.jp_","https___www.saisoncard.co.jp_","https___www.sanki.co.jp_","https___www.sankyu.co.jp_","https___www.sanrio.co.jp_","https___www.sanyofoods.co.jp_","https___www.sapporobeer.jp_","https___www.sbfoods.co.jp_","https___www.sbigroup.co.jp_","https___www.sbishinseibank.co.jp_","https___www.sc.mufg.jp_","https___www.secom.co.jp_","https___www.sega.co.jp_","https___www.seibuholdings.co.jp_","https___www.seiburailway.jp_","https___www.seiko.co.jp_","https___www.seino.co.jp_","https___www.sej.co.jp_","https___www.sekisuihouse.com_","https___www.senko.co.jp_","https___www.sevenbank.co.jp_","https___www.shigagin.com_","https___www.shimadzu.co.jp_","https___www.shimamura.gr.jp_","https___www.shimz.co.jp_","https___www.shinmaywa.co.jp_","https___www.shiseido.co.jp_","https___www.shizuokabank.co.jp_","https___www.shochiku.co.jp_","https___www.shokochukin.co.jp_","https___www.shutoko.co.jp_","https___www.skylark.co.jp_","https___www.smbc-card.com_","https___www.smbc-cf.com_","https___www.smbc.co.jp_","https___www.smbcnikko.co.jp_","https___www.smcon.co.jp_","https___www.smfl.co.jp_","https___www.smtb.jp_","https___www.sogo-seibu.co.jp_","https___www.sojitz.com_","https___www.sompo-japan.co.jp_","https___www.sonylife.co.jp_","https___www.sonysonpo.co.jp_","https___www.srigroup.co.jp_","https___www.stanley.co.jp_","https___www.starts.co.jp_","https___www.subaru.co.jp_","https___www.sugi-net.jp_","https___www.sumitomo-pharma.co.jp_","https___www.sumitomo-rd.co.jp_","https___www.sumitomo-soko.co.jp_","https___www.sumitomocorp.com_ja_jp_","https___www.sumitomolife.co.jp_","https___www.summitstore.co.jp_","https___www.suntory.co.jp_","https___www.surugabank.co.jp_","https___www.suzuken.co.jp_","https___www.suzuki.co.jp_","https___www.sws.co.jp_","https___www.sysmex.co.jp_","https___www.taisei.co.jp_","https___www.taisho.co.jp_","https___www.taiyo-seimei.co.jp_","https___www.takashimaya.co.jp_","https___www.takenaka.co.jp_","https___www.tatemono.com_","https___www.teldevice.co.jp_","https___www.tepco.co.jp_","https___www.terumo.co.jp_","https___www.tmn-anshin.co.jp_","https___www.tobu.co.jp_","https___www.toda.co.jp_","https___www.toei.co.jp_","https___www.toenec.co.jp_","https___www.tohoku-epco.co.jp_","https___www.tokai-rika.co.jp_","https___www.tokyo-gas.co.jp_","https___www.tokyocentury.co.jp_","https___www.tokyu-agc.co.jp_","https___www.tokyu-cnst.co.jp_","https___www.tokyu-dept.co.jp_","https___www.tokyu-land.co.jp_","https___www.tokyu-store.co.jp_","https___www.tokyu.co.jp_","https___www.tonami.co.jp_","https___www.toyo-eng.com_jp_","https___www.toyoda-gosei.co.jp_","https___www.toyota-boshoku.com_jp_","https___www.toyota-tsusho.com_","https___www.toyotahome.co.jp_","https___www.toyotires.jp_","https___www.tr.mufg.jp_","https___www.trusco.co.jp_","https___www.tsuruha.co.jp_","https___www.tv-asahi.co.jp_","https___www.tv-tokyo.co.jp_","https___www.uchida.co.jp_","https___www.unicharm.co.jp_ja_","https___www.w-nexco.co.jp_","https___www.westjr.co.jp_","https___www.xebio.co.jp_","https___www.y-yokohama.com_","https___www.yakult.co.jp_","https___www.yamagatabank.co.jp_","https___www.yamaha-motor.co.jp_","https___www.yamanashibank.co.jp_","https___www.yamazen.co.jp_","https___www.yanase.co.jp_","https___www.yaoko-net.com_","https___www.yaskawa.co.jp_","https___www.yonden.co.jp_","https___www.yoshinoya.com_","https___www.yurtec.co.jp_","https___www.yusen-logistics.com_","https___www.zensho.co.jp_jp_","https___www.zeria.co.jp_","https___www.zuken.co.jp_"]);
+    function screenKey(url) { return url.replace(/[^0-9A-Za-z._-]/g, '_'); }
+    function screenSrc(d) {
+      const k = screenKey(d.url);
+      return SCREEN_KEYS.has(k) ? `assets/screens/${k}.webp` : null;
+    }
+
     function renderGallery(data) {
       const grid = document.getElementById('galleryGrid');
       const noRes = document.getElementById('noResultsGallery');
@@ -5686,11 +5718,16 @@
       noRes.classList.add('hidden');
 
       grid.innerHTML = data.map((d, i) => {
-        const thumb = dummyImg(d, 400, 620);
+        const real = screenSrc(d);
+        const dummy = dummyImg(d, 400, 620);
+        const thumb = real || dummy;
+        const onerr = real ? ` onerror="this.onerror=null;this.src='${dummy}'"` : '';
+        const shotBadge = real ? `<span class="shot-badge">実写</span>` : '';
         const urlCell = `<a class="gcard-url" href="${d.url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" title="${d.url}">${d.url}</a>`;
         return `<div class="gcard" onclick="openLightbox(${i})">
           <div class="gcard-thumb">
-            <img loading="lazy" src="${thumb}" alt="${d.company} ${d.pageType}">
+            <img loading="lazy" src="${thumb}"${onerr} alt="${d.company} ${d.pageType}">
+            ${shotBadge}
             <span class="gcard-expand">全体を見る ⤢</span>
           </div>
           <div class="gcard-body">
@@ -5718,10 +5755,19 @@
       document.getElementById('lbCompany').textContent = d.company;
       document.getElementById('lbMeta').textContent = `${d.industry} ・ ${d.pageType} ・ ${d.url}`;
       document.getElementById('lbLink').href = d.url;
-      /* tall "full page" dummy */
-      const full = dummyImg(d, 640, 2200);
-      document.getElementById('lightboxBody').innerHTML =
-        `<img src="${full}" alt="${d.company} ${d.pageType} 全体イメージ">`;
+      const real = screenSrc(d);
+      if (real) {
+        /* 実キャプチャ全体像 (幅440pxの縮小WebP、縦にスクロール可能) */
+        const dummy = dummyImg(d, 640, 2200);
+        document.getElementById('lightboxBody').innerHTML =
+          `<img src="${real}" onerror="this.onerror=null;this.src='${dummy}'" alt="${d.company} ${d.pageType} 全体キャプチャ">
+           <p class="lightbox-note">実サイトのキャプチャ画像（縮小版）です。原寸で見るには「サイトを開く」からアクセスしてください。</p>`;
+      } else {
+        /* スクショ未取得の行はプレースホルダー */
+        const full = dummyImg(d, 640, 2200);
+        document.getElementById('lightboxBody').innerHTML =
+          `<img src="${full}" alt="${d.company} ${d.pageType} 全体イメージ">`;
+      }
       document.getElementById('lightbox').classList.remove('hidden');
       document.body.style.overflow = 'hidden';
     }
